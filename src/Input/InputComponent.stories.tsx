@@ -2,17 +2,44 @@ import React from "react";
 import InputComponent from "./InputComponent";
 
 export default {
-  title: "InputComponent",
+  title: "Input",
+  component: InputComponent,
+  decorators: [
+    (Story) => (
+      <div style={{ width: "200px" }}>
+        <Story />
+      </div>
+    ),
+  ],
+  argTypes: {
+    variant: {
+      options: ["text", "password"],
+      control: {
+        type: "radio",
+      },
+    },
+    value: {
+      control: {
+        type: "text",
+      },
+    },
+    label: {
+      control: {
+        type: "text",
+      },
+    },
+    error: {
+      control: {
+        type: "object",
+      },
+    },
+  },
+  arg: {
+    variant: "text",
+    label: "Label",
+  },
 };
 
-export const Active = () => {
-  return <InputComponent label="Usuário" value="Text" />;
-};
-
-export const Text = () => {
+export const Input = () => {
   return <InputComponent label="Usuário" />;
-};
-
-export const Password = () => {
-  return <InputComponent label="Usuário" variant="password" />;
 };
