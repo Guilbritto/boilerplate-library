@@ -5,7 +5,6 @@ import { InputProps } from "./InputComponent.types";
 
 import { Eye } from "../assets/Eye";
 import { EyeOff } from "../assets/EyeOff";
-import IconComponent from "../IconComponent/IconComponent";
 
 const InputComponent = ({
   value,
