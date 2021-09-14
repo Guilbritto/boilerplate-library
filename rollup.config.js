@@ -2,8 +2,8 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
-
-
+import analyser from "rollup-plugin-analyzer"
+import {terser} from "rollup-plugin-terser"
 const packageJson = require("./package.json");
 
 export default {
@@ -20,9 +20,12 @@ export default {
       sourcemap: true
     }
   ],
-  external: ["styled-components"],
   plugins: [
     peerDepsExternal(),
+    analyser({
+      summaryOnly: true,
+    }),
+    terser(), 
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
