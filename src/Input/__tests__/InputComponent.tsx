@@ -63,6 +63,6 @@ describe("Input Component", () => {
       />
     );
     const alertMessage = getByTestId("input-errorMessage");
-    expect(alertMessage.innerHTML).toBe("Diferent Message");
+    expect(alertMessage.innerHTML === "Mensagem Diferente").toBeFalsy();
   });
 });
