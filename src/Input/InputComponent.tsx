@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { Container, AlertMessage } from "./InputComponent.style";
+import {
+  Container,
+  AlertMessage,
+  Input,
+  Label,
+  Svg,
+} from "./InputComponent.style";
 import { InputProps } from "./InputComponent.types";
 
 import { Eye } from "../assets/Eye";
@@ -47,33 +53,46 @@ const InputComponent = ({
     setInputText(e.target.value);
     onChange(e);
   };
+  const handleEyeClick = () => {
+    setIsEyeOn(!isEyeOn);
+    if (isEyeOn) {
+      inputRef.current?.setAttribute("type", "text");
+    } else {
+      inputRef.current?.setAttribute("type", "password");
+    }
+  };
 
   return (
     <>
       <Container
-        isActive={isActive}
-        isEyeOn={isEyeOn && variant === "password"}
         variant={variant}
         onClick={heandleFocus}
         onBlur={handleBlur}
-        error={!!error}
+        data-testid="input-container"
       >
-        <input
+        <Input
           {...rest}
           ref={inputRef}
+          type={variant === "password" ? "password" : "text"}
           value={inputText}
+          isActive={isActive}
+          isEyeOn={isEyeOn && variant === "password"}
+          error={!!error}
           onChange={(evt) => handleChange(evt)}
+          data-testid="input"
         />
-        <label>{label}</label>
+        <Label isActive={isActive} error={!!error} data-testid="input-label">
+          {label}
+        </Label>
 
         {variant === "password" && (
-          <div onClick={() => setIsEyeOn(!isEyeOn)}>
+          <Svg onClick={() => handleEyeClick()} data-testid="input-eye">
             {isEyeOn ? Eye : EyeOff}
-          </div>
+          </Svg>
         )}
       </Container>
       {error && (
-        <AlertMessage>
+        <AlertMessage data-testid="input-errorMessage">
           {AlertCircle}
           {error?.message}
         </AlertMessage>

@@ -40,6 +40,4 @@ export default {
   },
 };
 
-export const Input = () => {
-  return <InputComponent label="Usuário" />;
-};
+export const Input = (args) => <InputComponent {...args} />;
