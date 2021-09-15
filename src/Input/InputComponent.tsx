@@ -19,7 +19,7 @@ const InputComponent = ({
   label,
   error,
   type = "text",
-  onChange,
+  customOnChange,
   ...rest
 }: InputProps) => {
   const [isActive, setIsActive] = useState(false);
@@ -51,7 +51,9 @@ const InputComponent = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
-    onChange(e);
+    if (customOnChange) {
+      customOnChange(e);
+    }
   };
   const handleEyeClick = () => {
     setIsEyeOn(!isEyeOn);
