@@ -13,7 +13,6 @@ export const AlertMessage = styled.div`
   justify-content: flex-start;
   padding: 5px;
   color: #E73A33;
-
   svg{
     margin-right: 5px;
   }
@@ -21,16 +20,15 @@ export const AlertMessage = styled.div`
 `
 
 export const Container = styled.div<InputComponentStylesProps>`
-  
+  box-sizing: border-box;
   position: relative;
   width: auto;
   height: 48px;
 `
 
 export const Svg = styled.div`
+  display: flex;
   svg{
-
-    position: absolute;
     right: -2.9rem;
     top: .9rem;
     cursor: pointer;
@@ -61,30 +59,44 @@ export const Label = styled.label<InputComponentStylesProps>`
   `}
 `
 
-export const Input = styled.input<InputComponentStylesProps>`
-  position: absolute;
+export const Input = styled.div<InputComponentStylesProps>`
+  display: flex;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   padding-left: .8rem;
-  padding-right: 2.8rem;
+  padding-right: .8rem;
   border: 2px solid #004282;
   border-radius: 4px;
-  font-size: inherit;
-  font-family: inherit;
   color: #2B2C32;
-  outline: none;
-  background: none;
-  &::-ms-reveal,
-  &::-ms-clear {
-    display: none;
+  align-items: center;
+  justify-content: center;
+  input{
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+    height: 88%;
+    outline: none;
+    background: none;
+    border-style: none;
+    &::-ms-reveal,
+    &::-ms-clear {
+      display: none;
+    }
+    ${props => (props.isActive && props.error) && css`
+      color: #E73A33;
+    `}
   }
+  
+  
+  
+  
   ${props => (props.isActive && props.error) && css`
     border-color: #E73A33;
     color: #E73A33;
   `}
   ${props => (props.isActive && !props.error) && css`
-    border-color:#2B52DD
+    border-color:#2B52DD;
   `}
 `

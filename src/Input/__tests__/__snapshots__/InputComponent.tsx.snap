@@ -2,6 +2,7 @@
 
 exports[`Input Component Should be able to match a snapshot with false parameter 1`] = `
 .c0 {
+  box-sizing: border-box;
   position: relative;
   width: auto;
   height: 48px;
@@ -14,6 +15,7 @@ exports[`Input Component Should be able to match a snapshot with false parameter
 
 exports[`Input Component Should be able to match a snapshot with true parameter 1`] = `
 .c0 {
+  box-sizing: border-box;
   position: relative;
   width: auto;
   height: 48px;

@@ -74,24 +74,26 @@ const InputComponent = ({
       >
         <Input
           {...rest}
-          ref={inputRef}
-          type={variant === "password" ? "password" : "text"}
-          value={inputText}
           isActive={isActive}
           isEyeOn={isEyeOn && variant === "password"}
           error={!!error}
-          onChange={(evt) => handleChange(evt)}
-          data-testid="input"
-        />
+        >
+          <input
+            value={inputText}
+            data-testid="input"
+            onChange={(evt) => handleChange(evt)}
+            ref={inputRef}
+            type={variant === "password" ? "password" : "text"}
+          />
+          {variant === "password" && (
+            <Svg onClick={() => handleEyeClick()} data-testid="input-eye">
+              {isEyeOn ? Eye : EyeOff}
+            </Svg>
+          )}
+        </Input>
         <Label isActive={isActive} error={!!error} data-testid="input-label">
           {label}
         </Label>
-
-        {variant === "password" && (
-          <Svg onClick={() => handleEyeClick()} data-testid="input-eye">
-            {isEyeOn ? Eye : EyeOff}
-          </Svg>
-        )}
       </Container>
       {error && (
         <AlertMessage data-testid="input-errorMessage">
