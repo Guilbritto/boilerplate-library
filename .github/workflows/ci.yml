@@ -6,16 +6,19 @@ on:
     - develop
 jobs:
   build:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
     
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - run: yarn
-    - run: yarn test
-      env:
-        CI: true
+    - name: Install dependencies
+      run: yarn
+      
+    - name: Check tests
+      run: yarn test --coverage
+    
