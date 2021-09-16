@@ -25,6 +25,8 @@
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
+    "storybook-addon-styled-components-themes": "^0.0.2",
+
     "@babel/core": "^7.15.5",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",

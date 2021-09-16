@@ -12,7 +12,7 @@ export const AlertMessage = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding: 5px;
-  color: #E73A33;
+  color: ${props => props.theme.colors.suport.error};
   svg{
     margin-right: 5px;
   }
@@ -41,7 +41,7 @@ export const Label = styled.label<InputComponentStylesProps>`
   top: 35%;
   padding: 0 .5rem;
   margin-left: -.5rem;
-  color: #999EA7;
+  color: ${props => props.theme.colors.neutral.soft};
   cursor: text;
   transition: top 200ms ease-in,
   left 200ms ease-in,
@@ -51,11 +51,11 @@ export const Label = styled.label<InputComponentStylesProps>`
     top: -.5rem;
     font-size: .8rem;
     left: .8rem;
-    background-color: #FFF;
-    color: #2B52DD;
+    background-color: ${props => props.theme.colors.neutral.white};
+    color: ${props => props.theme.colors.primary};
   `}
   ${props => props.error && css` 
-    color: #E73A33;
+    color: ${props => props.theme.colors.suport.error};
   `}
 `
 
@@ -67,9 +67,9 @@ export const Input = styled.div<InputComponentStylesProps>`
   height: 100%;
   padding-left: .8rem;
   padding-right: .8rem;
-  border: 2px solid #004282;
+  border: 2px solid ${props => props.theme.colors.secondary};
   border-radius: 4px;
-  color: #2B2C32;
+  color: ${props => props.theme.colors.neutral.dark};
   align-items: center;
   justify-content: center;
   input{
@@ -85,7 +85,7 @@ export const Input = styled.div<InputComponentStylesProps>`
       display: none;
     }
     ${props => (props.isActive && props.error) && css`
-      color: #E73A33;
+      color: ${props => props.theme.colors.suport.error};
     `}
   }
   
@@ -93,10 +93,10 @@ export const Input = styled.div<InputComponentStylesProps>`
   
   
   ${props => (props.isActive && props.error) && css`
-    border-color: #E73A33;
-    color: #E73A33;
+    border-color: ${props => props.theme.colors.suport.error};
+    color: ${props => props.theme.colors.suport.error};
   `}
   ${props => (props.isActive && !props.error) && css`
-    border-color:#2B52DD;
+    border-color:${props => props.theme.colors.primary};
   `}
 `

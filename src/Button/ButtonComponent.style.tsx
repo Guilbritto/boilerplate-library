@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  background-color: #2b52dd;
+  background-color: ${(props) => props.theme.colors.primary};
   width: 328px;
   height: 48px;
 
   border-style: none;
 
-  color: #ffffff;
+  color: ${(props) => props.theme.colors.suport.white};
   display: flex;
   align-items: center;
   justify-content: center;
