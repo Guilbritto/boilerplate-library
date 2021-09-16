@@ -11,7 +11,11 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+        "@svg/*": ["./src/assets/svg/*"]
+    }
   },
   "include": ["src/**/*", "./jest.setup.ts"],
   "exclude": [

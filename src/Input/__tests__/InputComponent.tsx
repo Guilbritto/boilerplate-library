@@ -5,7 +5,7 @@ import { Container } from "../InputComponent.style";
 import Input from "../InputComponent";
 import "@testing-library/jest-dom/extend-expect";
 
-jest.mock("../../assets/AlertCircle", () => {
+jest.mock("@svg/AlertCircle", () => {
   return () => <></>;
 });
 

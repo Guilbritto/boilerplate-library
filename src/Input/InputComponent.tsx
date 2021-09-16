@@ -9,9 +9,9 @@ import {
 } from "./InputComponent.style";
 import { InputProps } from "./InputComponent.types";
 
-import { Eye } from "../assets/Eye";
-import { EyeOff } from "../assets/EyeOff";
-import { AlertCircle } from "../assets/AlertCircle";
+import { Eye } from "@svg/Eye";
+import { EyeOff } from "@svg/EyeOff";
+import { AlertCircle } from "@svg/AlertCircle";
 
 const InputComponent = ({
   value,

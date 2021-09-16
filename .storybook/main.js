@@ -11,7 +11,10 @@ module.exports = {
       use: ["style-loader", "css-loader", "sass-loader"],
       include: path.resolve(__dirname, "../")
     });
-
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@svg": path.resolve(__dirname, "../src/assets/svg"),
+    }
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       loader: require.resolve("babel-loader"),
