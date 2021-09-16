@@ -7,7 +7,7 @@ export default {
 
   argTypes: {
     icon: {
-      options: ["arrowRight", "eye"],
+      options: ["arrowRight"],
       control: {
         type: "select",
       },
