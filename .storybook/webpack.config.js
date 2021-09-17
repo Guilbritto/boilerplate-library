@@ -4,6 +4,8 @@ module.exports = ({ config }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@svg": path.resolve(__dirname, "../src/assets/svg"),
+      "@styles": path.resolve(__dirname, "../src/styles"),
+      "@lib": path.resolve(__dirname, "../src/lib")
     }
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
