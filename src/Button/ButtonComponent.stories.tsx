@@ -17,6 +17,12 @@ export default {
         type: "text",
       },
     },
+    iconSide: {
+      options: ["left", "right"],
+      control: {
+        type: "select",
+      },
+    },
   },
 };
 
