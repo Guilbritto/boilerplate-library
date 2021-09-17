@@ -1,10 +1,9 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
 import "jest-styled-components";
 import { Container } from "../InputComponent.style";
 import Input from "../InputComponent";
 import "@testing-library/jest-dom/extend-expect";
-
+import { fireEvent, render } from "../../lib/test-utils";
 jest.mock("@svg/AlertCircle", () => {
   return () => <></>;
 });
@@ -12,10 +11,11 @@ jest.mock("@svg/AlertCircle", () => {
 describe("Input Component", () => {
   it("Should be able to match a snapshot with false parameter", () => {
     const { container } = render(
-      <Container
-        error={false}
-        isActive={false}
-        isEyeOn={false}
+      <Input
+        label="Test"
+        error={{
+          message: "Test",
+        }}
         variant="text"
       />
     );
@@ -24,10 +24,11 @@ describe("Input Component", () => {
   });
   it("Should be able to match a snapshot with true parameter", () => {
     const { container } = render(
-      <Container
-        error={true}
-        isActive={true}
-        isEyeOn={true}
+      <Input
+        label="Test"
+        error={{
+          message: "Test",
+        }}
         variant="password"
       />
     );
@@ -97,7 +98,6 @@ describe("Input Component", () => {
     fireEvent.click(eye);
     expect((input as HTMLInputElement).type).toBe("password");
   });
-
   it("Should be able to click outside the input and trigger blur", () => {
     const { getByTestId } = render(
       <Input

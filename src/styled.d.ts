@@ -2,13 +2,31 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    typography: {}
+    name: string;
     colors: {
-      main: string;
+      primary: string;
       secondary: string;
+      neutral: {
+        white: string;
+        light: string;
+        dark: string;
+        soft: string;
+        medium: string; 
+      }
+      suport: {
+        success: string;
+        alert: string;
+        error: string;
+      }
     };
-    
-    borderRadius: string;
+    fontSizes: {
+      small: string;
+      medium: string;
+      large: string;
+      xlarge: string,
+    }
+    borderRadius: string; 
 
   }
+  
 }

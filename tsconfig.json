@@ -14,7 +14,9 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-        "@svg/*": ["./src/assets/svg/*"]
+        "@svg/*": ["./src/assets/svg/*"],
+        "@styles/*": ["./src/styles/*"],
+        "@lib/*": ["./src/lib/*"]
     }
   },
   "include": ["src/**/*", "./jest.setup.ts"],
