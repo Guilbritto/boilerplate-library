@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 export const Container = styled.button`
-    background-color: #2b52dd;
-    width: 328px;
-    height: 48px;
+  background-color: ${(props) => props.theme.colors.primary};
+  width: 328px;
+  height: 48px;
 
     border-style: none;
 
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: ${(props) => props.theme.colors.neutral.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
     border-radius: 4px;
     font-size: 16px;
