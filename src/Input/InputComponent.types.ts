@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components'
+
 export interface InputProps
     extends React.InputHTMLAttributes<HTMLInputElement> {
     label: string
@@ -5,6 +7,7 @@ export interface InputProps
     error?: InputError
     variant?: 'password' | 'text'
     customOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+    theme?: DefaultTheme
 }
 
 export type InputError = {
