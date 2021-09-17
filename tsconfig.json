@@ -16,7 +16,8 @@
     "paths": {
         "@svg/*": ["./src/assets/svg/*"],
         "@styles/*": ["./src/styles/*"],
-        "@lib/*": ["./src/lib/*"]
+        "@lib/*": ["./src/lib/*"],
+        "@components/*": ["./src/components/*"]
     }
   },
   "include": ["src/**/*", "./jest.setup.ts"],

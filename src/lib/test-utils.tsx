@@ -1,10 +1,12 @@
 import { render, RenderOptions } from "@testing-library/react";
 import React, { ReactElement, FC } from "react";
-import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "../styles/defaultTheme";
+import { CustomThemeProvider } from "../hooks/ThemeContext";
 
 const Providers: FC = ({ children }) => {
-  return <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>;
+  return (
+    <CustomThemeProvider theme={defaultTheme}>{children}</CustomThemeProvider>
+  );
 };
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */

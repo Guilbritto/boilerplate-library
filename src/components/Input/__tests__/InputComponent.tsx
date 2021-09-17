@@ -2,7 +2,7 @@ import React from "react";
 import "jest-styled-components";
 import Input from "../InputComponent";
 import "@testing-library/jest-dom/extend-expect";
-import { fireEvent, render } from "../../lib/test-utils";
+import { fireEvent, render } from "../../../lib/test-utils";
 jest.mock("@svg/AlertCircle", () => {
   return () => <></>;
 });

@@ -12,7 +12,7 @@ import { InputProps } from "./InputComponent.types";
 import { Eye } from "@svg/Eye";
 import { EyeOff } from "@svg/EyeOff";
 import { AlertCircle } from "@svg/AlertCircle";
-import { DefaultTheme, withTheme } from "styled-components";
+import { useTheme } from "../../hooks/ThemeContext";
 
 const InputComponent = ({
   value,
@@ -20,7 +20,6 @@ const InputComponent = ({
   label,
   error,
   type = "text",
-  theme,
   customOnChange,
   ...rest
 }: InputProps) => {
@@ -28,6 +27,7 @@ const InputComponent = ({
   const [inputText, setInputText] = useState(value || "");
   const [isEyeOn, setIsEyeOn] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
+  const theme = useTheme();
 
   useEffect(() => {
     if (inputText) {
@@ -57,6 +57,7 @@ const InputComponent = ({
       customOnChange(e);
     }
   };
+
   const handleEyeClick = () => {
     setIsEyeOn(!isEyeOn);
     if (isEyeOn) {
@@ -73,12 +74,14 @@ const InputComponent = ({
         onClick={heandleFocus}
         onBlur={handleBlur}
         data-testid="input-container"
+        theme={theme}
       >
         <Input
           {...rest}
           isActive={isActive}
           isEyeOn={isEyeOn && variant === "password"}
           error={!!error}
+          theme={theme}
         >
           <input
             value={inputText}
@@ -88,17 +91,26 @@ const InputComponent = ({
             type={variant === "password" ? "password" : "text"}
           />
           {variant === "password" && (
-            <Svg onClick={() => handleEyeClick()} data-testid="input-eye">
+            <Svg
+              theme={theme}
+              onClick={() => handleEyeClick()}
+              data-testid="input-eye"
+            >
               {isEyeOn ? Eye : EyeOff}
             </Svg>
           )}
         </Input>
-        <Label isActive={isActive} error={!!error} data-testid="input-label">
+        <Label
+          theme={theme}
+          isActive={isActive}
+          error={!!error}
+          data-testid="input-label"
+        >
           {label}
         </Label>
       </Container>
       {error && (
-        <AlertMessage data-testid="input-errorMessage">
+        <AlertMessage theme={theme} data-testid="input-errorMessage">
           {AlertCircle}
           {error?.message}
         </AlertMessage>
@@ -107,4 +119,4 @@ const InputComponent = ({
   );
 };
 
-export default withTheme(InputComponent);
+export default InputComponent;
