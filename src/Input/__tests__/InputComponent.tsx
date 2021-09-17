@@ -1,6 +1,5 @@
 import React from "react";
 import "jest-styled-components";
-import { Container } from "../InputComponent.style";
 import Input from "../InputComponent";
 import "@testing-library/jest-dom/extend-expect";
 import { fireEvent, render } from "../../lib/test-utils";

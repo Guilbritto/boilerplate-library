@@ -6,12 +6,13 @@ import {
   Input,
   Label,
   Svg,
-} from "./InputComponent.style";
+} from "./InputComponent.styles";
 import { InputProps } from "./InputComponent.types";
 
 import { Eye } from "@svg/Eye";
 import { EyeOff } from "@svg/EyeOff";
 import { AlertCircle } from "@svg/AlertCircle";
+import { DefaultTheme, withTheme } from "styled-components";
 
 const InputComponent = ({
   value,
@@ -19,6 +20,7 @@ const InputComponent = ({
   label,
   error,
   type = "text",
+  theme,
   customOnChange,
   ...rest
 }: InputProps) => {
@@ -105,4 +107,4 @@ const InputComponent = ({
   );
 };
 
-export default InputComponent;
+export default withTheme(InputComponent);
