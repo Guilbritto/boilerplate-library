@@ -21,3 +21,6 @@ jobs:
 
             - name: Check tests
               run: yarn test --coverage
+
+            - name: Check types
+              run: yarn type-check
