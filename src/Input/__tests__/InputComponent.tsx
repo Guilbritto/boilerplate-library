@@ -1,37 +1,37 @@
-import React from "react";
-import "jest-styled-components";
-import { Container } from "../InputComponent.style";
-import Input from "../InputComponent";
-import "@testing-library/jest-dom/extend-expect";
-import { fireEvent, render } from "../../lib/test-utils";
-jest.mock("@svg/AlertCircle", () => {
-  return () => <></>;
-});
+import React from 'react'
+import 'jest-styled-components'
+import { Container } from '../InputComponent.style'
+import Input from '../InputComponent'
+import '@testing-library/jest-dom/extend-expect'
+import { fireEvent, render } from '../../lib/test-utils'
+jest.mock('@svg/AlertCircle', () => {
+    return () => <></>
+})
 
-describe("Input Component", () => {
-  it("Should be able to match a snapshot with false parameter", () => {
-    const { container } = render(
-      <Input
-        label="Test"
-        error={{
-          message: "Test",
-        }}
-        variant="text"
-      />
-    );
+describe('Input Component', () => {
+    it('Should be able to match a snapshot with false parameter', () => {
+        const { container } = render(
+            <Input
+                label="Test"
+                error={{
+                    message: 'Test'
+                }}
+                variant="text"
+            />
+        )
 
-    expect(container.firstChild).toMatchSnapshot();
-  });
-  it("Should be able to match a snapshot with true parameter", () => {
-    const { container } = render(
-      <Input
-        label="Test"
-        error={{
-          message: "Test",
-        }}
-        variant="password"
-      />
-    );
+        expect(container.firstChild).toMatchSnapshot()
+    })
+    it('Should be able to match a snapshot with true parameter', () => {
+        const { container } = render(
+            <Input
+                label="Test"
+                error={{
+                    message: 'Test'
+                }}
+                variant="password"
+            />
+        )
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -93,26 +93,26 @@ describe("Input Component", () => {
         const eye = getByTestId('input-eye')
         const input = getByTestId('input')
 
-    fireEvent.click(eye);
-    expect((input as HTMLInputElement).type).toBe("text");
-    fireEvent.click(eye);
-    expect((input as HTMLInputElement).type).toBe("password");
-  });
-  it("Should be able to click outside the input and trigger blur", () => {
-    const { getByTestId } = render(
-      <Input
-        error={{
-          message: "",
-        }}
-        label="Label"
-        variant="password"
-      />
-    );
-    const input = getByTestId("input");
-    input.focus();
-    expect(input).toHaveFocus();
-    input.blur();
-    const label = getByTestId("input-label");
-    expect(label).toMatchSnapshot();
-  });
-});
+        fireEvent.click(eye)
+        expect((input as HTMLInputElement).type).toBe('text')
+        fireEvent.click(eye)
+        expect((input as HTMLInputElement).type).toBe('password')
+    })
+    it('Should be able to click outside the input and trigger blur', () => {
+        const { getByTestId } = render(
+            <Input
+                error={{
+                    message: ''
+                }}
+                label="Label"
+                variant="password"
+            />
+        )
+        const input = getByTestId('input')
+        input.focus()
+        expect(input).toHaveFocus()
+        input.blur()
+        const label = getByTestId('input-label')
+        expect(label).toMatchSnapshot()
+    })
+})
