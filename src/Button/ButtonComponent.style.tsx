@@ -7,7 +7,7 @@ export const Container = styled.button`
 
   border-style: none;
 
-  color: ${(props) => props.theme.colors.suport.white};
+  color: ${(props) => props.theme.colors.neutral.white};
   display: flex;
   align-items: center;
   justify-content: center;
