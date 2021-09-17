@@ -1,15 +1,13 @@
-
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
-    label: string;
-    value?: string;
+export interface InputProps
+    extends React.InputHTMLAttributes<HTMLInputElement> {
+    label: string
+    value?: string
     error?: InputError
-    variant?: "password" | "text";
-    customOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    variant?: 'password' | 'text'
+    customOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export type InputError ={
-    message?: string;
-    icon?: string;
+export type InputError = {
+    message?: string
+    icon?: string
 }
-
-

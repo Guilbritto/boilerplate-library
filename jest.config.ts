@@ -105,7 +105,7 @@ export default {
 
     moduleFileExtensions: ['ts', 'js', 'tsx', 'jsx'],
     transform: {
-        '^.+\\.(ts|js)$': 'ts-jest',
+        '^.+\\.(ts|js)$': 'ts-jest'
     },
     modulePaths: ['<rootDir>/src'],
     testMatch: [
@@ -171,7 +171,7 @@ export default {
     // The glob patterns Jest uses to detect test files
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-    testPathIgnorePatterns: [ '<rootDir>/node_modules/'],
+    testPathIgnorePatterns: ['<rootDir>/node_modules/']
 
     // The regexp pattern or array of patterns that Jest uses to detect test files
     // testRegex: [],

@@ -1,7 +1,3 @@
-import {DefaultTheme} from 'styled-components'
+import { DefaultTheme } from 'styled-components'
 
-
-export const defaultTheme: DefaultTheme = {
-  
-
-}
+export const defaultTheme: DefaultTheme = {}
