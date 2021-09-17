@@ -1,6 +1,5 @@
-import { render } from "@testing-library/react";
 import ButtonComponent from "../ButtonComponent";
-
+import { render } from "../../lib/test-utils";
 describe("Button", () => {
   it("Should be able pass to snapshot test", () => {
     const { container } = render(

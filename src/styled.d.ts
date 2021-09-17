@@ -28,4 +28,5 @@ declare module 'styled-components' {
     borderRadius: string; 
 
   }
+  
 }
