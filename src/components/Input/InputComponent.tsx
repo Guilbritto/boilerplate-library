@@ -90,7 +90,6 @@ const InputComponent = ({
                 }}
             >
                 <Input
-                    {...rest}
                     isActive={isActive}
                     isEyeOn={isEyeOn && variant === 'password'}
                     error={!!error}
@@ -102,6 +101,7 @@ const InputComponent = ({
                         onChange={evt => handleChange(evt)}
                         ref={inputRef}
                         type={variant === 'password' ? 'password' : 'text'}
+                        {...rest}
                     />
                     {variant === 'password' && (
                         <Svg
