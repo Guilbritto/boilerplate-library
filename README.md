@@ -1,5 +1,8 @@
 # React Martins Component Library
 
+[![Main CI](https://github.com/Guilbritto/react-martins-component-library/workflows/Main%20CI/badge.svg)](https://github.com/Guilbritto/react-martins-component-library/actions?query=workflow%3AMain+branch%3Amain)
+[![codecov](https://codecov.io/gh/Guilbritto/react-martins-component-library/branch/main/graph/badge.svg?token=PWEI1FO5I2)](https://codecov.io/gh/Guilbritto/react-martins-component-library)
+
 This repo aims to be used as a design system for martins
 contains several components written in react
 
