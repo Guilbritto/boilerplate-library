@@ -1,8 +1,11 @@
-import { addDecorator } from '@storybook/react'
-import { withThemesProvider } from 'storybook-addon-styled-component-theme'
-import { ThemeProvider } from 'styled-components'
-import { defaultTheme } from '../src/styles/defaultTheme'
+import React from 'react';
 
-const themes = [defaultTheme]
+import {CustomThemeProvider} from '../src/hooks/ThemeContext';
 
-addDecorator(withThemesProvider(themes, ThemeProvider))
+export const decorators = [
+  (Story) => (
+    <CustomThemeProvider>
+      <Story />
+    </CustomThemeProvider>
+  ),
+];

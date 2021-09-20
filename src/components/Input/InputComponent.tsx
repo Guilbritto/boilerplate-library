@@ -21,12 +21,18 @@ const InputComponent = ({
     error,
     type = 'text',
     customOnChange,
+    marginTop,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    width,
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)
     const [inputText, setInputText] = useState(value || '')
     const [isEyeOn, setIsEyeOn] = useState(true)
     const inputRef = useRef<HTMLInputElement>(null)
+
     const theme = useTheme()
 
     useEffect(() => {
@@ -66,6 +72,7 @@ const InputComponent = ({
             inputRef.current?.setAttribute('type', 'password')
         }
     }
+
     return (
         <>
             <Container
@@ -74,6 +81,13 @@ const InputComponent = ({
                 onBlur={handleBlur}
                 data-testid="input-container"
                 theme={theme}
+                style={{
+                    marginTop,
+                    marginBottom,
+                    marginLeft,
+                    marginRight,
+                    width
+                }}
             >
                 <Input
                     {...rest}
