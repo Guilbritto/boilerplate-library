@@ -6,6 +6,10 @@
 This repo aims to be used as a design system for martins
 contains several components written in react
 
+## Figma references
+
+[Figma](https://www.figma.com/file/oX25OOCKxYY37i47njHQdO/Tracking?node-id=0%3A1)
+
 ## Core Technologies
 
 -   [ReactJS](https://reactjs.org/)
