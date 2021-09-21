@@ -92,7 +92,11 @@ export const Input = styled.div<InputComponentStylesProps>`
                 color: ${props => props.theme.colors.suport.error};
             `}
     }
-
+    ${props =>
+        props.error &&
+        css`
+            border-color: ${props => props.theme.colors.suport.error};
+        `}
     ${props =>
         props.isActive &&
         props.error &&

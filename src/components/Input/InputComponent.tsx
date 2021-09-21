@@ -20,12 +20,12 @@ const InputComponent = ({
     label,
     error,
     type = 'text',
-    customOnChange,
     marginTop,
     marginBottom,
     marginLeft,
     marginRight,
     width,
+    customOnChange,
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)

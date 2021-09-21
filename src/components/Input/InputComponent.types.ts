@@ -9,6 +9,8 @@ export interface InputProps
     marginBottom?: string;
     marginLeft?: string;
     marginRight?: string;
+    register?: any;
+    required?: boolean;
 }
 
 export type InputError = {
