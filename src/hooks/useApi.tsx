@@ -18,10 +18,10 @@ interface useApiProps {
  * @param {useApiProps}  useApiProps props to perform an request
  * @return {data, error} the returned data and if has error
  */
-export const useApi = <D, E = undefined>(
+const useApi = <D, E = undefined>(
     props: useApiProps
 ): useApiReturnType<D, E> => {
-    // destroy props
+    //destroy props
     const { url, cancelationToken, api } = props
 
     //Create data and error useState to store the result of request,
@@ -63,3 +63,5 @@ export const useApi = <D, E = undefined>(
     //return data and error
     return { data, error }
 }
+
+export { useApi }
