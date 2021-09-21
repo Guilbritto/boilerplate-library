@@ -49,6 +49,7 @@ const InputComponent = ({
 
     const heandleFocus = () => {
         setIsActive(true)
+        inputRef.current?.focus()
     }
 
     const handleBlur = () => {
