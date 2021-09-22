@@ -17,7 +17,8 @@
         "@svg/*": ["./src/assets/svg/*"],
         "@styles/*": ["./src/styles/*"],
         "@lib/*": ["./src/lib/*"],
-        "@components/*": ["./src/components/*"]
+        "@components/*": ["./src/components/*"],
+        "@hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src/**/*", "./jest.setup.ts"],
