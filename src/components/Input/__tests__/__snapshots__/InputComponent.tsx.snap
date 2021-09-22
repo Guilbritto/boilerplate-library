@@ -101,6 +101,7 @@ exports[`Input Component Should be able to match a snapshot with false parameter
     <input
       data-testid="input"
       type="text"
+      value=""
     />
   </div>
   <label
@@ -204,6 +205,7 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
     <input
       data-testid="input"
       type="password"
+      value=""
     />
     <div
       class="c2"

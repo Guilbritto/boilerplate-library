@@ -79,7 +79,7 @@ describe('useForm', () => {
         expect(result.current.formStatus).toBe(FormStatus.COMPLETED)
     })
 
-    it('Should be able to fieldsError add erros for client side validation', async () => {
+    it('Should be able to FieldsErrors add erros for client side validation', async () => {
         const { result, waitForNextUpdate } = renderHook(() =>
             useForm({
                 schema,
@@ -94,8 +94,8 @@ describe('useForm', () => {
         await waitForNextUpdate()
 
         expect(result.current.formStatus).toBe(FormStatus.SUBMITTED)
-        expect(result.current.fieldsError.login).toBe(required.login)
-        expect(result.current.fieldsError.password).toBe(required.password)
+        expect(result.current.FieldsErrors.login).toBe(required.login)
+        expect(result.current.FieldsErrors.password).toBe(required.password)
 
         const target = { name: 'login', value: 'user.martins' }
 
@@ -110,7 +110,7 @@ describe('useForm', () => {
         await waitForNextUpdate()
 
         expect(result.current.fields.login).toBe(target.value)
-        expect(result.current.fieldsError.password).toBe(required.password)
+        expect(result.current.FieldsErrors.password).toBe(required.password)
 
         const newTarget = { name: 'password', value: '12345' }
 
@@ -126,6 +126,49 @@ describe('useForm', () => {
 
         expect(result.current.fields.login).toBe(target.value)
         expect(result.current.fields.password).toBe(newTarget.value)
-        expect(result.current.fieldsError).toBe(undefined)
+        expect(result.current.FieldsErrors).toBe(undefined)
+    })
+
+    it('Should be able to setFieldsErrors and add errors from api for example', async () => {
+        const { result, waitForNextUpdate } = renderHook(() =>
+            useForm({
+                schema,
+                fieldsInitialValue: { login: '', password: '' }
+            })
+        )
+
+        act(() => {
+            result.current.setFormStatus(FormStatus.SUBMITTED)
+        })
+
+        await waitForNextUpdate()
+
+        expect(result.current.formStatus).toBe(FormStatus.SUBMITTED)
+
+        const loginError = 'error from api'
+        const passwordError = 'some password error from api'
+
+        act(() => {
+            result.current.setFieldsErrors({
+                login: loginError,
+                password: passwordError
+            })
+        })
+
+        expect(result.current.FieldsErrors.login).toBe(loginError)
+        expect(result.current.FieldsErrors.password).toBe(passwordError)
+
+        const newLoginError = ''
+        const newPasswordError = ''
+
+        act(() => {
+            result.current.setFieldsErrors({
+                login: newLoginError,
+                password: newPasswordError
+            })
+        })
+
+        expect(result.current.FieldsErrors.login).toBe(newLoginError)
+        expect(result.current.FieldsErrors.password).toBe(newPasswordError)
     })
 })
