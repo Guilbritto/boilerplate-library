@@ -66,7 +66,15 @@ const InputComponent = ({
     }
 
     return (
-        <>
+        <div
+            style={{
+                marginTop,
+                marginBottom,
+                marginLeft,
+                marginRight,
+                width
+            }}
+        >
             <Container
                 variant={variant}
                 onClick={heandleFocus}
@@ -84,7 +92,7 @@ const InputComponent = ({
                 <Input
                     isActive={isActive}
                     isEyeOn={isEyeOn && variant === 'password'}
-                    error={!!error}
+                    error={!!(error && error.message)}
                     theme={theme}
                 >
                     <input
@@ -112,13 +120,13 @@ const InputComponent = ({
                     {label}
                 </Label>
             </Container>
-            {error && (
+            {error && error.message && (
                 <AlertMessage theme={theme} data-testid="input-errorMessage">
                     {AlertCircle}
                     {error?.message}
                 </AlertMessage>
             )}
-        </>
+        </div>
     )
 }
 
