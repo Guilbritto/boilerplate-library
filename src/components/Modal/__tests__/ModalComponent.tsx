@@ -3,11 +3,18 @@ import { render, screen } from '../../../lib/test-utils'
 import ModalComponent from '../ModalComponent'
 
 describe('<ModalComponent />', () => {
-  it('should render the component', () => {
-    const { container } = render(<ModalComponent />)
+    it('should render the component', () => {
+        let isOpen = true
+        const { container } = render(
+            <ModalComponent
+                title=""
+                isOpen={isOpen}
+                handleClose={() => (isOpen = false)}
+            >
+                Teste
+            </ModalComponent>
+        )
 
-    expect(screen.getByRole('heading', { name: /Modal/i })).toBeInTheDocument()
-
-    expect(container.firstChild).toMatchSnapshot()
-  })
+        expect(container.firstChild).toMatchSnapshot()
+    })
 })

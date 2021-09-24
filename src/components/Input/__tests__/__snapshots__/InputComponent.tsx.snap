@@ -11,7 +11,6 @@ exports[`Input Component Should be able to click outside the input and trigger b
   cursor: text;
   -webkit-transition: top 200ms ease-in,left 200ms ease-in,font-size 200ms ease-in;
   transition: top 200ms ease-in,left 200ms ease-in,font-size 200ms ease-in;
-  color: #E73A33;
 }
 
 <label
@@ -23,6 +22,27 @@ exports[`Input Component Should be able to click outside the input and trigger b
 `;
 
 exports[`Input Component Should be able to match a snapshot with false parameter 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 5px;
+  color: #E73A33;
+}
+
+.c3 svg {
+  margin-right: 5px;
+}
+
 .c0 {
   box-sizing: border-box;
   position: relative;
@@ -91,29 +111,57 @@ exports[`Input Component Should be able to match a snapshot with false parameter
   display: none;
 }
 
-<div
-  class="c0"
-  data-testid="input-container"
->
+<div>
   <div
-    class="c1"
+    class="c0"
+    data-testid="input-container"
   >
-    <input
-      data-testid="input"
-      type="text"
-      value=""
-    />
+    <div
+      class="c1"
+    >
+      <input
+        data-testid="input"
+        type="text"
+      />
+    </div>
+    <label
+      class="c2"
+      data-testid="input-label"
+    >
+      Test
+    </label>
   </div>
-  <label
-    class="c2"
-    data-testid="input-label"
+  <div
+    class="c3"
+    data-testid="input-errorMessage"
   >
     Test
-  </label>
+  </div>
 </div>
 `;
 
 exports[`Input Component Should be able to match a snapshot with true parameter 1`] = `
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 5px;
+  color: #E73A33;
+}
+
+.c4 svg {
+  margin-right: 5px;
+}
+
 .c0 {
   box-sizing: border-box;
   position: relative;
@@ -195,55 +243,62 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
   display: none;
 }
 
-<div
-  class="c0"
-  data-testid="input-container"
->
+<div>
   <div
-    class="c1"
+    class="c0"
+    data-testid="input-container"
   >
-    <input
-      data-testid="input"
-      type="password"
-      value=""
-    />
     <div
-      class="c2"
-      data-testid="input-eye"
+      class="c1"
     >
-      <svg
-        fill="none"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
+      <input
+        data-testid="input"
+        type="password"
+      />
+      <div
+        class="c2"
+        data-testid="input-eye"
       >
-        <path
-          clip-rule="evenodd"
-          d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
-          fill-rule="evenodd"
-          stroke="#6D7384"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-        />
-        <path
-          clip-rule="evenodd"
-          d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
-          fill-rule="evenodd"
-          stroke="#6D7384"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-        />
-      </svg>
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+            fill-rule="evenodd"
+            stroke="#6D7384"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+            fill-rule="evenodd"
+            stroke="#6D7384"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
     </div>
+    <label
+      class="c3"
+      data-testid="input-label"
+    >
+      Test
+    </label>
   </div>
-  <label
-    class="c3"
-    data-testid="input-label"
+  <div
+    class="c4"
+    data-testid="input-errorMessage"
   >
     Test
-  </label>
+  </div>
 </div>
 `;
