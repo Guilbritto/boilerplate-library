@@ -8,4 +8,5 @@ export default {
 }
 
 export const Default = () => <CheckboxComponent />
+export const Minus = () => <CheckboxComponent icon="minus" />
 export const Disabled = () => <CheckboxComponent checked={true} disabled />
