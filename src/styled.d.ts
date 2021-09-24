@@ -8,7 +8,10 @@ declare module 'styled-components' {
             secondary: string
             neutral: {
                 white: string
-                light: string
+                light: {
+                    300:string,
+                    500: string
+                }
                 dark: string
                 soft: string
                 medium: string
@@ -17,14 +20,26 @@ declare module 'styled-components' {
                 success: string
                 alert: string
                 error: string
+                successLight: string,
+                alertLight: string,
+                errorLight: string
+            },
+            blue: {
+                light: string,
+                medium: string,
+                dark: string
             }
         }
-        fontSizes: {
-            small: string
-            medium: string
-            large: string
-            xlarge: string
+        fontTokens:{
+            [key: string]: FlattenSimpleInterpolation
         }
         borderRadius: string
+        fontWeight: {
+            light: number,
+            regular: number,
+            medium: number,
+            bold: number,
+            black: number
+        },
     }
 }

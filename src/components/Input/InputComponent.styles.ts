@@ -69,7 +69,7 @@ export const Input = styled.div<InputComponentStylesProps>`
     padding-left: 0.8rem;
     padding-right: 0.8rem;
     border: 2px solid ${props => props.theme.colors.secondary};
-    border-radius: 4px;
+    border-radius: ${props => props.theme.borderRadius};
     color: ${props => props.theme.colors.neutral.dark};
     align-items: center;
     justify-content: center;

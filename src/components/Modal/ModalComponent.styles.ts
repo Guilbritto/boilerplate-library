@@ -22,7 +22,7 @@ export const ModalContainer = styled.div`
 
 export const ModalHeader = styled.div`
     display: flex;
-    font-weight: 600;
+    font-weight: ${props => props.theme.fontWeight.medium};
     font-size: 20px;
     display: flex;
     align-items: center;
