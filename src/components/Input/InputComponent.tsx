@@ -34,13 +34,13 @@ const InputComponent = ({
     const theme = useTheme()
 
     useEffect(() => {
-        if (inputRef.current?.value) {
+        if (inputRef.current?.value && inputRef.current.value != '') {
             setIsActive(true)
         }
     })
 
     useEffect(() => {
-        if (!!error) {
+        if (!!error && error.message) {
             setIsActive(true)
         }
     }, [error, inputRef])
@@ -81,13 +81,6 @@ const InputComponent = ({
                 onBlur={handleBlur}
                 data-testid="input-container"
                 theme={theme}
-                style={{
-                    marginTop,
-                    marginBottom,
-                    marginLeft,
-                    marginRight,
-                    width
-                }}
             >
                 <Input
                     isActive={isActive}
@@ -114,7 +107,7 @@ const InputComponent = ({
                 <Label
                     theme={theme}
                     isActive={isActive}
-                    error={!!error}
+                    error={!!(error && error.message)}
                     data-testid="input-label"
                 >
                     {label}
