@@ -16,4 +16,9 @@ export const Container = styled.button`
     font-size: 16px;
     line-height: 24px;
     font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: ${props => props.theme.colors.secondary};
+    }
 `
