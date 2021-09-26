@@ -7,9 +7,12 @@ export const createTheme = (theme: typeof defaultTheme) => {
       ...defaultTheme.colors,
       ...theme.colors,
     },
-    fontSizes: {
-      ...defaultTheme.fontSizes,
-      ...theme.fontSizes,
+    borderRadius: theme.borderRadius || defaultTheme.borderRadius,
+    fontTokens: {
+        ...defaultTheme.fontTokens,
+        ...theme.fontTokens,
     },
+    fontWeight: theme.fontWeight || defaultTheme.fontWeight,
+    name: theme.name || defaultTheme.name,
   } as typeof defaultTheme;
 }
