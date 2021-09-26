@@ -79,7 +79,7 @@ describe('useForm', () => {
         expect(result.current.formStatus).toBe(FormStatus.COMPLETED)
     })
 
-    it('Should be able to FieldsErrors add erros for client side validation', async () => {
+    it('Should be able to fieldsErrors add erros for client side validation', async () => {
         const { result, waitForNextUpdate } = renderHook(() =>
             useForm({
                 schema,
@@ -92,10 +92,9 @@ describe('useForm', () => {
         })
 
         await waitForNextUpdate()
-
         expect(result.current.formStatus).toBe(FormStatus.SUBMITTED)
-        expect(result.current.FieldsErrors.login).toBe(required.login)
-        expect(result.current.FieldsErrors.password).toBe(required.password)
+        expect(result.current.fieldsErrors.login).toBe(required.login)
+        expect(result.current.fieldsErrors.password).toBe(required.password)
 
         const target = { name: 'login', value: 'user.martins' }
 
@@ -110,7 +109,7 @@ describe('useForm', () => {
         await waitForNextUpdate()
 
         expect(result.current.fields.login).toBe(target.value)
-        expect(result.current.FieldsErrors.password).toBe(required.password)
+        expect(result.current.fieldsErrors.password).toBe(required.password)
 
         const newTarget = { name: 'password', value: '12345' }
 
@@ -126,7 +125,7 @@ describe('useForm', () => {
 
         expect(result.current.fields.login).toBe(target.value)
         expect(result.current.fields.password).toBe(newTarget.value)
-        expect(result.current.FieldsErrors).toBe(undefined)
+        expect(result.current.fieldsErrors).toBe(undefined)
     })
 
     it('Should be able to setFieldsErrors and add errors from api for example', async () => {
@@ -155,8 +154,8 @@ describe('useForm', () => {
             })
         })
 
-        expect(result.current.FieldsErrors.login).toBe(loginError)
-        expect(result.current.FieldsErrors.password).toBe(passwordError)
+        expect(result.current.fieldsErrors.login).toBe(loginError)
+        expect(result.current.fieldsErrors.password).toBe(passwordError)
 
         const newLoginError = ''
         const newPasswordError = ''
@@ -168,7 +167,7 @@ describe('useForm', () => {
             })
         })
 
-        expect(result.current.FieldsErrors.login).toBe(newLoginError)
-        expect(result.current.FieldsErrors.password).toBe(newPasswordError)
+        expect(result.current.fieldsErrors.login).toBe(newLoginError)
+        expect(result.current.fieldsErrors.password).toBe(newPasswordError)
     })
 })

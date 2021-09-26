@@ -15,7 +15,6 @@ import { AlertCircle } from '@svg/AlertCircle'
 import { useTheme } from '../../hooks/ThemeContext'
 
 const InputComponent = ({
-    value,
     variant = 'text',
     label,
     error,
@@ -29,20 +28,19 @@ const InputComponent = ({
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)
-    const [inputText, setInputText] = useState(value || '')
     const [isEyeOn, setIsEyeOn] = useState(true)
     const inputRef = useRef<HTMLInputElement>(null)
 
     const theme = useTheme()
 
     useEffect(() => {
-        if (inputText) {
+        if (inputRef.current?.value && inputRef.current.value != '') {
             setIsActive(true)
         }
     })
 
     useEffect(() => {
-        if (!!error) {
+        if (!!error && error.message) {
             setIsActive(true)
         }
     }, [error, inputRef])
@@ -53,15 +51,8 @@ const InputComponent = ({
     }
 
     const handleBlur = () => {
-        if (inputText.length === 0) {
+        if (inputRef.current?.value.length === 0) {
             setIsActive(false)
-        }
-    }
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInputText(e.target.value)
-        if (customOnChange) {
-            customOnChange(e)
         }
     }
 
@@ -75,31 +66,30 @@ const InputComponent = ({
     }
 
     return (
-        <>
+        <div
+            style={{
+                marginTop,
+                marginBottom,
+                marginLeft,
+                marginRight,
+                width
+            }}
+        >
             <Container
                 variant={variant}
                 onClick={heandleFocus}
                 onBlur={handleBlur}
                 data-testid="input-container"
                 theme={theme}
-                style={{
-                    marginTop,
-                    marginBottom,
-                    marginLeft,
-                    marginRight,
-                    width
-                }}
             >
                 <Input
                     isActive={isActive}
                     isEyeOn={isEyeOn && variant === 'password'}
-                    error={!!error}
+                    error={!!(error && error.message)}
                     theme={theme}
                 >
                     <input
-                        value={inputText}
                         data-testid="input"
-                        onChange={evt => handleChange(evt)}
                         ref={inputRef}
                         type={variant === 'password' ? 'password' : 'text'}
                         {...rest}
@@ -117,19 +107,19 @@ const InputComponent = ({
                 <Label
                     theme={theme}
                     isActive={isActive}
-                    error={!!error}
+                    error={!!(error && error.message)}
                     data-testid="input-label"
                 >
                     {label}
                 </Label>
             </Container>
-            {error && (
+            {error && error.message && (
                 <AlertMessage theme={theme} data-testid="input-errorMessage">
                     {AlertCircle}
                     {error?.message}
                 </AlertMessage>
             )}
-        </>
+        </div>
     )
 }
 

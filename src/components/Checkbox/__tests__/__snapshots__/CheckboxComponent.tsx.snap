@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CheckboxComponent /> should render the component 1`] = `
+<div
+  class="sc-gsTEea dzWFCL"
+>
+  <div
+    class="sc-bdfBQB jZXqOZ"
+  >
+    <div>
+      <input
+        type="checkbox"
+      />
+    </div>
+  </div>
+</div>
+`;

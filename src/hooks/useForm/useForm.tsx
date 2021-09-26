@@ -1,4 +1,4 @@
-import {
+import React, {
     useState,
     ChangeEvent,
     useEffect,
@@ -18,14 +18,21 @@ interface useApiReturnType<F> {
     handleChange: (e: ChangeEvent<HTMLInputElement>) => void
     setFormStatus: Dispatch<SetStateAction<FormStatus>>
     setFieldsErrors: Dispatch<SetStateAction<F | undefined>>
+    onFormSubmit: OnFormSubmit<F>
     fields: F
-    FieldsErrors: F | undefined
+    fieldsErrors: F | undefined
     formStatus: FormStatus
 }
 
 interface useFormProps<T> {
     schema: ObjectSchema<any>
     fieldsInitialValue: T
+}
+
+interface OnFormSubmit<F> {
+    (calback: (data: F, e?: React.BaseSyntheticEvent) => void): (
+        e?: React.BaseSyntheticEvent
+    ) => Promise<void>
 }
 
 /**
@@ -45,19 +52,19 @@ const isEmptyObject = (errors: any): boolean =>
  * setFormStatus is a function to keep the state of the form
  * setFieldsErrors is a function to set errors from an API for example
  * fields values of the inputs
- * FieldsErrors array of values
+ * fieldsErrors array of values
  * formStatus status of the form
  */
-const useForm = <F,>(props: useFormProps<F>) => {
+const useForm = <F,>(props: useFormProps<F>): useApiReturnType<F> => {
     //destroy props
     const { schema, fieldsInitialValue } = props
 
-    //Create fields, FieldsErrors, formStatus
+    //Create fields, fieldsErrors, formStatus
     //to store the input(fields) values,
     //to store input errors(FieldsErrors) values
     //to store status(fromStatus) values
     const [fields, setFields] = useState<F>(fieldsInitialValue)
-    const [FieldsErrors, setFieldsErrors] = useState<F | undefined>(undefined)
+    const [fieldsErrors, setFieldsErrors] = useState<F | undefined>(undefined)
     const [formStatus, setFormStatus] = useState<FormStatus>(FormStatus.IDLE)
 
     //a method to handle input changes
@@ -67,18 +74,16 @@ const useForm = <F,>(props: useFormProps<F>) => {
     }
 
     useEffect(() => {
-        //an method to validate fields and store FieldsErrorss according to schema
+        //an method to validate fields and store fieldsErrorss according to schema
         const validateFields = async () => {
             try {
                 await schema.validate(fields, { abortEarly: false })
                 setFieldsErrors(undefined)
             } catch (e) {
                 const errors: any = {}
-                if (e instanceof ValidationError) {
-                    e.inner.forEach(err => {
-                        if (err.path) errors[err.path] = err.message
-                    })
-                }
+                ;(e as ValidationError).inner.forEach(err => {
+                    if (err.path) errors[err.path] = err.message
+                })
                 setFieldsErrors(isEmptyObject(errors) ? undefined : errors)
             }
         }
@@ -86,12 +91,17 @@ const useForm = <F,>(props: useFormProps<F>) => {
         if (formStatus === FormStatus.SUBMITTED) validateFields()
     }, [fields, formStatus])
 
+    const onFormSubmit: OnFormSubmit<F> = callback => async e => {
+        callback(fields, e)
+    }
+
     return {
         handleChange,
         setFormStatus,
         setFieldsErrors,
+        onFormSubmit,
         fields,
-        FieldsErrors,
+        fieldsErrors,
         formStatus
     }
 }
