@@ -6,7 +6,7 @@ import { createTheme } from "@lib/createTheme";
 import { useApi } from './hooks/useApi/index'
 import { useForm, FormStatus } from './hooks/useForm/index'
 import { ToastProvider,useToast  } from './hooks/useToast'
-import ToastContainer from './components/Toast/ToastComponent'
+import ToastContainer from './components/ToastContainer/ToastComponent'
 
 export {
   Input,
