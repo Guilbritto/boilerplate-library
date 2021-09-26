@@ -1,4 +1,4 @@
-import { useTheme } from '../../hooks/ThemeContext'
+import { useTheme } from '../../hooks/useTheme'
 import { Close } from '@svg/Close'
 import React, { memo, useEffect } from 'react'
 import ReactDOM from 'react-dom'

@@ -2,6 +2,7 @@ import React from "react"
 
 export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
     icon?: 'default' | 'minus'
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 

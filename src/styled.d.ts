@@ -18,10 +18,10 @@ declare module 'styled-components' {
             }
             suport: {
                 success: string
-                alert: string
+                warning: string
                 error: string
                 successLight: string,
-                alertLight: string,
+                warningLight: string,
                 errorLight: string
             },
             blue: {
