@@ -21,7 +21,6 @@ const ToastProvider: React.FC = ({ children }) => {
 
     const addToast = useCallback(
         ({ type, message }: Omit<ToastMessages, 'id'>) => {
-            console.log('açlsjdflçaskj')
             const id = uuid()
             const toast = {
                 id,
