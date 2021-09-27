@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Check } from '@svg/Check'
-import { useTheme } from '../../hooks/ThemeContext'
+import { useTheme } from '../../hooks/useTheme'
 import { Container, EffectArea } from './CheckboxComponent.styles'
 import { CheckboxProps } from './CheckboxComponent.types'
 import { Minus } from '@svg/Minus'

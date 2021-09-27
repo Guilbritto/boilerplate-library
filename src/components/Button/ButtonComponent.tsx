@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from './ButtonComponent.styles'
 import { ButtonProps } from './ButtonComponent.types'
 import { ArrowRight } from '@svg/ArrowRight'
-import { useTheme } from '../../hooks/ThemeContext'
+import { useTheme } from '../../hooks/useTheme'
 
 const ButtonComponent = ({
     icon,

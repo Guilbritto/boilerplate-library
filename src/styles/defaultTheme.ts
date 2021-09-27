@@ -17,10 +17,10 @@ export const defaultTheme: DefaultTheme = {
         },
         suport: {
             success: '#3EB96F',
-            alert: '#FBC436',
+            warning: '#FBC436',
             error: '#E73A33',
             successLight: '#D8F1E2',
-            alertLight: '#FEF3D7',
+            warningLight: '#FEF3D7',
             errorLight: '#FAD8D6'
         },
         blue: {

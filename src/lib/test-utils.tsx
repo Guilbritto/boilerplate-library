@@ -1,7 +1,7 @@
 import { render, RenderOptions } from '@testing-library/react'
 import React, { ReactElement, FC } from 'react'
 import { defaultTheme } from '../styles/defaultTheme'
-import { CustomThemeProvider } from '../hooks/ThemeContext'
+import { CustomThemeProvider } from '../hooks/useTheme/ThemeContext'
 
 const Providers: FC = ({ children }) => {
     return (

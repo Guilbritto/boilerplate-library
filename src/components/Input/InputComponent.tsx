@@ -12,7 +12,7 @@ import { InputProps } from './InputComponent.types'
 import { Eye } from '@svg/Eye'
 import { EyeOff } from '@svg/EyeOff'
 import { AlertCircle } from '@svg/AlertCircle'
-import { useTheme } from '../../hooks/ThemeContext'
+import { useTheme } from '../../hooks/useTheme'
 
 const InputComponent = ({
     variant = 'text',

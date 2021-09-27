@@ -1,6 +1,6 @@
 {
   "name": "react-martins-component-library",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "main": "build/index.js",
   "types": "build/src/index.d.ts",
   "repository": {
@@ -76,6 +76,8 @@
     "yup": "^0.32.9"
   },
   "dependencies": {
-    "styled-components": "^5.3.1"
+    "react-spring": "^9.2.4",
+    "styled-components": "^5.3.1",
+    "uuidv4": "^6.2.12"
   }
 }

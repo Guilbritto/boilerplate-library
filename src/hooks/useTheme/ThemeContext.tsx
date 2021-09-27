@@ -5,7 +5,7 @@ import React, {
     useEffect,
     useState
 } from 'react'
-import { defaultTheme } from '../styles/defaultTheme'
+import { defaultTheme } from '../../styles/defaultTheme'
 import { DefaultTheme } from 'styled-components'
 
 interface ThemeContextData {
