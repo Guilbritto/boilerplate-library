@@ -10,7 +10,6 @@ export default {
 
 export const Default = () => {
     const { addToast } = useToast()
-    console.log(typeof addToast)
     return (
         <button
             onClick={() =>

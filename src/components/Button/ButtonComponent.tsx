@@ -34,7 +34,6 @@ const ButtonComponent = ({
                 width
             }}
             {...rest}
-            onClick={() => alert('oi')}
         >
             {loading ? (
                 <>
