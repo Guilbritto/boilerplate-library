@@ -24,6 +24,8 @@ const ButtonComponent = ({
     return (
         <Container
             theme={theme}
+            isDisabled={loading}
+            disabled={loading}
             style={{
                 marginBottom,
                 marginLeft,
@@ -32,6 +34,7 @@ const ButtonComponent = ({
                 width
             }}
             {...rest}
+            onClick={() => alert('oi')}
         >
             {loading ? (
                 <>

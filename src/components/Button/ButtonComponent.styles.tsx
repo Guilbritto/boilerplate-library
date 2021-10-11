@@ -1,6 +1,9 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
-export const Container = styled.button`
+interface ButtonStyleProps {
+    isDisabled: boolean
+}
+export const Container = styled.button<ButtonStyleProps>`
     background-color: ${props => props.theme.colors.primary};
     width: 328px;
     height: 48px;
@@ -20,6 +23,14 @@ export const Container = styled.button`
     &:hover {
         background-color: ${props => props.theme.colors.secondary};
     }
+    ${props =>
+        props.isDisabled &&
+        css`
+            cursor: not-allowed;
+            &:hover {
+                background-color: ${props => props.theme.colors.primary};
+            }
+        `}
 `
 
 const blik = keyframes`
