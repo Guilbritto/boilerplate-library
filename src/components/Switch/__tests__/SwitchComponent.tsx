@@ -12,10 +12,6 @@ describe('<SwitchComponent />', () => {
         )
 
         const switchButton = getByTestId('switch-button')
-        const switchButtonAura = getByTestId('switch-button-aura')
-
-        fireEvent.mouseDown(switchButtonAura)
-        fireEvent.mouseUp(switchButtonAura)
 
         fireEvent.click(switchButton)
 
