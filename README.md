@@ -6,7 +6,7 @@
 This repo aims to be used as a design system for martins
 contains several components written in react
 
-#Storybook
+# Storybook
 
 https://guilbritto.github.io/react-martins-component-library/?path=/story/button--default
 
