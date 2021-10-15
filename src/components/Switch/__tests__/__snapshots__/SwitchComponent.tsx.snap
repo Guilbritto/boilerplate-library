@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SwitchComponent /> Should be able to render a active switch 1`] = `
+<div
+  class="sc-bdfBQB rvVuK"
+>
+  <div
+    class="sc-gsTEea kFvFwm"
+  >
+    <div
+      class="sc-dlfnuX kFkJSD"
+    />
+  </div>
+</div>
+`;
+
+exports[`<SwitchComponent /> Should be able to render a not active switch 1`] = `
+<div
+  class="sc-bdfBQB bZRwow"
+>
+  <div
+    class="sc-gsTEea dNaYiJ"
+  >
+    <div
+      class="sc-dlfnuX jzfzSw"
+    />
+  </div>
+</div>
+`;
+
+exports[`<SwitchComponent /> Should be able to render disabled switch 1`] = `
+<div
+  class="sc-bdfBQB gaPvPz"
+  disabled=""
+>
+  <div
+    class="sc-gsTEea iVovoG"
+    disabled=""
+  >
+    <div
+      class="sc-dlfnuX djftuf"
+      disabled=""
+    />
+  </div>
+</div>
+`;
