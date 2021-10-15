@@ -3,9 +3,11 @@
 exports[`<SwitchComponent /> Should be able to render a active switch 1`] = `
 <div
   class="sc-bdfBQB rvVuK"
+  data-testid="switch-button"
 >
   <div
     class="sc-gsTEea kFvFwm"
+    data-testid="switch-button-aura"
   >
     <div
       class="sc-dlfnuX kFkJSD"
@@ -17,9 +19,11 @@ exports[`<SwitchComponent /> Should be able to render a active switch 1`] = `
 exports[`<SwitchComponent /> Should be able to render a not active switch 1`] = `
 <div
   class="sc-bdfBQB bZRwow"
+  data-testid="switch-button"
 >
   <div
     class="sc-gsTEea dNaYiJ"
+    data-testid="switch-button-aura"
   >
     <div
       class="sc-dlfnuX jzfzSw"
@@ -31,10 +35,12 @@ exports[`<SwitchComponent /> Should be able to render a not active switch 1`] = 
 exports[`<SwitchComponent /> Should be able to render disabled switch 1`] = `
 <div
   class="sc-bdfBQB gaPvPz"
+  data-testid="switch-button"
   disabled=""
 >
   <div
     class="sc-gsTEea iVovoG"
+    data-testid="switch-button-aura"
     disabled=""
   >
     <div
@@ -42,5 +48,27 @@ exports[`<SwitchComponent /> Should be able to render disabled switch 1`] = `
       disabled=""
     />
   </div>
+</div>
+`;
+
+exports[`<SwitchComponent /> Should be able to render the switch buttom with pressed Down and show aura 1`] = `
+<div
+  class="sc-gsTEea cnBcBh"
+  data-testid="switch-button-aura"
+>
+  <div
+    class="sc-dlfnuX jzfzSw"
+  />
+</div>
+`;
+
+exports[`<SwitchComponent /> Should be able to render the switch buttom with pressed Up and show aura 1`] = `
+<div
+  class="sc-gsTEea igqAUp"
+  data-testid="switch-button-aura"
+>
+  <div
+    class="sc-dlfnuX jzfzSw"
+  />
 </div>
 `;

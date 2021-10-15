@@ -36,6 +36,7 @@ const SwitchComponent = ({
             onClick={handleOnClick}
             disabled={disabled || false}
             theme={theme}
+            data-testid="switch-button"
         >
             <CircleAura
                 isActive={isChecked}
@@ -45,6 +46,7 @@ const SwitchComponent = ({
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
                 theme={theme}
+                data-testid="switch-button-aura"
             >
                 <Circle
                     theme={theme}
