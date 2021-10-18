@@ -33,7 +33,7 @@ const buttonTypes = {
         background-color: ${defaultTheme.colors.suport.error};
         color: ${defaultTheme.colors.neutral.white};
         &:hover {
-            background-color: ${props => props.theme.colors.secondary};
+            background-color: #9B1C13;
         }
         svg{
             fill: ${props => props.theme.colors.neutral.white};
