@@ -9,6 +9,6 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     width?: string;
     loading?: boolean;
     buttonSize: "large" | 'small';
-    buttonType: 'primary' | 'secondary' | 'disabled' | 'danger';
+    buttonType: 'primary' | 'secondary' | 'danger';
     disabled?: boolean
 }
