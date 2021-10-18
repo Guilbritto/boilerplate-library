@@ -10,6 +10,7 @@ const buttonTypes = {
     primary: css `
         background-color: ${defaultTheme.colors.primary};
         color: ${defaultTheme.colors.neutral.white};
+        cursor: pointer;
         &:hover {
             background-color: ${props => props.theme.colors.secondary};
         }
@@ -21,6 +22,7 @@ const buttonTypes = {
     secondary: css`
         background-color: ${defaultTheme.colors.neutral.white};
         color: ${defaultTheme.colors.primary};
+        cursor: pointer;
         &:hover {
             background-color: #D1E5FF;
         }
@@ -32,6 +34,7 @@ const buttonTypes = {
     danger: css`
         background-color: ${defaultTheme.colors.suport.error};
         color: ${defaultTheme.colors.neutral.white};
+        cursor: pointer;
         &:hover {
             background-color: #9B1C13;
         }
@@ -58,15 +61,16 @@ export const Container = styled.button<ButtonStyleProps>`
         height: auto;
         padding: 4px 12px;
     `}
+    ${props => props.isDisabled && css`
+        cursor: not-allowed;
+    ` }
     border-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: ${props => props.theme.borderRadius};
     ${props => props.theme.fontTokens['200']};
     font-weight: ${props => props.theme.fontWeight.bold};
-    cursor: pointer;
     transition: background-color 0.3s;
     svg{
         height: 20px;
