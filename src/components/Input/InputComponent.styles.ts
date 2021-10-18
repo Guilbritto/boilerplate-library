@@ -6,7 +6,8 @@ interface InputComponentStylesProps {
     isEyeOn?: boolean
     error?: boolean
     isFilled?: boolean
-    inputType?: "large" | "medium"
+    disabled?: boolean
+    inputSize?: "large" | "medium"
 }
 
 export const AlertMessage = styled.div`
@@ -24,11 +25,14 @@ export const Container = styled.div<InputComponentStylesProps>`
     box-sizing: border-box;
     position: relative;
     width: auto;
-    ${props => props.inputType === "large" && css`
+    ${props => props.inputSize === "large" && css`
         height: 48px;
     `}
-    ${props => props.inputType === "medium" && css`
+    ${props => props.inputSize === "medium" && css`
         height: 32px;
+    `}
+    ${props => props.disabled && css`
+        cursor: not-allowed;
     `}
 
 `
@@ -50,6 +54,9 @@ export const Mediumlabel = styled.div<InputComponentStylesProps>`
         css`
             background-color: ${props => props.theme.colors.neutral.white};
             color: ${props => props.theme.colors.primary};
+        `}
+        ${props => props.disabled && css`
+            cursor: not-allowed;
         `}
     ${props =>
         props.error &&
@@ -78,6 +85,10 @@ export const Label = styled.label<InputComponentStylesProps>`
             background-color: ${props => props.theme.colors.neutral.white};
             color: ${props => props.theme.colors.primary};
         `}
+        ${props => props.disabled && css`
+            cursor: not-allowed;
+            color: ${props.theme.colors.neutral.medium};
+        `}
     ${props =>
         props.error &&
         css`
@@ -95,16 +106,15 @@ export const Input = styled.div<InputComponentStylesProps>`
     padding-left: 0.8rem;
     padding-right: 0.8rem;
 
-    ${props => props.inputType ==="large" && css`
+    ${props => props.inputSize ==="large" && css`
         border: 2px solid ${props.theme.colors.secondary};
     `}
 
-    ${props => props.inputType ==="medium" && props.isFilled ? css`
-        border: 2px solid ${props.theme.colors.neutral.white};
+    ${props => props.inputSize ==="medium" && props.isFilled ? css`
+        border: 2px solid ${props.theme.colors.neutral.dark};
     ` : css `
         border: 2px solid ${props.theme.colors.neutral.soft};
     `}
-
     border-radius: ${props => props.theme.borderRadius};
     color: ${props => props.theme.colors.neutral.dark};
     align-items: center;
@@ -127,6 +137,9 @@ export const Input = styled.div<InputComponentStylesProps>`
             css`
                 color: ${props => props.theme.colors.suport.error};
             `}
+        ${props => props.disabled && css` 
+            cursor: not-allowed;
+        `}
     }
     ${props =>
         props.error &&
@@ -146,4 +159,9 @@ export const Input = styled.div<InputComponentStylesProps>`
         css`
             border-color: ${props => props.theme.colors.primary};
         `}
+    ${props => props.disabled && css`
+        cursor: not-allowed;
+        background-color: ${props.theme.colors.neutral.light[300]};
+       border-color:  ${props.theme.colors.neutral.light[300]};
+    `}
 `

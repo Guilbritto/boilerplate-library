@@ -26,7 +26,8 @@ const InputComponent = ({
     marginRight,
     width,
     customOnChange,
-    inputType = 'large',
+    inputSize = 'large',
+    disabled=false,
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)
@@ -38,7 +39,7 @@ const InputComponent = ({
 
     useEffect(() => {
         if (
-            inputType === 'large' &&
+            inputSize === 'large' &&
             inputRef.current?.value &&
             inputRef.current.value != ''
         ) {
@@ -58,7 +59,7 @@ const InputComponent = ({
     }
 
     const handleBlur = () => {
-        if (inputType === 'medium' || inputRef.current?.value.length === 0) {
+        if (inputSize === 'medium' || inputRef.current?.value.length === 0) {
             setIsActive(false)
         }
         if (inputRef.current?.value.length > 0) {
@@ -93,14 +94,16 @@ const InputComponent = ({
                 onBlur={handleBlur}
                 data-testid="input-container"
                 theme={theme}
-                inputType={inputType}
+                disabled={disabled}
+                inputSize={inputSize}
             >
-                {inputType === 'medium' && (
+                {inputSize === 'medium' && (
                     <Mediumlabel
                         isActive={isActive}
                         error={!!(error && error.message)}
                         data-testid="input-label"
                         theme={theme}
+                        disabled={disabled}
                     >
                         {label}
                     </Mediumlabel>
@@ -110,12 +113,15 @@ const InputComponent = ({
                     isActive={isActive}
                     isEyeOn={isEyeOn && variant === 'password'}
                     error={!!(error && error.message)}
-                    inputType={inputType}
+                    inputSize={inputSize}
                     theme={theme}
+                    disabled={disabled}
+
                 >
                     <input
                         data-testid="input"
                         ref={inputRef}
+                        disabled={disabled}
                         type={variant === 'password' ? 'password' : 'text'}
                         {...rest}
                     />
@@ -129,12 +135,14 @@ const InputComponent = ({
                         </Svg>
                     )}
                 </Input>
-                {inputType === 'large' && (
+                {inputSize === 'large' && (
                     <Label
                         theme={theme}
                         isActive={isActive}
                         error={!!(error && error.message)}
                         data-testid="input-label"
+                        disabled={disabled}
+
                     >
                         {label}
                     </Label>

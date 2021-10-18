@@ -9,7 +9,8 @@ export interface InputProps
     marginBottom?: string;
     marginLeft?: string;
     marginRight?: string;
-    inputType?: "large" | "medium"
+    inputSize?: "large" | "medium"
+    disabled?: boolean
 }
 
 export type InputError = {
