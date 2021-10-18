@@ -5,6 +5,8 @@ interface InputComponentStylesProps {
     variant?: string
     isEyeOn?: boolean
     error?: boolean
+    isFilled?: boolean
+    inputType?: "large" | "medium"
 }
 
 export const AlertMessage = styled.div`
@@ -22,7 +24,13 @@ export const Container = styled.div<InputComponentStylesProps>`
     box-sizing: border-box;
     position: relative;
     width: auto;
-    height: 48px;
+    ${props => props.inputType === "large" && css`
+        height: 48px;
+    `}
+    ${props => props.inputType === "medium" && css`
+        height: 32px;
+    `}
+
 `
 
 export const Svg = styled.div`
@@ -33,6 +41,23 @@ export const Svg = styled.div`
         cursor: pointer;
     }
 `
+export const Mediumlabel = styled.div<InputComponentStylesProps>`
+    color: ${props => props.theme.colors.neutral.dark};
+    cursor: text;
+
+    ${props =>
+        props.isActive &&
+        css`
+            background-color: ${props => props.theme.colors.neutral.white};
+            color: ${props => props.theme.colors.primary};
+        `}
+    ${props =>
+        props.error &&
+        css`
+            color: ${props => props.theme.colors.suport.error};
+        `}
+`
+
 
 export const Label = styled.label<InputComponentStylesProps>`
     position: absolute;
@@ -58,6 +83,7 @@ export const Label = styled.label<InputComponentStylesProps>`
         css`
             color: ${props => props.theme.colors.suport.error};
         `}
+
 `
 
 export const Input = styled.div<InputComponentStylesProps>`
@@ -68,7 +94,17 @@ export const Input = styled.div<InputComponentStylesProps>`
     height: 100%;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
-    border: 2px solid ${props => props.theme.colors.secondary};
+
+    ${props => props.inputType ==="large" && css`
+        border: 2px solid ${props.theme.colors.secondary};
+    `}
+
+    ${props => props.inputType ==="medium" && props.isFilled ? css`
+        border: 2px solid ${props.theme.colors.neutral.white};
+    ` : css `
+        border: 2px solid ${props.theme.colors.neutral.soft};
+    `}
+
     border-radius: ${props => props.theme.borderRadius};
     color: ${props => props.theme.colors.neutral.dark};
     align-items: center;
