@@ -3,6 +3,7 @@ import { Container, DotContaier } from './ButtonComponent.styles'
 import { ButtonProps } from './ButtonComponent.types'
 import { ArrowRight } from '@svg/ArrowRight'
 import { useTheme } from '../../hooks/useTheme'
+import {BiRightArrowAlt} from 'react-icons/bi'
 
 const ButtonComponent = ({
     icon,
@@ -14,18 +15,22 @@ const ButtonComponent = ({
     marginRight,
     marginTop,
     width,
+    buttonSize="large",
+    buttonType="primary",
+    disabled,
     ...rest
 }: ButtonProps) => {
     const theme = useTheme()
     const ButtonIcons = {
-        arrowRight: ArrowRight
+        arrowRight: <BiRightArrowAlt />
     }
 
     return (
         <Container
             theme={theme}
-            isDisabled={loading}
-            disabled={loading}
+            isDisabled={loading ? true : disabled}
+            buttonSize={buttonSize}
+            buttonType={disabled ? 'disabled' : buttonType}
             style={{
                 marginBottom,
                 marginLeft,
@@ -33,6 +38,7 @@ const ButtonComponent = ({
                 marginTop,
                 width
             }}
+            disabled={loading ? true : disabled}
             {...rest}
         >
             {loading ? (
