@@ -39,7 +39,6 @@ const ButtonComponent = ({
                 width
             }}
             disabled={loading ? true : disabled}
-            onClick={() => alert('cheguei aqui')}
             {...rest}
         >
             {loading ? (
