@@ -80,6 +80,7 @@ exports[`Input Component Should be able to match a snapshot with false parameter
   padding-left: 0.8rem;
   padding-right: 0.8rem;
   border: 2px solid #004282;
+  border: 2px solid #A7ADBF;
   border-radius: 4px;
   color: #2B2C32;
   -webkit-align-items: center;
@@ -212,6 +213,7 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
   padding-left: 0.8rem;
   padding-right: 0.8rem;
   border: 2px solid #004282;
+  border: 2px solid #A7ADBF;
   border-radius: 4px;
   color: #2B2C32;
   -webkit-align-items: center;
