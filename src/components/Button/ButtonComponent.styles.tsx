@@ -68,21 +68,10 @@ export const Container = styled.button<ButtonStyleProps>`
     font-weight: ${props => props.theme.fontWeight.bold};
     cursor: pointer;
     transition: background-color 0.3s;
-    ${props =>
-        props.isDisabled &&
-        css`
-            cursor: not-allowed;
-            &:hover {
-                background-color: ${props => props.theme.colors.primary};
-            }
-        `}
     svg{
         height: 20px;
         width: 20px;
     }
-    ${props => props.disabled && css ` 
-        cursor: not-allowed;
-    `}
 `
 
 const blik = keyframes`
