@@ -1,16 +1,64 @@
 import styled, { css, keyframes } from 'styled-components'
-
+import { defaultTheme } from '../../styles/defaultTheme'
 interface ButtonStyleProps {
     isDisabled: boolean
+    buttonSize: 'large'| 'small'
+    buttonType: 'primary' | 'secondary' | 'disabled' | 'danger'
+}
+
+const buttonTypes = {
+    primary: css `
+        background-color: ${defaultTheme.colors.primary};
+        color: ${defaultTheme.colors.neutral.white};
+        &:hover {
+            background-color: ${props => props.theme.colors.secondary};
+        }
+        svg{
+            fill: ${props => props.theme.colors.neutral.white};
+        }
+
+    `,
+    secondary: css`
+        background-color: ${defaultTheme.colors.neutral.white};
+        color: ${defaultTheme.colors.primary};
+        &:hover {
+            background-color: #D1E5FF;
+        }
+        svg{
+            fill: ${props => props.theme.colors.primary};
+        }
+
+    `,
+    danger: css`
+        background-color: ${defaultTheme.colors.suport.error};
+        color: ${defaultTheme.colors.neutral.white};
+        &:hover {
+            background-color: ${props => props.theme.colors.secondary};
+        }
+        svg{
+            fill: ${props => props.theme.colors.neutral.white};
+        }
+
+    `,
+    disabled: css`
+        background-color: #EEEEEE;
+        color: "#AAAAA";
+        cursor: not-allowed;
+    `
+
 }
 export const Container = styled.button<ButtonStyleProps>`
-    background-color: ${props => props.theme.colors.primary};
-    width: 328px;
-    height: 48px;
-
+    ${props => buttonTypes[props.buttonType]}
+    ${props => props.buttonSize === "large" && css`
+        width: 328px;
+        height: 48px;
+    `}
+    ${props => props.buttonSize === "small" && css `
+        width: auto;
+        height: auto;
+        padding: 4px 12px;
+    `}
     border-style: none;
-
-    color: ${props => props.theme.colors.neutral.white};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,9 +68,6 @@ export const Container = styled.button<ButtonStyleProps>`
     font-weight: ${props => props.theme.fontWeight.bold};
     cursor: pointer;
     transition: background-color 0.3s;
-    &:hover {
-        background-color: ${props => props.theme.colors.secondary};
-    }
     ${props =>
         props.isDisabled &&
         css`
@@ -31,6 +76,13 @@ export const Container = styled.button<ButtonStyleProps>`
                 background-color: ${props => props.theme.colors.primary};
             }
         `}
+    svg{
+        height: 20px;
+        width: 20px;
+    }
+    ${props => props.disabled && css ` 
+        cursor: not-allowed;
+    `}
 `
 
 const blik = keyframes`
