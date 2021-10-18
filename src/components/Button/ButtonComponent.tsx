@@ -28,7 +28,7 @@ const ButtonComponent = ({
     return (
         <Container
             theme={theme}
-            isDisabled={disabled}
+            isDisabled={loading ? true : disabled}
             buttonSize={buttonSize}
             buttonType={disabled ? 'disabled' : buttonType}
             style={{
