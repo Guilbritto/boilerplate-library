@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, DotContaier } from './ButtonComponent.styles'
 import { ButtonProps } from './ButtonComponent.types'
-import { ArrowRight } from '@svg/ArrowRight'
 import { useTheme } from '../../hooks/useTheme'
 import {BiRightArrowAlt} from 'react-icons/bi'
 
