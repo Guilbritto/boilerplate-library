@@ -7,7 +7,7 @@ import {BiRightArrowAlt} from 'react-icons/bi'
 
 const ButtonComponent = ({
     icon,
-    iconSide,
+    iconSide='right',
     label,
     loading,
     marginBottom,
