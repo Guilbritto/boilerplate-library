@@ -48,7 +48,7 @@ export const Svg = styled.div`
 export const Mediumlabel = styled.div<InputComponentStylesProps>`
     color: ${props => props.theme.colors.neutral.dark};
     cursor: text;
-
+    ${props => props.theme.fontTokens[75]}
     ${props =>
         props.isActive &&
         css`
@@ -120,7 +120,7 @@ export const Input = styled.div<InputComponentStylesProps>`
     align-items: center;
     justify-content: center;
     input {
-        font-size: inherit;
+       ${props => props.theme.fontTokens[100]} 
         font-family: inherit;
         width: 100%;
         height: 88%;

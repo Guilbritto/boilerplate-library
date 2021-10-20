@@ -46,7 +46,7 @@ export const Container = styled.div <CheckboxStyleProps>`
         svg{
             position: absolute;
             width: 100%;
-            height: ${props => props.icon === 'default' ? '5px' : '2px'};
+            height: ${props => props.icon === 'default' ? '10px' : '2px'};
         }
     }
 `
