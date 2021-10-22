@@ -97,8 +97,8 @@ exports[`Input Component Should be able to match a snapshot with false parameter
 }
 
 .c1 input {
-  font-size: inherit;
-  font-family: inherit;
+  font-size: 14px;
+  line-height: 17px  font-family:inherit;
   width: 100%;
   height: 88%;
   outline: none;
@@ -112,7 +112,9 @@ exports[`Input Component Should be able to match a snapshot with false parameter
   display: none;
 }
 
-<div>
+<div
+  style="height: 74px; display: flex; flex-direction: column; justify-content: space-between;"
+>
   <div
     class="c0"
     data-testid="input-container"
@@ -230,8 +232,8 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
 }
 
 .c1 input {
-  font-size: inherit;
-  font-family: inherit;
+  font-size: 14px;
+  line-height: 17px  font-family:inherit;
   width: 100%;
   height: 88%;
   outline: none;
@@ -245,7 +247,9 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
   display: none;
 }
 
-<div>
+<div
+  style="height: 74px; display: flex; flex-direction: column; justify-content: space-between;"
+>
   <div
     class="c0"
     data-testid="input-container"

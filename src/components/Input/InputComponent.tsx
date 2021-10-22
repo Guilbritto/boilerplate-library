@@ -85,7 +85,11 @@ const InputComponent = ({
                 marginBottom,
                 marginLeft,
                 marginRight,
-                width
+                width,
+                height: '74px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
             }}
         >
             <Container
