@@ -85,6 +85,7 @@ export const Link = styled.a`
     display: inline-block;
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 
     &::after {
         content: '';
