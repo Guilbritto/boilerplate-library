@@ -2,7 +2,7 @@
 
 exports[`<TabComponent /> Should be able to render 1 tabs and click in one tab 1`] = `
 <div
-  class="sc-hKgJUU dttJog"
+  class="sc-hKgJUU fDWQzl"
   data-testid="tabCell"
 >
   teste1
@@ -17,13 +17,13 @@ exports[`<TabComponent /> should render the component 1`] = `
     class="sc-dlfnuX eEZcei"
   >
     <div
-      class="sc-hKgJUU dttJog"
+      class="sc-hKgJUU fDWQzl"
       data-testid="tabCell"
     >
       teste1
     </div>
     <div
-      class="sc-hKgJUU fVGcbF"
+      class="sc-hKgJUU dnhRxg"
       data-testid="tabCell"
     >
       teste2
@@ -38,7 +38,7 @@ exports[`<TabComponent /> should render the component 1`] = `
       Tab1
     </div>
     <div
-      class="sc-eCstlR cuCGxM"
+      class="sc-eCstlR gduWFM"
     >
       Tab2
     </div>
