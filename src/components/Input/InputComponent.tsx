@@ -91,7 +91,7 @@ const InputComponent = ({
                     <input
                         data-testid="input"
                         ref={inputRef}
-                        type={variant === 'password' ? 'password' : 'text'}
+                        type={variant === 'password' ? 'password' : type}
                         {...rest}
                     />
                     {variant === 'password' && (

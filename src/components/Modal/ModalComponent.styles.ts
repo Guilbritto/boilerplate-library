@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { ContainerModalProps } from './ModalComponent.types'
 
-
 export const Container = styled.div<ContainerModalProps>`
     position: absolute;
     width: 100vw;
@@ -12,6 +11,7 @@ export const Container = styled.div<ContainerModalProps>`
     align-items: center;
     justify-content: center;
 `
+
 export const ModalContainer = styled.div`
     min-width: 376px;
     min-height: 303px;
