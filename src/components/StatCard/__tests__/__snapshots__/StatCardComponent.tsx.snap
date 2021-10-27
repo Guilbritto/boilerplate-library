@@ -86,7 +86,7 @@ exports[`<StatCardComponent /> Should render with children 1`] = `
   </div>
   <div>
     <a
-      class="sc-gKseQn cbFEny"
+      class="sc-gKseQn hMRgoU"
     >
       Children
     </a>
