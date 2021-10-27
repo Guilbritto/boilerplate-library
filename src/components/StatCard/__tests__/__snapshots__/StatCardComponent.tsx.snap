@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StatCardComponent /> Should render the primary variation by default 1`] = `
+<div
+  class="sc-bdfBQB GIkpO"
+>
+  <span
+    class="sc-gsTEea eskIjD"
+  >
+    Title
+  </span>
+  <span
+    class="sc-dlfnuX irNcAN"
+  >
+    Subtitle
+  </span>
+  <span
+    class="sc-hKgJUU hxnvbo"
+  >
+    8/10
+  </span>
+  <div
+    class="sc-eCstlR bMpgvh"
+  >
+    <div
+      class="sc-jSgvzq igPcSV"
+    />
+  </div>
+</div>
+`;
+
+exports[`<StatCardComponent /> Should render the secondary variation 1`] = `
+<div
+  class="sc-bdfBQB hDZwdz"
+>
+  <span
+    class="sc-gsTEea eskIjD"
+  >
+    Title
+  </span>
+  <span
+    class="sc-dlfnuX irNcAN"
+  >
+    Subtitle
+  </span>
+  <span
+    class="sc-hKgJUU hxnvbo"
+  >
+    8/10
+  </span>
+  <div
+    class="sc-eCstlR bMpgvh"
+  >
+    <div
+      class="sc-jSgvzq igPcSV"
+    />
+  </div>
+</div>
+`;
+
+exports[`<StatCardComponent /> Should render with children 1`] = `
+<div
+  class="sc-bdfBQB GIkpO"
+>
+  <span
+    class="sc-gsTEea eskIjD"
+  >
+    Title
+  </span>
+  <span
+    class="sc-dlfnuX irNcAN"
+  >
+    Subtitle
+  </span>
+  <span
+    class="sc-hKgJUU hxnvbo"
+  >
+    8/10
+  </span>
+  <div
+    class="sc-eCstlR bMpgvh"
+  >
+    <div
+      class="sc-jSgvzq igPcSV"
+    />
+  </div>
+  <div>
+    <a
+      class="sc-gKseQn cbFEny"
+    >
+      Children
+    </a>
+  </div>
+</div>
+`;
