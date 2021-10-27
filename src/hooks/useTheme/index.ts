@@ -1,1 +1,1 @@
-export {CustomThemeProvider,useTheme } from './ThemeContext'
+export { CustomThemeProvider, useTheme } from './ThemeContext'

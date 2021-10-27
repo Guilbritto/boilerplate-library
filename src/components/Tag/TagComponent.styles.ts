@@ -1,9 +1,8 @@
 import { defaultTheme } from '../../styles/defaultTheme'
 import styled, { css } from 'styled-components'
 
-
 interface TagStyleProps {
-   type: 'success' | 'warning' | 'danger' | 'inactive'
+    type: 'success' | 'warning' | 'danger' | 'inactive'
 }
 
 const tagStyles = {
@@ -26,7 +25,7 @@ const tagStyles = {
 }
 
 export const Container = styled.div<TagStyleProps>`
-    width: 120px ;
+    width: 120px;
     height: 24px;
     border-radius: 4px;
     display: flex;
@@ -34,5 +33,4 @@ export const Container = styled.div<TagStyleProps>`
     align-items: center;
     ${props => props.theme.fontTokens[100]};
     ${props => tagStyles[props.type]};
-
 `

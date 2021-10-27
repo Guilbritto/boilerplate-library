@@ -1,11 +1,10 @@
 import styled, { css } from 'styled-components'
 
-
 interface TabPanelStyleProps {
     active: boolean
 }
 
-interface TabCellProps{
+interface TabCellProps {
     isActive: boolean
 }
 
@@ -31,12 +30,18 @@ export const TabCell = styled.div<TabCellProps>`
     color: ${props => props.theme.colors.neutral.soft};
     cursor: pointer;
     ${props => props.theme.fontTokens[200]}
-    ${props => props.isActive && css`
-        border-bottom: 1px solid ${props => props.theme.colors.primary};
-        color: ${props => props.theme.colors.primary};
-        font-weight: 500;
-    `}
+    ${props =>
+        props.isActive &&
+        css`
+            border-bottom: 1px solid ${props => props.theme.colors.primary};
+            color: ${props => props.theme.colors.primary};
+            font-weight: 500;
+        `}
 `
 export const TabPanelContainer = styled.div<TabPanelStyleProps>`
-    ${props => !props.active && css`display: none;` }
+    ${props =>
+        !props.active &&
+        css`
+            display: none;
+        `}
 `
