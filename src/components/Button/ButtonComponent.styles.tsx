@@ -2,68 +2,70 @@ import styled, { css, keyframes } from 'styled-components'
 import { defaultTheme } from '../../styles/defaultTheme'
 interface ButtonStyleProps {
     isDisabled: boolean
-    buttonSize: 'large'| 'small'
+    buttonSize: 'large' | 'small'
     buttonType: 'primary' | 'secondary' | 'disabled' | 'danger'
 }
 
 const buttonTypes = {
-    primary: css `
+    primary: css`
         background-color: ${defaultTheme.colors.primary};
         color: ${defaultTheme.colors.neutral.white};
         cursor: pointer;
         &:hover {
             background-color: ${props => props.theme.colors.secondary};
         }
-        svg{
+        svg {
             fill: ${props => props.theme.colors.neutral.white};
         }
-
     `,
     secondary: css`
         background-color: ${defaultTheme.colors.neutral.white};
         color: ${defaultTheme.colors.primary};
         cursor: pointer;
         &:hover {
-            background-color: #D1E5FF;
+            background-color: #d1e5ff;
         }
-        svg{
+        svg {
             fill: ${props => props.theme.colors.primary};
         }
-
     `,
     danger: css`
         background-color: ${defaultTheme.colors.suport.error};
         color: ${defaultTheme.colors.neutral.white};
         cursor: pointer;
         &:hover {
-            background-color: #9B1C13;
+            background-color: #9b1c13;
         }
-        svg{
+        svg {
             fill: ${props => props.theme.colors.neutral.white};
         }
-
     `,
     disabled: css`
-        background-color: #EEEEEE;
-        color: "#AAAAA";
+        background-color: #eeeeee;
+        color: '#AAAAA';
         cursor: not-allowed;
     `
-
 }
 export const Container = styled.button<ButtonStyleProps>`
     ${props => buttonTypes[props.buttonType]}
-    ${props => props.buttonSize === "large" && css`
-        width: 328px;
-        height: 48px;
-    `}
-    ${props => props.buttonSize === "small" && css `
-        width: auto;
-        height: auto;
-        padding: 4px 12px;
-    `}
-    ${props => props.isDisabled && css`
-        cursor: not-allowed;
-    ` }
+    ${props =>
+        props.buttonSize === 'large' &&
+        css`
+            width: 328px;
+            height: 48px;
+        `}
+    ${props =>
+        props.buttonSize === 'small' &&
+        css`
+            width: auto;
+            height: auto;
+            padding: 4px 12px;
+        `}
+    ${props =>
+        props.isDisabled &&
+        css`
+            cursor: not-allowed;
+        `}
     border-style: none;
     display: flex;
     align-items: center;
@@ -72,7 +74,7 @@ export const Container = styled.button<ButtonStyleProps>`
     ${props => props.theme.fontTokens['200']};
     font-weight: ${props => props.theme.fontWeight.bold};
     transition: background-color 0.3s;
-    svg{
+    svg {
         height: 20px;
         width: 20px;
     }

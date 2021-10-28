@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { ContainerModalProps } from './ModalComponent.types'
 
-
 export const Container = styled.div<ContainerModalProps>`
     position: absolute;
     width: 100vw;

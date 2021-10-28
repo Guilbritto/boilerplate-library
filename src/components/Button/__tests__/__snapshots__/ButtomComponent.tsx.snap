@@ -2,7 +2,7 @@
 
 exports[`Button Should be able pass to snapshot test 1`] = `
 <button
-  class="sc-bdfBQB iPLsOx"
+  class="sc-bdfBQB knuzpq"
 >
   <svg
     fill="currentColor"
@@ -18,5 +18,111 @@ exports[`Button Should be able pass to snapshot test 1`] = `
     />
   </svg>
   Teste
+</button>
+`;
+
+exports[`Button Should render a danger version 1`] = `
+<button
+  class="sc-bdfBQB eyCNfi"
+>
+  Teste
+  <svg
+    fill="currentColor"
+    height="1em"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Button Should render a disabled button 1`] = `
+<button
+  class="sc-bdfBQB grbVLB"
+  disabled=""
+>
+  Teste
+  <svg
+    fill="currentColor"
+    height="1em"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Button Should render a secondary version 1`] = `
+<button
+  class="sc-bdfBQB dpPrOe"
+>
+  Teste
+  <svg
+    fill="currentColor"
+    height="1em"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Button Should render a small size 1`] = `
+<button
+  class="sc-bdfBQB buALzq"
+>
+  Teste
+  <svg
+    fill="currentColor"
+    height="1em"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Button Should render the button with the on the right side 1`] = `
+<button
+  class="sc-bdfBQB knuzpq"
+>
+  Teste
+  <svg
+    fill="currentColor"
+    height="1em"
+    stroke="currentColor"
+    stroke-width="0"
+    viewBox="0 0 24 24"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+    />
+  </svg>
 </button>
 `;

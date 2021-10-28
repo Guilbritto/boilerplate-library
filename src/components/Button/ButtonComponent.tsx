@@ -2,11 +2,11 @@ import React from 'react'
 import { Container, DotContaier } from './ButtonComponent.styles'
 import { ButtonProps } from './ButtonComponent.types'
 import { useTheme } from '../../hooks/useTheme'
-import {BiRightArrowAlt} from 'react-icons/bi'
+import { BiRightArrowAlt } from 'react-icons/bi'
 
 const ButtonComponent = ({
     icon,
-    iconSide='right',
+    iconSide = 'right',
     label,
     loading,
     marginBottom,
@@ -14,8 +14,8 @@ const ButtonComponent = ({
     marginRight,
     marginTop,
     width,
-    buttonSize="large",
-    buttonType="primary",
+    buttonSize = 'large',
+    buttonType = 'primary',
     disabled,
     ...rest
 }: ButtonProps) => {

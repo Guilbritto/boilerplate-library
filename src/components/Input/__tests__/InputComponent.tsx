@@ -22,6 +22,22 @@ describe('Input Component', () => {
 
         expect(container.firstChild).toMatchSnapshot()
     })
+
+    it('Should render the component with medium size', () => {
+        const { container } = render(
+            <Input
+                label="Test"
+                inputSize="medium"
+                error={{
+                    message: 'Test'
+                }}
+                variant="text"
+            />
+        )
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     it('Should be able to match a snapshot with true parameter', () => {
         const { container } = render(
             <Input
@@ -35,6 +51,7 @@ describe('Input Component', () => {
 
         expect(container.firstChild).toMatchSnapshot()
     })
+
     it('Should be able to check the error message', () => {
         const errorMessage = 'Error Message'
         const { getByTestId } = render(
@@ -49,6 +66,7 @@ describe('Input Component', () => {
         const alertMessage = getByTestId('input-errorMessage')
         expect(alertMessage.innerHTML).toBe(errorMessage)
     })
+
     it('Should be not able to check the error message when message is diferent', () => {
         const errorMessage = 'Error Message'
         const { getByTestId } = render(
@@ -63,6 +81,7 @@ describe('Input Component', () => {
         const alertMessage = getByTestId('input-errorMessage')
         expect(alertMessage.innerHTML === 'Mensagem Diferente').toBeFalsy()
     })
+
     it('Should be able to change a value of input', () => {
         const { getByTestId } = render(
             <Input
@@ -79,6 +98,7 @@ describe('Input Component', () => {
         fireEvent.change(input, { target: { value } })
         expect((input as HTMLInputElement).value).toBe(value)
     })
+
     it('Should be able to click on eye', () => {
         const { getByTestId } = render(
             <Input
@@ -98,6 +118,7 @@ describe('Input Component', () => {
         fireEvent.click(eye)
         expect((input as HTMLInputElement).type).toBe('password')
     })
+
     it('Should be able to click outside the input and trigger blur', () => {
         const { getByTestId } = render(
             <Input
