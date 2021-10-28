@@ -4,6 +4,7 @@ export type DropdownProps = {
     multSelect?: boolean
     selectedItem: DropdownItem
     setSelectedItem: any
+    label?: string
 }
 
 export type DropdownItem={

@@ -46,3 +46,8 @@ export const DropdownItem = styled.div`
 export const DropdownTitle = styled.div`
     padding: 16px;
 `
+
+export const DropdownLabel = styled.span`
+    color: ${props => props.theme.colors.neutral.dark};
+    ${props => props.theme.fontTokens[100]};
+`

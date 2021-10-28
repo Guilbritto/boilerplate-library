@@ -1,10 +1,11 @@
-import React, { BaseSyntheticEvent, useState } from 'react'
+import React, { useState } from 'react'
 
 import { useTheme } from '../../hooks/useTheme'
 import {
     Container,
     DropdownContainerItem,
     DropdownItem,
+    DropdownLabel,
     DropdownTitle
 } from './DropdownComponent.styles'
 import {
@@ -17,8 +18,9 @@ const DropdownComponent = ({
     items = [],
     title,
     multSelect = false,
-    selectedItem, 
-    setSelectedItem,
+    selectedItem,
+    label,
+    setSelectedItem
 }: DropdownProps) => {
     const [open, setOpen] = useState(false)
 
@@ -33,24 +35,27 @@ const DropdownComponent = ({
     }
 
     return (
-        <Container theme={theme} onClick={handleClick}>
-            <DropdownTitle theme={theme}>
-                {selectedItem?.value ? selectedItem.value : title}
-            </DropdownTitle>
-            {open ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        <>
+            <DropdownLabel theme={theme}>{label}</DropdownLabel>
+            <Container theme={theme} onClick={handleClick}>
+                <DropdownTitle theme={theme}>
+                    {selectedItem?.value ? selectedItem.value : title}
+                </DropdownTitle>
+                {open ? <IoIosArrowUp /> : <IoIosArrowDown />}
 
-            <DropdownContainerItem theme={theme} isOpen={open}>
-                {items.map(item => (
-                    <DropdownItem
-                        theme={theme}
-                        key={item.id}
-                        onClick={() => handleItemClick(item)}
-                    >
-                        {item.value}
-                    </DropdownItem>
-                ))}
-            </DropdownContainerItem>
-        </Container>
+                <DropdownContainerItem theme={theme} isOpen={open}>
+                    {items.map(item => (
+                        <DropdownItem
+                            theme={theme}
+                            key={item.id}
+                            onClick={() => handleItemClick(item)}
+                        >
+                            {item.value}
+                        </DropdownItem>
+                    ))}
+                </DropdownContainerItem>
+            </Container>
+        </>
     )
 }
 export default DropdownComponent

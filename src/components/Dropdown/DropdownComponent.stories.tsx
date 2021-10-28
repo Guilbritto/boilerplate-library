@@ -31,11 +31,13 @@ const customItems: DropdownItem[] = [
     }
 ]
 
-export const Default = () =>{
+export const Default = args => {
     const [selectedItem, setSelectedItem] = useState({} as DropdownItem)
     return (
-
-        <DropdownComponent items={customItems} title="Choose One" selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
-        )
-} 
-
+        <DropdownComponent
+            {...args}
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
+        />
+    )
+}
