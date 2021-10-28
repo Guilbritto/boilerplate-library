@@ -18,25 +18,37 @@ describe('Button', () => {
 
     it('Should render a small size', () => {
         const { container } = render(
-            <ButtonComponent label="Teste" buttonSize="small" icon="arrowRight" />
+            <ButtonComponent
+                label="Teste"
+                buttonSize="small"
+                icon="arrowRight"
+            />
         )
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('Should render a secondary version', () => {
         const { container } = render(
-            <ButtonComponent label="Teste" buttonType="secondary" icon="arrowRight" />
+            <ButtonComponent
+                label="Teste"
+                buttonType="secondary"
+                icon="arrowRight"
+            />
         )
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('Should render a danger version', () => {
         const { container } = render(
-            <ButtonComponent label="Teste" buttonType="danger" icon="arrowRight" />
+            <ButtonComponent
+                label="Teste"
+                buttonType="danger"
+                icon="arrowRight"
+            />
         )
         expect(container.firstChild).toMatchSnapshot()
     })
-    
+
     it('Should render a disabled button', () => {
         const { container } = render(
             <ButtonComponent label="Teste" disabled icon="arrowRight" />
