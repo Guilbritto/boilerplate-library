@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { useTheme } from '../../hooks/useTheme'
 
 import {
@@ -35,4 +35,4 @@ const StatCard = ({
     )
 }
 
-export default memo(StatCard)
+export default StatCard
