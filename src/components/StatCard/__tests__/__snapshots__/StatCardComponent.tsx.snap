@@ -5,7 +5,7 @@ exports[`<StatCardComponent /> Should render the primary variation by default 1`
   class="sc-bdfBQB GIkpO"
 >
   <span
-    class="sc-gsTEea eskIjD"
+    class="sc-gsTEea JTImc"
   >
     Title
   </span>
@@ -15,7 +15,7 @@ exports[`<StatCardComponent /> Should render the primary variation by default 1`
     Subtitle
   </span>
   <span
-    class="sc-hKgJUU hxnvbo"
+    class="sc-hKgJUU imxmEz"
   >
     8/10
   </span>
@@ -34,7 +34,7 @@ exports[`<StatCardComponent /> Should render the secondary variation 1`] = `
   class="sc-bdfBQB hDZwdz"
 >
   <span
-    class="sc-gsTEea eskIjD"
+    class="sc-gsTEea JTImc"
   >
     Title
   </span>
@@ -44,7 +44,7 @@ exports[`<StatCardComponent /> Should render the secondary variation 1`] = `
     Subtitle
   </span>
   <span
-    class="sc-hKgJUU hxnvbo"
+    class="sc-hKgJUU imxmEz"
   >
     8/10
   </span>
@@ -63,7 +63,7 @@ exports[`<StatCardComponent /> Should render with children 1`] = `
   class="sc-bdfBQB GIkpO"
 >
   <span
-    class="sc-gsTEea eskIjD"
+    class="sc-gsTEea JTImc"
   >
     Title
   </span>
@@ -73,7 +73,7 @@ exports[`<StatCardComponent /> Should render with children 1`] = `
     Subtitle
   </span>
   <span
-    class="sc-hKgJUU hxnvbo"
+    class="sc-hKgJUU imxmEz"
   >
     8/10
   </span>

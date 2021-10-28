@@ -43,6 +43,7 @@ export const Container = styled.div<ContainerProps>`
 
 export const Title = styled.span`
     font-family: inherit;
+    font-weight: ${props => props.theme.fontWeight.medium};
     width: 85%;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -59,6 +60,7 @@ export const Subtitle = styled.span`
 
 export const Quantity = styled.span`
     font-family: inherit;
+    font-weight: ${props => props.theme.fontWeight.medium};
     ${props => props.theme.fontTokens['600']};
     color: ${props => props.theme.colors.neutral.white};
 `
