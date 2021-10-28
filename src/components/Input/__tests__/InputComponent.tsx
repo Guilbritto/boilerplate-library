@@ -16,7 +16,6 @@ describe('Input Component', () => {
                 error={{
                     message: 'Test'
                 }}
-                variant="text"
             />
         )
 

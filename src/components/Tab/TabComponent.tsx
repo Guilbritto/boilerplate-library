@@ -25,6 +25,7 @@ const TabComponent = ({ children, titles }: TabProps) => {
             <TabTitles theme={theme}>
                 {titles?.map((element, index) => (
                     <TabCell
+                        key={`${element}-${index}`}
                         data-testid="tabCell"
                         theme={theme}
                         isActive={index === activeCell}
