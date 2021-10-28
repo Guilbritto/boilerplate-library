@@ -86,7 +86,7 @@ const InputComponent = ({
                 marginLeft,
                 marginRight,
                 width,
-                height: '74px',
+                height: (inputSize === 'medium' && !!error) ? '74px' : 'auto',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
