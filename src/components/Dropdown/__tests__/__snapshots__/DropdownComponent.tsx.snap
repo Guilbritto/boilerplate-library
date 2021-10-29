@@ -1,69 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DropdownComponent /> should be able to click on component 1`] = `
-<div
-  class="sc-bdfBQB gfQCGV"
->
-  <div
-    class="sc-hKgJUU iylwnk"
-  >
-    Componente Teste
-  </div>
-  <svg
-    fill="currentColor"
-    height="1em"
-    stroke="currentColor"
-    stroke-width="0"
-    viewBox="0 0 512 512"
-    width="1em"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M256 217.9L383 345c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.3-24.6 0-34L273 167c-9.1-9.1-23.7-9.3-33.1-.7L95 310.9c-4.7 4.7-7 10.9-7 17s2.3 12.3 7 17c9.4 9.4 24.6 9.4 33.9 0l127.1-127z"
-    />
-  </svg>
-  <div
-    class="sc-gsTEea dkAGr"
-  >
-    <div
-      class="sc-dlfnuX eYsPoL"
-    >
-      Testando 123...
-    </div>
-  </div>
-</div>
+<span
+  class="sc-eCstlR exfwVj"
+/>
 `;
 
 exports[`<DropdownComponent /> should render the component 1`] = `
-<div
-  class="sc-bdfBQB gfQCGV"
->
-  <div
-    class="sc-hKgJUU iylwnk"
-  >
-    Componente Teste
-  </div>
-  <svg
-    fill="currentColor"
-    height="1em"
-    stroke="currentColor"
-    stroke-width="0"
-    viewBox="0 0 512 512"
-    width="1em"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
-    />
-  </svg>
-  <div
-    class="sc-gsTEea jVkkCt"
-  >
-    <div
-      class="sc-dlfnuX eYsPoL"
-    >
-      Testando 123...
-    </div>
-  </div>
-</div>
+<span
+  class="sc-eCstlR exfwVj"
+/>
 `;

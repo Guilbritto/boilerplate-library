@@ -38,5 +38,4 @@ describe('<DropdownComponent />', () => {
         fireEvent.click(container.firstChild)
         expect(container.firstChild).toMatchSnapshot()
     })
-    it('it should be able to click on a children of selected item')
 })
