@@ -10,10 +10,14 @@ export const Container = styled.div<ContainerProps>`
     border-radius: 5px;
     padding: 15px;
     width: ${props => props.widthSize}%;
+    max-height: auto;
 `
 
 export const ContainerChildren = styled.div<ContainerChildrenProps>`
-    display: ${props => (props.collapse ? 'none' : 'block')};
+    transition: max-height 0.3s ease-out;
+    max-height: ${props => props.maxHeight};
+    margin-top: 20px;
+    overflow-x: hidden;
 `
 
 export const ContainerHead = styled.div`
@@ -30,4 +34,20 @@ export const IconArea = styled.div`
     justify-content: center;
     width: 24px;
     height: 24px;
+`
+
+export const Quantity = styled.span`
+    ${props => props.theme.fontTokens[50]};
+    margin-left: 8px;
+    color: ${props => props.theme.colors.neutral.soft};
+`
+
+export const Title = styled.span`
+    ${props => props.theme.fontTokens[100]};
+`
+
+export const Head = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `

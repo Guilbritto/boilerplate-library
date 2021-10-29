@@ -6,7 +6,10 @@ import {
     Container,
     ContainerChildren,
     ContainerHead,
-    IconArea
+    Head,
+    IconArea,
+    Quantity,
+    Title
 } from './CollapseComponent.styles'
 import { CollapseProps } from './CollapseComponent.types'
 import { useTheme } from '../../hooks/useTheme'
@@ -14,6 +17,7 @@ import { useTheme } from '../../hooks/useTheme'
 const CollapseComponent = ({
     children,
     title,
+    quantity = 0,
     widthSize = 100,
     opened = false
 }: CollapseProps) => {
@@ -23,7 +27,12 @@ const CollapseComponent = ({
     return (
         <Container theme={theme} widthSize={widthSize}>
             <ContainerHead>
-                <h3>{title}</h3>
+                <Head>
+                    <Title theme={theme}>{title}</Title>
+                    {quantity > 0 && (
+                        <Quantity theme={theme}>{quantity} resultados</Quantity>
+                    )}
+                </Head>
                 <IconArea
                     theme={theme}
                     onClick={() => setIsCollapsed(prev => !prev)}
@@ -31,7 +40,11 @@ const CollapseComponent = ({
                     {isCollapse ? <ArrowUp /> : <ArrowDown />}
                 </IconArea>
             </ContainerHead>
-            <ContainerChildren collapse={isCollapse} aria-expanded={isCollapse}>
+            <ContainerChildren
+                maxHeight={isCollapse ? '16rem' : '0'}
+                collapse={isCollapse}
+                aria-expanded={isCollapse}
+            >
                 {children}
             </ContainerChildren>
         </Container>
