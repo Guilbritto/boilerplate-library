@@ -25,11 +25,13 @@ const ButtonComponent = ({
     }
 
     return (
+        //eslint-disable-next-line
         <Container
             theme={theme}
             isDisabled={loading ? true : disabled}
             buttonSize={buttonSize}
             buttonType={disabled ? 'disabled' : buttonType}
+            disabled={loading ? true : disabled}
             style={{
                 marginBottom,
                 marginLeft,
@@ -37,7 +39,6 @@ const ButtonComponent = ({
                 marginTop,
                 width
             }}
-            disabled={loading ? true : disabled}
             {...rest}
         >
             {loading ? (

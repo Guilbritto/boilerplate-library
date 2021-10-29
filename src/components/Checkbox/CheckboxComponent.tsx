@@ -8,10 +8,11 @@ import { Minus } from '@svg/Minus'
 const CheckboxComponent = ({
     disabled,
     icon = 'default',
+    isChecked = false,
     ...rest
 }: CheckboxProps) => {
     const theme = useTheme()
-    const [isChecked, setIsChecked] = useState(false)
+    const [isLocalChecked, setIsChecked] = useState(isChecked)
     const [mouseDown, setMouseDown] = useState(false)
     const [mouseUp, setMouseUp] = useState(false)
 
@@ -37,7 +38,7 @@ const CheckboxComponent = ({
 
     const handleClick = () => {
         if (!disabled) {
-            setIsChecked(!isChecked)
+            setIsChecked(!isLocalChecked)
         }
     }
 
@@ -53,14 +54,14 @@ const CheckboxComponent = ({
                 theme={theme}
                 disabled={disabled}
                 onClick={handleClick}
-                isChecked={isChecked}
+                isChecked={isLocalChecked}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
             >
                 <div onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}>
                     <input
                         type="checkbox"
-                        checked={isChecked}
+                        checked={isLocalChecked}
                         disabled={disabled}
                         onMouseDown={handleMouseDown}
                         onMouseUp={handleMouseUp}

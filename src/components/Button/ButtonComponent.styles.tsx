@@ -1,3 +1,4 @@
+import { HtmlHTMLAttributes } from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { defaultTheme } from '../../styles/defaultTheme'
 interface ButtonStyleProps {
@@ -46,6 +47,7 @@ const buttonTypes = {
         cursor: not-allowed;
     `
 }
+
 export const Container = styled.button<ButtonStyleProps>`
     ${props => buttonTypes[props.buttonType]}
     ${props =>
