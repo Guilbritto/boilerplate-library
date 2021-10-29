@@ -7,7 +7,7 @@ export const defaultTheme: DefaultTheme = {
         secondary: '#004282 ',
         neutral: {
             white: '#FFF',
-            ligth: {
+            light: {
                 "300": "#F4F6FC",
                 "500": "#C9CAD2"
             },
@@ -24,7 +24,7 @@ export const defaultTheme: DefaultTheme = {
             errorLight: '#FAD8D6'
         },
         blue: {
-            ligth: '#CFDDF5',
+            light: '#CFDDF5',
             medium: '#173EC5',
             dark: '#163161'
         }
