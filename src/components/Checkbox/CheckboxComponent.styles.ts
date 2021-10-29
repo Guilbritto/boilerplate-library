@@ -7,9 +7,9 @@ export const Container = styled.div <CheckboxStyleProps>`
     box-sizing: border-box;
     height: 20px;
     width: 20px;
-    border: 2px solid ${props => props.theme.colors.neutral.light[500]};
-    border-radius: ${props =>  props.theme.borderRadius};
-    padding: 2px;
+    border: 3px solid ${props => props.theme.colors.neutral.light[500]};
+    border-radius: ${props => props.theme.borderRadius};
+    margin: 1px;
     position: relative;
     display: flex;
     align-items: center;
@@ -20,14 +20,13 @@ export const Container = styled.div <CheckboxStyleProps>`
     `}
     ${props => props.disabled && css`cursor: not-allowed;`}
 
-    div{
-        width: 100%;
-        height: 100%;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        input{
+        input {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             appearance: none;
             height: 100%;
             width: 100%;
@@ -46,9 +45,9 @@ export const Container = styled.div <CheckboxStyleProps>`
         svg{
             position: absolute;
             width: 100%;
-            height: ${props => props.icon === 'default' ? '10px' : '2px'};
+            fill: ${props => props.theme.colors.neutral.white};
+            height: ${props => (props.icon === 'default' ? '10px' : '19px')};
         }
-    }
 `
 
 

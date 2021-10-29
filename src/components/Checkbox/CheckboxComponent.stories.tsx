@@ -7,6 +7,28 @@ export default {
     component: CheckboxComponent
 }
 
-export const Default = () => <CheckboxComponent />
-export const Minus = () => <CheckboxComponent icon="minus" />
-export const Disabled = () => <CheckboxComponent checked={true} disabled />
+export const Default = () => {
+    const [checked, setChecked] = React.useState(false)
+    return <CheckboxComponent isChecked={checked} setIsChecked={setChecked} />
+}
+export const Minus = () => {
+    const [checked, setChecked] = React.useState(false)
+    return (
+        <CheckboxComponent
+            icon="minus"
+            isChecked={checked}
+            setIsChecked={setChecked}
+        />
+    )
+}
+
+export const Disabled = () => {
+    const [checked, setChecked] = React.useState(true)
+    return (
+        <CheckboxComponent
+            isChecked={checked}
+            setIsChecked={setChecked}
+            disabled
+        />
+    )
+}
