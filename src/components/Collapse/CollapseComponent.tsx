@@ -1,7 +1,15 @@
 import React, { useState } from 'react'
+import { ArrowUp } from './ArrowUp'
+import { ArrowDown } from './ArrowDown'
 
-import { Container, ContainerHead } from './CollapseComponent.styles'
+import {
+    Container,
+    ContainerChildren,
+    ContainerHead,
+    IconArea
+} from './CollapseComponent.styles'
 import { CollapseProps } from './CollapseComponent.types'
+import { useTheme } from '../../hooks/useTheme'
 
 const CollapseComponent = ({
     children,
@@ -10,23 +18,23 @@ const CollapseComponent = ({
     opened = false
 }: CollapseProps) => {
     const [isCollapse, setIsCollapsed] = useState<boolean>(opened)
+    const theme = useTheme()
 
     return (
-        <>
+        <Container theme={theme} widthSize={widthSize}>
             <ContainerHead>
                 <h3>{title}</h3>
-                <button onClick={() => setIsCollapsed(prev => !prev)}>
-                    abrir/fechar
-                </button>
+                <IconArea
+                    theme={theme}
+                    onClick={() => setIsCollapsed(prev => !prev)}
+                >
+                    {isCollapse ? <ArrowUp /> : <ArrowDown />}
+                </IconArea>
             </ContainerHead>
-            <Container
-                widthSize={widthSize}
-                collapse={isCollapse}
-                aria-expanded={isCollapse}
-            >
+            <ContainerChildren collapse={isCollapse} aria-expanded={isCollapse}>
                 {children}
-            </Container>
-        </>
+            </ContainerChildren>
+        </Container>
     )
 }
 

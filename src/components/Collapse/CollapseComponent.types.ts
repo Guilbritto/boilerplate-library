@@ -7,7 +7,10 @@ export type CollapseProps = {
     opened?: boolean
 }
 
-export type ContainerProps = {
+export type ContainerChildrenProps = {
     collapse: boolean
+}
+
+export type ContainerProps = {
     widthSize?: number
 }
