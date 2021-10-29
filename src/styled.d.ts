@@ -8,7 +8,7 @@ declare module 'styled-components' {
             secondary: string
             neutral: {
                 white: string
-                light: {
+                ligth: {
                     300:string,
                     500: string
                 }
@@ -25,7 +25,7 @@ declare module 'styled-components' {
                 errorLight: string
             },
             blue: {
-                light: string,
+                ligth: string,
                 medium: string,
                 dark: string
             }
