@@ -3,16 +3,15 @@ import { CheckboxStyleProps } from './CheckboxComponent.types'
 
 export const Container = styled.div<CheckboxStyleProps>`
     box-sizing: border-box;
-    height: 20px;
-    width: 20px;
-    border: 2px solid ${props => props.theme.colors.neutral.light[500]};
+    height: 21px;
+    width: 21px;
+    border: 3px solid ${props => props.theme.colors.neutral.light[500]};
     border-radius: ${props => props.theme.borderRadius};
-    padding: 2px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 1px;
     ${props =>
         props.isChecked &&
         !props.disabled &&
@@ -25,36 +24,34 @@ export const Container = styled.div<CheckboxStyleProps>`
             cursor: not-allowed;
         `}
 
-    div {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
         input {
-            appearance: none;
-            height: 100%;
             width: 100%;
-            border-radius: 2px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 0;
+            appearance: none;
+            border-radius: 2px;
             cursor: pointer;
-            position: absolute;
-            &:checked {
-                background-color: ${props => props.theme.colors.primary};
-            }
-            &:disabled {
-                background-color: ${props =>
-                    props.theme.colors.neutral.light[500]};
+
+            ${props => props.disabled && props.isChecked ? css`
+                background-color: ${props.theme.colors.neutral.light[500]};
                 cursor: not-allowed;
-            }
+            ` : css`
+                cursor: not-allowed;
+            `}
+            ${props => !props.disabled && props.isChecked && css `
+                background-color: ${props => props.theme.colors.primary};
+            `}
         }
         svg {
             position: absolute;
             width: 100%;
-            height: ${props => (props.icon === 'default' ? '10px' : '2px')};
+            fill: ${props => props.theme.colors.neutral.white};
+            height: ${props => (props.icon === 'default' ? '10px' : '19px')};
         }
-    }
 `
 
 export const EffectArea = styled.div<CheckboxStyleProps>`
