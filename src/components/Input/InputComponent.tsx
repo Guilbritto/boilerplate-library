@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {
+    FormEvent,
+    useCallback,
+    useEffect,
+    useRef,
+    useState
+} from 'react'
 
 import {
     Container,
@@ -28,6 +34,7 @@ const InputComponent = ({
     customOnChange,
     inputSize = 'large',
     disabled = false,
+    mask,
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)
@@ -78,6 +85,33 @@ const InputComponent = ({
         }
     }
 
+    const dateMask = (e: FormEvent<HTMLInputElement>) => {
+        let value = e.currentTarget.value
+        e.currentTarget.maxLength = 10
+        value.replace(/\D/g, '')
+        value.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
+        e.currentTarget.value = value
+    }
+
+    const timeMask = (e: FormEvent<HTMLInputElement>) => {
+        let value = e.currentTarget.value
+
+        return value
+    }
+
+    const handleKeyUp = useCallback(
+        (e: FormEvent<HTMLInputElement>) => {
+            if (mask === 'date') {
+                dateMask(e)
+            }
+
+            if (mask === 'time') {
+                timeMask(e)
+            }
+        },
+        [mask]
+    )
+
     return (
         <div
             style={{
@@ -86,7 +120,7 @@ const InputComponent = ({
                 marginLeft,
                 marginRight,
                 width,
-                height: (inputSize === 'medium' && !!error) ? '74px' : 'auto',
+                height: inputSize === 'medium' && !!error ? '74px' : 'auto',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between'
@@ -126,6 +160,7 @@ const InputComponent = ({
                         ref={inputRef}
                         disabled={disabled}
                         type={variant === 'password' ? 'password' : 'text'}
+                        onKeyUp={handleKeyUp}
                         {...rest}
                     />
                     {variant === 'password' && (
