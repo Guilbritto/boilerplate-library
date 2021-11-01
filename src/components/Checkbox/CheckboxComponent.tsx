@@ -13,7 +13,6 @@ const CheckboxComponent = ({
     ...rest
 }: CheckboxProps) => {
     const theme = useTheme()
-
     const [mouseDown, setMouseDown] = useState(false)
     const [mouseUp, setMouseUp] = useState(false)
 
@@ -39,7 +38,7 @@ const CheckboxComponent = ({
 
     const handleClick = () => {
         if (!disabled) {
-            setIsChecked(!isLocalChecked)
+            setIsChecked(!isChecked)
         }
     }
 
@@ -55,7 +54,7 @@ const CheckboxComponent = ({
                 theme={theme}
                 disabled={disabled}
                 onClick={handleClick}
-                isChecked={isLocalChecked}
+                isChecked={isChecked}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
             >
