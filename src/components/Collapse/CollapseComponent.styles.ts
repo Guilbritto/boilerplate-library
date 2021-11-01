@@ -8,7 +8,7 @@ export const Container = styled.div<ContainerProps>`
     border: 0.5px solid ${props => props.theme.colors.neutral.soft};
     box-sizing: border-box;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 1.25rem;
     width: ${props => props.widthSize}%;
     height: auto;
     min-height: 4rem;
@@ -35,16 +35,22 @@ export const IconArea = styled.div`
     justify-content: center;
     width: 24px;
     height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
 `
 
 export const Quantity = styled.span`
-    ${props => props.theme.fontTokens[50]};
     margin-left: 8px;
+    ${props => props.theme.fontTokens[50]};
+    line-height: 24px;
+    vertical-align: middle;
     color: ${props => props.theme.colors.neutral.soft};
 `
 
 export const Title = styled.span`
     ${props => props.theme.fontTokens[100]};
+    line-height: 24px;
+    vertical-align: middle;
 `
 
 export const Head = styled.div`
