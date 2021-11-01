@@ -6,5 +6,5 @@ export type TabProps = {
 export interface TabPanelProps {
     children: React.ReactNode
     indexActive?: number
-    index : number
+    index: number
 }
