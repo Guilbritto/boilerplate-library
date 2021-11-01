@@ -38,11 +38,12 @@ const CollapseComponent = ({
                     onClick={() => setIsCollapsed(prev => !prev)}
                     data-testid="IconButton"
                 >
-                    {isCollapse ? <ArrowUp /> : <ArrowDown />}
+                    {isCollapse ? <ArrowDown /> : <ArrowUp />}
                 </IconArea>
             </ContainerHead>
             <ContainerChildren
                 maxHeight={isCollapse ? '16rem' : '0'}
+                marginTop={isCollapse ? '1.25rem' : '0'}
                 collapse={isCollapse}
                 aria-expanded={isCollapse}
                 data-testid="Children"

@@ -21,10 +21,9 @@ export default {
 
 export const Default = args => (
     <CollapseComponent
-        title=""
-        quantity={0}
-        widthSize={80}
-        opened={true}
+        title="Collapse Component"
+        quantity={35}
+        widthSize={100}
         {...args}
     >
         <div>Collapse - 1</div>

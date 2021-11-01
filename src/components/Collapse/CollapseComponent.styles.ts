@@ -8,15 +8,16 @@ export const Container = styled.div<ContainerProps>`
     border: 0.5px solid ${props => props.theme.colors.neutral.soft};
     box-sizing: border-box;
     border-radius: 5px;
-    padding: 15px;
+    padding: 1rem;
     width: ${props => props.widthSize}%;
-    max-height: auto;
+    height: auto;
+    min-height: 4rem;
 `
 
 export const ContainerChildren = styled.div<ContainerChildrenProps>`
     transition: max-height 0.3s ease-out;
     max-height: ${props => props.maxHeight};
-    margin-top: 20px;
+    margin-top: ${props => props.marginTop};
     overflow-x: hidden;
 `
 

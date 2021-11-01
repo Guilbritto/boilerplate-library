@@ -11,6 +11,7 @@ export type CollapseProps = {
 export type ContainerChildrenProps = {
     collapse: boolean
     maxHeight: string
+    marginTop: string
 }
 
 export type ContainerProps = {
