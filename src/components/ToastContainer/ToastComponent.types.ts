@@ -1,6 +1,6 @@
-import { ToastMessages } from "../../hooks/useToast/ToastContext";
+import { ToastMessages } from '../../hooks/useToast/ToastContext'
 
 export type ToastProps = {
-    messages: ToastMessages[];
-    content?: string;
+    messages: ToastMessages[]
+    content?: string
 }

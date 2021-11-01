@@ -7,7 +7,7 @@ interface InputComponentStylesProps {
     error?: boolean
     isFilled?: boolean
     disabled?: boolean
-    inputSize?: "large" | "medium"
+    inputSize?: 'large' | 'medium'
 }
 
 export const AlertMessage = styled.div`
@@ -25,16 +25,21 @@ export const Container = styled.div<InputComponentStylesProps>`
     box-sizing: border-box;
     position: relative;
     width: auto;
-    ${props => props.inputSize === "large" && css`
-        height: 48px;
-    `}
-    ${props => props.inputSize === "medium" && css`
-        height: 32px;
-    `}
-    ${props => props.disabled && css`
-        cursor: not-allowed;
-    `}
-
+    ${props =>
+        props.inputSize === 'large' &&
+        css`
+            height: 48px;
+        `}
+    ${props =>
+        props.inputSize === 'medium' &&
+        css`
+            height: 32px;
+        `}
+    ${props =>
+        props.disabled &&
+        css`
+            cursor: not-allowed;
+        `}
 `
 
 export const Svg = styled.div`
@@ -55,7 +60,9 @@ export const Mediumlabel = styled.div<InputComponentStylesProps>`
             background-color: ${props => props.theme.colors.neutral.white};
             color: ${props => props.theme.colors.primary};
         `}
-        ${props => props.disabled && css`
+        ${props =>
+        props.disabled &&
+        css`
             cursor: not-allowed;
         `}
     ${props =>
@@ -64,7 +71,6 @@ export const Mediumlabel = styled.div<InputComponentStylesProps>`
             color: ${props => props.theme.colors.suport.error};
         `}
 `
-
 
 export const Label = styled.label<InputComponentStylesProps>`
     position: absolute;
@@ -85,7 +91,9 @@ export const Label = styled.label<InputComponentStylesProps>`
             background-color: ${props => props.theme.colors.neutral.white};
             color: ${props => props.theme.colors.primary};
         `}
-        ${props => props.disabled && css`
+    ${props =>
+        props.disabled &&
+        css`
             cursor: not-allowed;
             color: ${props.theme.colors.neutral.medium};
         `}
@@ -94,7 +102,6 @@ export const Label = styled.label<InputComponentStylesProps>`
         css`
             color: ${props => props.theme.colors.suport.error};
         `}
-
 `
 
 export const Input = styled.div<InputComponentStylesProps>`
@@ -106,21 +113,26 @@ export const Input = styled.div<InputComponentStylesProps>`
     padding-left: 0.8rem;
     padding-right: 0.8rem;
 
-    ${props => props.inputSize ==="large" && css`
-        border: 2px solid ${props.theme.colors.secondary};
-    `}
+    ${props =>
+        props.inputSize === 'large' &&
+        css`
+            border: 2px solid ${props.theme.colors.secondary};
+        `}
 
-    ${props => props.inputSize ==="medium" && props.isFilled ? css`
-        border: 2px solid ${props.theme.colors.neutral.dark};
-    ` : css `
-        border: 2px solid ${props.theme.colors.neutral.soft};
-    `}
+    ${props =>
+        props.inputSize === 'medium' && props.isFilled
+            ? css`
+                  border: 2px solid ${props.theme.colors.neutral.dark};
+              `
+            : css`
+                  border: 2px solid ${props.theme.colors.neutral.soft};
+              `}
     border-radius: ${props => props.theme.borderRadius};
     color: ${props => props.theme.colors.neutral.dark};
     align-items: center;
     justify-content: center;
     input {
-       ${props => props.theme.fontTokens[100]} 
+        ${props => props.theme.fontTokens[100]}
         font-family: inherit;
         width: 100%;
         height: 88%;
@@ -137,9 +149,11 @@ export const Input = styled.div<InputComponentStylesProps>`
             css`
                 color: ${props => props.theme.colors.suport.error};
             `}
-        ${props => props.disabled && css` 
-            cursor: not-allowed;
-        `}
+        ${props =>
+            props.disabled &&
+            css`
+                cursor: not-allowed;
+            `}
     }
     ${props =>
         props.error &&
@@ -159,9 +173,11 @@ export const Input = styled.div<InputComponentStylesProps>`
         css`
             border-color: ${props => props.theme.colors.primary};
         `}
-    ${props => props.disabled && css`
-        cursor: not-allowed;
-        background-color: ${props.theme.colors.neutral.light[300]};
-       border-color:  ${props.theme.colors.neutral.light[300]};
-    `}
+    ${props =>
+        props.disabled &&
+        css`
+            cursor: not-allowed;
+            background-color: ${props.theme.colors.neutral.light[300]};
+            border-color: ${props.theme.colors.neutral.light[300]};
+        `}
 `

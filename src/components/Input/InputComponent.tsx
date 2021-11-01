@@ -27,7 +27,7 @@ const InputComponent = ({
     width,
     customOnChange,
     inputSize = 'large',
-    disabled=false,
+    disabled = false,
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)
@@ -89,7 +89,7 @@ const InputComponent = ({
                 height: (inputSize === 'medium' && !!error) ? '74px' : 'auto',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'space-between'
             }}
         >
             <Container
@@ -120,7 +120,6 @@ const InputComponent = ({
                     inputSize={inputSize}
                     theme={theme}
                     disabled={disabled}
-
                 >
                     <input
                         data-testid="input"
@@ -146,7 +145,6 @@ const InputComponent = ({
                         error={!!(error && error.message)}
                         data-testid="input-label"
                         disabled={disabled}
-
                     >
                         {label}
                     </Label>

@@ -7,11 +7,13 @@ import { BiMinus } from 'react-icons/bi'
 const CheckboxComponent = ({
     disabled,
     icon = 'default',
+
     isChecked,
     setIsChecked,
     ...rest
 }: CheckboxProps) => {
     const theme = useTheme()
+
     const [mouseDown, setMouseDown] = useState(false)
     const [mouseUp, setMouseUp] = useState(false)
 
@@ -37,7 +39,7 @@ const CheckboxComponent = ({
 
     const handleClick = () => {
         if (!disabled) {
-            setIsChecked(!isChecked)
+            setIsChecked(!isLocalChecked)
         }
     }
 
@@ -53,10 +55,11 @@ const CheckboxComponent = ({
                 theme={theme}
                 disabled={disabled}
                 onClick={handleClick}
-                isChecked={isChecked}
+                isChecked={isLocalChecked}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
             >
+
                 <input
                     type="checkbox"
                     checked={isChecked}
@@ -68,6 +71,7 @@ const CheckboxComponent = ({
                 {isChecked &&
                     !disabled &&
                     (icon === 'default' ? <BsCheckLg /> : <BiMinus />)}
+
             </Container>
         </EffectArea>
     )

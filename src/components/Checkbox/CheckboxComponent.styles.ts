@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components'
 import { CheckboxStyleProps } from './CheckboxComponent.types'
 
-
-
-export const Container = styled.div <CheckboxStyleProps>`
+export const Container = styled.div<CheckboxStyleProps>`
     box-sizing: border-box;
     height: 20px;
     width: 20px;
@@ -15,10 +13,18 @@ export const Container = styled.div <CheckboxStyleProps>`
     align-items: center;
     justify-content: center;
 
-    ${props => props.isChecked && !props.disabled && css`
-        border-color: ${props.theme.colors.primary};
-    `}
-    ${props => props.disabled && css`cursor: not-allowed;`}
+    ${props =>
+        props.isChecked &&
+        !props.disabled &&
+        css`
+            border-color: ${props.theme.colors.primary};
+        `}
+    ${props =>
+        props.disabled &&
+        css`
+            cursor: not-allowed;
+        `}
+
 
         input {
             width: 100%;
@@ -27,22 +33,24 @@ export const Container = styled.div <CheckboxStyleProps>`
             display: flex;
             justify-content: center;
             align-items: center;
+
             appearance: none;
             height: 100%;
             width: 100%;
             border-radius: 2px;
-            margin:0;
+            margin: 0;
             cursor: pointer;
             position: absolute;
-            &:checked{
+            &:checked {
                 background-color: ${props => props.theme.colors.primary};
             }
             &:disabled {
-                background-color: ${props => props.theme.colors.neutral.light[500]};
+                background-color: ${props =>
+                    props.theme.colors.neutral.light[500]};
                 cursor: not-allowed;
             }
         }
-        svg{
+        svg {
             position: absolute;
             width: 100%;
             fill: ${props => props.theme.colors.neutral.white};
@@ -50,20 +58,21 @@ export const Container = styled.div <CheckboxStyleProps>`
         }
 `
 
-
 export const EffectArea = styled.div<CheckboxStyleProps>`
     box-sizing: border-box;
     height: 30px;
     width: 30px;
-    border-radius:50%;
+    border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease-in-out;
-    ${props => props.mouseDown && !props.disabled && css`
-        background-color: ${props.theme.colors.blue.light};
-        opacity: .8;
-    ` }
-
+    ${props =>
+        props.mouseDown &&
+        !props.disabled &&
+        css`
+            background-color: ${props.theme.colors.blue.light};
+            opacity: 0.8;
+        `}
 `

@@ -3,13 +3,13 @@ export interface InputProps
     label: string
     value?: string
     error?: InputError
-    variant?: "password" | "text";
-    customOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    marginTop?: string;
-    marginBottom?: string;
-    marginLeft?: string;
-    marginRight?: string;
-    inputSize?: "large" | "medium"
+    variant?: 'password' | 'text'
+    customOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+    marginTop?: string
+    marginBottom?: string
+    marginLeft?: string
+    marginRight?: string
+    inputSize?: 'large' | 'medium'
     disabled?: boolean
 }
 
