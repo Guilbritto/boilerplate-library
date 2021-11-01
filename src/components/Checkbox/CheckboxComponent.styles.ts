@@ -36,14 +36,15 @@ export const Container = styled.div<CheckboxStyleProps>`
             border-radius: 2px;
             cursor: pointer;
 
-            &:checked {
-                background-color: ${props => props.theme.colors.primary};
-            }
-            &:disabled {
-                background-color: ${props =>
-                    props.theme.colors.neutral.light[500]};
+            ${props => props.disabled && props.isChecked ? css`
+                background-color: ${props.theme.colors.neutral.light[500]};
                 cursor: not-allowed;
-            }
+            ` : css`
+                cursor: not-allowed;
+            `}
+            ${props => !props.disabled && props.isChecked && css `
+                background-color: ${props => props.theme.colors.primary};
+            `}
         }
         svg {
             position: absolute;

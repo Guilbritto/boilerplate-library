@@ -7,7 +7,6 @@ import { BiMinus } from 'react-icons/bi'
 const CheckboxComponent = ({
     disabled,
     icon = 'default',
-
     isChecked,
     setIsChecked,
     ...rest
@@ -32,7 +31,9 @@ const CheckboxComponent = ({
         if (rest.checked) {
             setIsChecked(true)
         } else {
-            setIsChecked(false)
+            if(!disabled){
+                setIsChecked(false)
+            }
         }
     }, [])
 
@@ -41,7 +42,7 @@ const CheckboxComponent = ({
             setIsChecked(!isChecked)
         }
     }
-
+    console.log(isChecked)
     return (
         <EffectArea
             theme={theme}

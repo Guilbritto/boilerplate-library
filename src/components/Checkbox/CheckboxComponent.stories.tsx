@@ -23,7 +23,7 @@ export const Minus = () => {
 }
 
 export const Disabled = () => {
-    const [checked, setChecked] = React.useState(true)
+    const [checked, setChecked] = React.useState(false)
     return (
         <CheckboxComponent
             isChecked={checked}
