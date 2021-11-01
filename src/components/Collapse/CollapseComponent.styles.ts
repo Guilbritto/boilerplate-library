@@ -11,7 +11,7 @@ export const Container = styled.div<ContainerProps>`
     padding: 1.25rem;
     width: ${props => props.widthSize}%;
     height: auto;
-    min-height: 4rem;
+    min-height: 4.125rem;
 `
 
 export const ContainerChildren = styled.div<ContainerChildrenProps>`
