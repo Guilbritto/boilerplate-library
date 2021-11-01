@@ -114,7 +114,7 @@ exports[`Input Component Should be able to match a snapshot with false parameter
 }
 
 <div
-  style="height: 74px; display: flex; flex-direction: column; justify-content: space-between;"
+  style="height: auto; display: flex; flex-direction: column; justify-content: space-between;"
 >
   <div
     class="c0"
@@ -250,7 +250,7 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
 }
 
 <div
-  style="height: 74px; display: flex; flex-direction: column; justify-content: space-between;"
+  style="height: auto; display: flex; flex-direction: column; justify-content: space-between;"
 >
   <div
     class="c0"

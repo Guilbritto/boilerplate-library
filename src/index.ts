@@ -7,6 +7,7 @@ import Switch from './components/Switch/SwitchComponent'
 import Checkbox from './components/Checkbox/CheckboxComponent'
 import { TabComponent as Tab, TabPanel } from './components/Tab/TabComponent'
 import ToastContainer from './components/ToastContainer/ToastComponent'
+import Dropdown from './components/Dropdown/DropdownComponent'
 /** Hooks */
 import { createTheme } from './lib/createTheme'
 import { useApi } from './hooks/useApi/index'
@@ -25,6 +26,7 @@ export {
     Tag,
     Checkbox,
     Switch,
+    Dropdown,
     ToastProvider,
     defaultTheme,
     useToast,
