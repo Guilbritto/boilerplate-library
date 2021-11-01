@@ -5,6 +5,9 @@ export interface CheckboxProps
     icon?: 'default' | 'minus'
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
     isChecked: boolean
+
+    setIsChecked: (isChecked: boolean) => void
+
 }
 
 export type CheckboxStyleProps = {

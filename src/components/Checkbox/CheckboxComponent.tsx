@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { Check } from '@svg/Check'
 import { useTheme } from '../../hooks/useTheme'
 import { Container, EffectArea } from './CheckboxComponent.styles'
 import { CheckboxProps } from './CheckboxComponent.types'
-import { Minus } from '@svg/Minus'
-
+import { BsCheckLg } from 'react-icons/bs'
+import { BiMinus } from 'react-icons/bi'
 const CheckboxComponent = ({
     disabled,
     icon = 'default',
-    isChecked = false,
+    isChecked,
+    setIsChecked,
     ...rest
 }: CheckboxProps) => {
     const theme = useTheme()
-    const [isLocalChecked, setIsChecked] = useState(isChecked)
     const [mouseDown, setMouseDown] = useState(false)
     const [mouseUp, setMouseUp] = useState(false)
 
@@ -32,16 +31,18 @@ const CheckboxComponent = ({
         if (rest.checked) {
             setIsChecked(true)
         } else {
-            setIsChecked(false)
+            if(!disabled){
+                setIsChecked(false)
+            }
         }
     }, [])
 
     const handleClick = () => {
         if (!disabled) {
-            setIsChecked(!isLocalChecked)
+            setIsChecked(!isChecked)
         }
     }
-
+    console.log(isChecked)
     return (
         <EffectArea
             theme={theme}
@@ -54,23 +55,23 @@ const CheckboxComponent = ({
                 theme={theme}
                 disabled={disabled}
                 onClick={handleClick}
-                isChecked={isLocalChecked}
+                isChecked={isChecked}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
             >
-                <div onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}>
-                    <input
-                        type="checkbox"
-                        checked={isLocalChecked}
-                        disabled={disabled}
-                        onMouseDown={handleMouseDown}
-                        onMouseUp={handleMouseUp}
-                        {...rest}
-                    />
-                    {isChecked &&
-                        !disabled &&
-                        (icon === 'default' ? Check : Minus)}
-                </div>
+
+                <input
+                    type="checkbox"
+                    checked={isChecked}
+                    disabled={disabled}
+                    onMouseDown={handleMouseDown}
+                    onMouseUp={handleMouseUp}
+                    {...rest}
+                />
+                {isChecked &&
+                    !disabled &&
+                    (icon === 'default' ? <BsCheckLg /> : <BiMinus />)}
+
             </Container>
         </EffectArea>
     )
