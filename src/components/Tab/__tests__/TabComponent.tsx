@@ -3,12 +3,20 @@ import { render, fireEvent } from '../../../lib/test-utils'
 import { TabComponent, TabPanel } from '../TabComponent'
 
 describe('<TabComponent />', () => {
-    it('should render the component', () => {
+    it('Should render the component', () => {
         const { container } = render(
             <TabComponent titles={['teste1', 'teste2']}>
                 <TabPanel index={0}>Tab1</TabPanel>
                 <TabPanel index={1}>Tab2</TabPanel>
             </TabComponent>
+        )
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('Should render the component with invalid children', () => {
+        const { container } = render(
+            <TabComponent titles={[]}>Lorem</TabComponent>
         )
 
         expect(container.firstChild).toMatchSnapshot()

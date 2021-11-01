@@ -2,15 +2,15 @@
 
 exports[`<SwitchComponent /> Should be able to render a active switch 1`] = `
 <div
-  class="sc-bdfBQB rvVuK"
+  class="sc-bdfBQB kDahIm"
   data-testid="switch-button"
 >
   <div
-    class="sc-gsTEea kFvFwm"
+    class="sc-gsTEea fpVGlI"
     data-testid="switch-button-aura"
   >
     <div
-      class="sc-dlfnuX kFkJSD"
+      class="sc-dlfnuX fRKrSx"
     />
   </div>
 </div>
@@ -18,15 +18,15 @@ exports[`<SwitchComponent /> Should be able to render a active switch 1`] = `
 
 exports[`<SwitchComponent /> Should be able to render a not active switch 1`] = `
 <div
-  class="sc-bdfBQB bZRwow"
+  class="sc-bdfBQB kVAGWU"
   data-testid="switch-button"
 >
   <div
-    class="sc-gsTEea dNaYiJ"
+    class="sc-gsTEea cDUZgb"
     data-testid="switch-button-aura"
   >
     <div
-      class="sc-dlfnuX jzfzSw"
+      class="sc-dlfnuX eUkhDO"
     />
   </div>
 </div>
@@ -34,17 +34,17 @@ exports[`<SwitchComponent /> Should be able to render a not active switch 1`] = 
 
 exports[`<SwitchComponent /> Should be able to render disabled switch 1`] = `
 <div
-  class="sc-bdfBQB gaPvPz"
+  class="sc-bdfBQB gBzkXP"
   data-testid="switch-button"
   disabled=""
 >
   <div
-    class="sc-gsTEea iVovoG"
+    class="sc-gsTEea kHcSHU"
     data-testid="switch-button-aura"
     disabled=""
   >
     <div
-      class="sc-dlfnuX djftuf"
+      class="sc-dlfnuX khbdAx"
       disabled=""
     />
   </div>
@@ -53,22 +53,22 @@ exports[`<SwitchComponent /> Should be able to render disabled switch 1`] = `
 
 exports[`<SwitchComponent /> Should be able to render the switch buttom with pressed Down and show aura 1`] = `
 <div
-  class="sc-gsTEea cnBcBh"
+  class="sc-gsTEea iehEnf"
   data-testid="switch-button-aura"
 >
   <div
-    class="sc-dlfnuX jzfzSw"
+    class="sc-dlfnuX eUkhDO"
   />
 </div>
 `;
 
 exports[`<SwitchComponent /> Should be able to render the switch buttom with pressed Up and show aura 1`] = `
 <div
-  class="sc-gsTEea igqAUp"
+  class="sc-gsTEea iSyREL"
   data-testid="switch-button-aura"
 >
   <div
-    class="sc-dlfnuX jzfzSw"
+    class="sc-dlfnuX eUkhDO"
   />
 </div>
 `;

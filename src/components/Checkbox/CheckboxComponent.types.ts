@@ -1,14 +1,16 @@
-import React from "react"
+import React from 'react'
 
-export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps
+    extends React.InputHTMLAttributes<HTMLInputElement> {
     icon?: 'default' | 'minus'
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
     isChecked: boolean
+
     setIsChecked: (isChecked: boolean) => void
+
 }
 
-
-export type CheckboxStyleProps= {
+export type CheckboxStyleProps = {
     disabled?: boolean
     isChecked?: boolean
     mouseDown?: boolean

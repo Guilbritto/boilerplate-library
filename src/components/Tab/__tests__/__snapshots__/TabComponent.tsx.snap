@@ -2,14 +2,14 @@
 
 exports[`<TabComponent /> Should be able to render 1 tabs and click in one tab 1`] = `
 <div
-  class="sc-hKgJUU dttJog"
+  class="sc-hKgJUU fDWQzl"
   data-testid="tabCell"
 >
   teste1
 </div>
 `;
 
-exports[`<TabComponent /> should render the component 1`] = `
+exports[`<TabComponent /> Should render the component 1`] = `
 <div
   class="sc-bdfBQB dOljJr"
 >
@@ -17,13 +17,13 @@ exports[`<TabComponent /> should render the component 1`] = `
     class="sc-dlfnuX eEZcei"
   >
     <div
-      class="sc-hKgJUU dttJog"
+      class="sc-hKgJUU fDWQzl"
       data-testid="tabCell"
     >
       teste1
     </div>
     <div
-      class="sc-hKgJUU fVGcbF"
+      class="sc-hKgJUU dnhRxg"
       data-testid="tabCell"
     >
       teste2
@@ -38,10 +38,25 @@ exports[`<TabComponent /> should render the component 1`] = `
       Tab1
     </div>
     <div
-      class="sc-eCstlR cuCGxM"
+      class="sc-eCstlR gduWFM"
     >
       Tab2
     </div>
+  </div>
+</div>
+`;
+
+exports[`<TabComponent /> Should render the component with invalid children 1`] = `
+<div
+  class="sc-bdfBQB dOljJr"
+>
+  <div
+    class="sc-dlfnuX eEZcei"
+  />
+  <div
+    class="sc-gsTEea MxmYI"
+  >
+    Lorem
   </div>
 </div>
 `;

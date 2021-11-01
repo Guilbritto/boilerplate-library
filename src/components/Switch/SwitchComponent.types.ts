@@ -1,10 +1,10 @@
 export type SwitchProps = {
-    isChecked: boolean;
-    setIsChecked?: (isChecked: boolean) => void;
-    disabled?: boolean;
+    isChecked: boolean
+    setIsChecked?: (isChecked: boolean) => void
+    disabled?: boolean
 }
 
-export interface SwtichStyleProps{
+export interface SwtichStyleProps {
     isActive: boolean
     disabled: boolean
     isMouseDown?: boolean
