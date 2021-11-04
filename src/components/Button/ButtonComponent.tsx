@@ -1,8 +1,10 @@
 import React from 'react'
-import { Container, DotContaier } from './ButtonComponent.styles'
+import { BiRightArrowAlt } from 'react-icons/bi'
+import { BsDownload } from 'react-icons/bs'
+
+import { Container, Content, DotContaier } from './ButtonComponent.styles'
 import { ButtonProps } from './ButtonComponent.types'
 import { useTheme } from '../../hooks/useTheme'
-import { BiRightArrowAlt } from 'react-icons/bi'
 
 const ButtonComponent = ({
     icon,
@@ -20,12 +22,13 @@ const ButtonComponent = ({
     ...rest
 }: ButtonProps) => {
     const theme = useTheme()
+
     const ButtonIcons = {
-        arrowRight: <BiRightArrowAlt />
+        arrowRight: <BiRightArrowAlt />,
+        download: <BsDownload />
     }
 
     return (
-        //eslint-disable-next-line
         <Container
             theme={theme}
             isDisabled={loading ? true : disabled}
@@ -50,11 +53,13 @@ const ButtonComponent = ({
                     </DotContaier>
                 </>
             ) : (
-                <>
+                <Content>
                     {icon && iconSide === 'left' && ButtonIcons[icon]}
+
                     {label}
+
                     {icon && iconSide === 'right' && ButtonIcons[icon]}
-                </>
+                </Content>
             )}
         </Container>
     )
