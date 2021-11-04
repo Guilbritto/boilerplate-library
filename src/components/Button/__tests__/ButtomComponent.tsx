@@ -43,7 +43,7 @@ describe('Button', () => {
             <ButtonComponent
                 label="Teste"
                 buttonType="danger"
-                icon="arrowRight"
+                icon="download"
             />
         )
         expect(container.firstChild).toMatchSnapshot()
@@ -51,7 +51,7 @@ describe('Button', () => {
 
     it('Should render a disabled button', () => {
         const { container } = render(
-            <ButtonComponent label="Teste" disabled icon="arrowRight" />
+            <ButtonComponent label="Teste" disabled icon="download" />
         )
         expect(container.firstChild).toMatchSnapshot()
     })
