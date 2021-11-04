@@ -25,7 +25,6 @@ const ButtonComponent = ({
     }
 
     return (
-        //eslint-disable-next-line
         <Container
             theme={theme}
             isDisabled={loading ? true : disabled}
