@@ -1,0 +1,288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CollapseComponent /> should render the collapse component beeing opened at start 1`] = `
+.c0 {
+  border: 0.5px solid #A7ADBF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 1.25rem;
+  width: 100%;
+  height: auto;
+  min-height: 4.125rem;
+}
+
+.c6 {
+  -webkit-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
+  max-height: 16rem;
+  margin-top: 1.25rem;
+  overflow-x: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  cursor: pointer;
+  color: #A7ADBF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+.c4 {
+  margin-left: 8px;
+  font-size: 11px;
+  line-height: 13px;
+  line-height: 24px;
+  vertical-align: middle;
+  color: #A7ADBF;
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 17px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Collapse
+      </span>
+      <span
+        class="c4"
+      >
+        4
+         resultados
+      </span>
+    </div>
+    <div
+      class="c5"
+      data-testid="IconButton"
+    >
+      <svg
+        fill="none"
+        height="8"
+        stroke="currentColor"
+        viewBox="0 0 14 8"
+        width="14"
+      >
+        <path
+          d="M13 7L7 0.999999L1 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    aria-expanded="true"
+    class="c6"
+    data-testid="Children"
+  >
+    <div>
+      Content 1
+    </div>
+    <div>
+      Content 2
+    </div>
+    <div>
+      Content 3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CollapseComponent /> should render the collapse component without beeing opened at start 1`] = `
+.c0 {
+  border: 0.5px solid #A7ADBF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 1.25rem;
+  width: 100%;
+  height: auto;
+  min-height: 4.125rem;
+}
+
+.c6 {
+  -webkit-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
+  max-height: 0;
+  margin-top: 0;
+  overflow-x: hidden;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  cursor: pointer;
+  color: #A7ADBF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+.c4 {
+  margin-left: 8px;
+  font-size: 11px;
+  line-height: 13px;
+  line-height: 24px;
+  vertical-align: middle;
+  color: #A7ADBF;
+}
+
+.c3 {
+  font-size: 14px;
+  line-height: 17px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Collapse
+      </span>
+      <span
+        class="c4"
+      >
+        4
+         resultados
+      </span>
+    </div>
+    <div
+      class="c5"
+      data-testid="IconButton"
+    >
+      <svg
+        fill="none"
+        height="8"
+        stroke="currentColor"
+        viewBox="0 0 14 8"
+        width="14"
+      >
+        <path
+          d="M1 1L7 7L13 1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    aria-expanded="false"
+    class="c6"
+    data-testid="Children"
+  >
+    <div>
+      Content 1
+    </div>
+    <div>
+      Content 2
+    </div>
+  </div>
+</div>
+`;
