@@ -64,7 +64,6 @@ export const Circle = styled.div<SwtichStyleProps>`
     background-color: #6d6e75;
     top: -2px;
     ${props => {
-        console.log(props)
         return ''
     }}
 
