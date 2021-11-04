@@ -7,7 +7,7 @@ export type DropdownProps = {
     label?: string
 }
 
-export type DropdownItem={
+export type DropdownItem = {
     id: number
     value: string
 }

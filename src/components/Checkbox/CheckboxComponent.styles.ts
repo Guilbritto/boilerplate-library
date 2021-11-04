@@ -26,33 +26,41 @@ export const Container = styled.div<CheckboxStyleProps>`
 
 
         input {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            appearance: none;
-            border-radius: 2px;
-            cursor: pointer;
-            ${props => props.disabled && css`
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        appearance: none;
+        border-radius: 2px;
+        cursor: pointer;
+        ${props =>
+            props.disabled &&
+            css`
                 cursor: not-allowed;
             `}
-            ${props => props.disabled && props.isChecked && css`
+        ${props =>
+            props.disabled &&
+            props.isChecked &&
+            css`
                 background-color: ${props.theme.colors.neutral.light[500]};
-            ` }
+            `}
 
-            ${props => !props.disabled && props.isChecked && css`
+            ${props =>
+            !props.disabled &&
+            props.isChecked &&
+            css`
                 background-color: ${props => props.theme.colors.primary};
                 cursor: pointer;
             `}
-        }
-        svg {
-            position: absolute;
-            width: 100%;
-            fill: ${props => props.theme.colors.neutral.white};
-            height: ${props => (props.icon === 'default' ? '10px' : '19px')};
-        }
+    }
+    svg {
+        position: absolute;
+        width: 100%;
+        fill: ${props => props.theme.colors.neutral.white};
+        height: ${props => (props.icon === 'default' ? '10px' : '19px')};
+    }
 `
 
 export const EffectArea = styled.div<CheckboxStyleProps>`

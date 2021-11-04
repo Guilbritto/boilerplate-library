@@ -31,7 +31,7 @@ const CheckboxComponent = ({
         if (rest.checked) {
             setIsChecked(true)
         } else {
-            if(!disabled){
+            if (!disabled) {
                 setIsChecked(false)
             }
         }
@@ -59,7 +59,6 @@ const CheckboxComponent = ({
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
             >
-
                 <input
                     type="checkbox"
                     checked={isChecked}
@@ -71,7 +70,6 @@ const CheckboxComponent = ({
                 {isChecked &&
                     !disabled &&
                     (icon === 'default' ? <BsCheckLg /> : <BiMinus />)}
-
             </Container>
         </EffectArea>
     )

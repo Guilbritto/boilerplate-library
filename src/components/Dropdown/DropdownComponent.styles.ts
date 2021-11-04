@@ -16,7 +16,7 @@ export const Container = styled.div`
 
     position: relative;
 
-    svg{
+    svg {
         margin-right: 5px;
     }
 `
@@ -30,15 +30,17 @@ export const DropdownContainerItem = styled.div<DropdownContainerItemStyleProps>
     border-bottom-right-radius: 4px;
     display: none;
 
-    ${props => props.isOpen && css`
-    display: block;
-    `}
+    ${props =>
+        props.isOpen &&
+        css`
+            display: block;
+        `}
 `
 
 export const DropdownItem = styled.div`
     padding: 3px;
     cursor: pointer;
-    &:hover{
+    &:hover {
         background-color: ${props => props.theme.colors.neutral.light[300]};
     }
 `

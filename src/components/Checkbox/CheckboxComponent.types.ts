@@ -7,7 +7,6 @@ export interface CheckboxProps
     isChecked: boolean
 
     setIsChecked: (isChecked: boolean) => void
-
 }
 
 export type CheckboxStyleProps = {
