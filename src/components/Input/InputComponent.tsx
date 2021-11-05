@@ -1,5 +1,6 @@
 import React, {
     FormEvent,
+    SyntheticEvent,
     useCallback,
     useEffect,
     useRef,
@@ -85,26 +86,51 @@ const InputComponent = ({
         }
     }
 
-    const dateMask = (e: FormEvent<HTMLInputElement>) => {
-        let value = e.currentTarget.value
+    const dateMask = (e: SyntheticEvent<HTMLInputElement>) => {
         e.currentTarget.maxLength = 10
-        value.replace(/\D/g, '')
-        value.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
+
+        let value = e.currentTarget.value
+
+        value = value.replace(/\D/g, '')
+
+        if (value.length <= 3) value = value.replace(/(\d{2})/, '$1/')
+
+        if (value.length === 4)
+            value = value.replace(/(\d{2})(\d{2})/, '$1/$2/')
+
+        if (value.length > 4)
+            value = value.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
+
         e.currentTarget.value = value
+
+        return e
     }
 
-    const timeMask = (e: FormEvent<HTMLInputElement>) => {
+    const timeMask = (e: SyntheticEvent<HTMLInputElement>) => {
+        e.currentTarget.maxLength = 8
+
         let value = e.currentTarget.value
 
-        return value
+        value = value.replace(/\D/g, '')
+
+        if (value.length <= 3) value = value.replace(/(\d{2})/, '$1:')
+
+        if (value.length === 4)
+            value = value.replace(/(\d{2})(\d{2})/, '$1:$2:')
+
+        if (value.length > 4)
+            value = value.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
+
+        e.currentTarget.value = value
+
+        return e
     }
 
     const handleKeyUp = useCallback(
-        (e: FormEvent<HTMLInputElement>) => {
+        (e: SyntheticEvent<HTMLInputElement>) => {
             if (mask === 'date') {
                 dateMask(e)
             }
-
             if (mask === 'time') {
                 timeMask(e)
             }
@@ -160,7 +186,7 @@ const InputComponent = ({
                         ref={inputRef}
                         disabled={disabled}
                         type={variant === 'password' ? 'password' : 'text'}
-                        onKeyUp={handleKeyUp}
+                        onChange={handleKeyUp}
                         {...rest}
                     />
                     {variant === 'password' && (
