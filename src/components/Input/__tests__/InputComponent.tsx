@@ -135,4 +135,44 @@ describe('Input Component', () => {
         const label = getByTestId('input-label')
         expect(label).toMatchSnapshot()
     })
+
+    it('Should render an input with date mask', () => {
+        const { container, getByTestId, getByDisplayValue } = render(
+            <Input
+                error={{
+                    message: ''
+                }}
+                label="Label"
+                mask="date"
+            />
+        )
+
+        const input = getByTestId('input')
+        const value = '11102012'
+        fireEvent.change(input, { target: { value } })
+        
+        const newInputValue = '11/10/2012'
+
+        expect(input).toHaveValue(newInputValue)
+    })
+
+    it('Should render an input with time mask', () => {
+        const { container, getByTestId, getByDisplayValue } = render(
+            <Input
+                error={{
+                    message: ''
+                }}
+                label="Label"
+                mask="time"
+            />
+        )
+
+        const input = getByTestId('input')
+        const value = '000000'
+        fireEvent.change(input, { target: { value } })
+        
+        const newInputValue = '00:00:00'
+
+        expect(input).toHaveValue(newInputValue)
+    })
 })
