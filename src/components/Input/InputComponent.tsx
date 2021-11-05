@@ -1,4 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {
+    FormEvent,
+    SyntheticEvent,
+    useCallback,
+    useEffect,
+    useRef,
+    useState
+} from 'react'
 
 import {
     Container,
@@ -28,6 +35,7 @@ const InputComponent = ({
     customOnChange,
     inputSize = 'large',
     disabled = false,
+    mask,
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)
@@ -78,6 +86,58 @@ const InputComponent = ({
         }
     }
 
+    const dateMask = (e: SyntheticEvent<HTMLInputElement>) => {
+        e.currentTarget.maxLength = 10
+
+        let value = e.currentTarget.value
+
+        value = value.replace(/\D/g, '')
+
+        if (value.length <= 3) value = value.replace(/(\d{2})/, '$1/')
+
+        if (value.length === 4)
+            value = value.replace(/(\d{2})(\d{2})/, '$1/$2/')
+
+        if (value.length > 4)
+            value = value.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
+
+        e.currentTarget.value = value
+
+        return e
+    }
+
+    const timeMask = (e: SyntheticEvent<HTMLInputElement>) => {
+        e.currentTarget.maxLength = 8
+
+        let value = e.currentTarget.value
+
+        value = value.replace(/\D/g, '')
+
+        if (value.length <= 3) value = value.replace(/(\d{2})/, '$1:')
+
+        if (value.length === 4)
+            value = value.replace(/(\d{2})(\d{2})/, '$1:$2:')
+
+        if (value.length > 4)
+            value = value.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
+
+        e.currentTarget.value = value
+
+        return e
+    }
+
+    const handleKeyUp = useCallback(
+        (e: SyntheticEvent<HTMLInputElement>) => {
+            if (mask === 'date') {
+                dateMask(e)
+            }
+            if (mask === 'time') {
+                timeMask(e)
+            }
+        },
+        [mask]
+    )
+
     return (
         <div
             style={{
@@ -126,6 +186,7 @@ const InputComponent = ({
                         ref={inputRef}
                         disabled={disabled}
                         type={variant === 'password' ? 'password' : 'text'}
+                        onChange={handleKeyUp}
                         {...rest}
                     />
                     {variant === 'password' && (
