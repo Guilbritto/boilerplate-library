@@ -11,6 +11,7 @@ export interface InputProps
     marginRight?: string
     inputSize?: 'large' | 'medium'
     disabled?: boolean
+    mask?: 'date' | 'time'
 }
 
 export type InputError = {

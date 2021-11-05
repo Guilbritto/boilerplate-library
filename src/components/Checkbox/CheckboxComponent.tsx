@@ -42,7 +42,7 @@ const CheckboxComponent = ({
             setIsChecked(!isChecked)
         }
     }
-    console.log(isChecked)
+
     return (
         <EffectArea
             theme={theme}

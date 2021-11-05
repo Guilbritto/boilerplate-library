@@ -40,4 +40,4 @@ export default {
     }
 }
 
-export const Input = args => <InputComponent {...args} />
+export const Default = args => <InputComponent {...args} />
