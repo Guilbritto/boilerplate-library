@@ -1,6 +1,5 @@
-import { HtmlHTMLAttributes } from 'react'
 import styled, { css, keyframes } from 'styled-components'
-import { defaultTheme } from '../../styles/defaultTheme'
+
 interface ButtonStyleProps {
     isDisabled: boolean
     buttonSize: 'large' | 'small'
@@ -9,8 +8,8 @@ interface ButtonStyleProps {
 
 const buttonTypes = {
     primary: css`
-        background-color: ${defaultTheme.colors.primary};
-        color: ${defaultTheme.colors.neutral.white};
+        background-color: ${props => props.theme.colors.primary};
+        color: ${props => props.theme.colors.neutral.white};
         cursor: pointer;
         &:hover {
             background-color: ${props => props.theme.colors.secondary};
@@ -20,8 +19,8 @@ const buttonTypes = {
         }
     `,
     secondary: css`
-        background-color: ${defaultTheme.colors.neutral.white};
-        color: ${defaultTheme.colors.primary};
+        background-color: ${props => props.theme.colors.neutral.white};
+        color: ${props => props.theme.colors.primary};
         cursor: pointer;
         &:hover {
             background-color: #d1e5ff;
@@ -31,8 +30,8 @@ const buttonTypes = {
         }
     `,
     danger: css`
-        background-color: ${defaultTheme.colors.suport.error};
-        color: ${defaultTheme.colors.neutral.white};
+        background-color: ${props => props.theme.colors.suport.error};
+        color: ${props => props.theme.colors.neutral.white};
         cursor: pointer;
         &:hover {
             background-color: #9b1c13;
@@ -93,6 +92,11 @@ const blik = keyframes`
       opacity: 0.2;
     }
   }
+`
+
+export const Content = styled.div`
+    display: flex;
+    gap: 8px;
 `
 
 export const DotContaier = styled.span`

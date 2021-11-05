@@ -7,7 +7,7 @@ export default {
 
     argTypes: {
         icon: {
-            options: ['arrowRight'],
+            options: ['arrowRight', 'download'],
             control: {
                 type: 'select'
             }
