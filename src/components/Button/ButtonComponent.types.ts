@@ -1,5 +1,6 @@
-import {HTMLAttributes} from 'react';
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+import {ButtonHTMLAttributes} from 'react';
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: 'arrowRight'
     label: string
     iconSide?: 'left' | 'right'
