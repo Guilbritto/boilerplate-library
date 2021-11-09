@@ -41,7 +41,11 @@ const DropdownComponent = ({
                 <DropdownTitle theme={theme}>
                     {selectedItem?.value ? selectedItem.value : title}
                 </DropdownTitle>
-                {open ? <IoIosArrowUp title="arrow-up" /> : <IoIosArrowDown title="arrow-down" />}
+                {open ? (
+                    <IoIosArrowUp title="arrow-up" />
+                ) : (
+                    <IoIosArrowDown title="arrow-down" />
+                )}
 
                 <DropdownContainerItem theme={theme} isOpen={open}>
                     {items.map(item => (

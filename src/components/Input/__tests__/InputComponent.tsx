@@ -150,7 +150,7 @@ describe('Input Component', () => {
         const input = getByTestId('input')
         const value = '11102012'
         fireEvent.change(input, { target: { value } })
-        
+
         const newInputValue = '11/10/2012'
 
         expect(input).toHaveValue(newInputValue)
@@ -170,7 +170,7 @@ describe('Input Component', () => {
         const input = getByTestId('input')
         const value = '000000'
         fireEvent.change(input, { target: { value } })
-        
+
         const newInputValue = '00:00:00'
 
         expect(input).toHaveValue(newInputValue)
