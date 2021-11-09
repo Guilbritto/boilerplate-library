@@ -1,9 +1,8 @@
 import { defaultTheme } from '../../styles/defaultTheme'
 import styled, { css } from 'styled-components'
+import { TagProps } from './TagComponent.types'
 
-interface TagStyleProps {
-    type: 'success' | 'warning' | 'danger' | 'inactive'
-}
+type TagStyleProps = Pick<TagProps, 'type'>
 
 const tagStyles = {
     success: css`
@@ -21,6 +20,10 @@ const tagStyles = {
     inactive: css`
         color: ${defaultTheme.colors.neutral.soft};
         background-color: ${defaultTheme.colors.neutral.light};
+    `,
+    default: css`
+        color: ${defaultTheme.colors.primary};
+        background-color: ${defaultTheme.colors.blue.light};
     `
 }
 
