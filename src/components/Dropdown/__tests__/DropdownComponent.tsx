@@ -44,9 +44,9 @@ describe('<DropdownComponent />', () => {
         const dropdownOption = getByText(itemValue)
 
         expect(arrowDown).toBeInTheDocument()
-        
+
         fireEvent.click(dropdownOption)
-        
+
         expect(arrowDown).not.toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
