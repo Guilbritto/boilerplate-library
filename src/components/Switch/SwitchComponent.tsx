@@ -6,7 +6,8 @@ import { useTheme } from '../../hooks/useTheme'
 const SwitchComponent = ({
     isChecked,
     setIsChecked,
-    disabled
+    disabled,
+    onClick
 }: SwitchProps) => {
     const [mouseDown, setMouseDown] = useState(false)
     const [mouseUp, setMouseUp] = useState(false)
@@ -24,10 +25,11 @@ const SwitchComponent = ({
         setMouseUp(false)
     }
 
-    const handleOnClick = () => {
+    const handleOnClick = (evt) => {
         setIsChecked(!isChecked)
         setMouseDown(false)
         setMouseUp(false)
+        onClick(evt)
     }
 
     return (
