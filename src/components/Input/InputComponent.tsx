@@ -82,19 +82,19 @@ const InputComponent = ({
     ) => {
         if (!value) return value
 
-        let NewValue = `${value}`
+        let newValue = `${value}`
 
-        NewValue = NewValue.replace(/\D/g, '')
+        newValue = newValue.replace(/\D/g, '')
 
-        if (NewValue.length <= 3) NewValue = NewValue.replace(/(\d{2})/, '$1/')
+        if (newValue.length <= 3) newValue = newValue.replace(/(\d{2})/, '$1/')
 
-        if (NewValue.length === 4)
-            NewValue = NewValue.replace(/(\d{2})(\d{2})/, '$1/$2/')
+        if (newValue.length === 4)
+            newValue = newValue.replace(/(\d{2})(\d{2})/, '$1/$2/')
 
-        if (NewValue.length > 4)
-            NewValue = NewValue.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
+        if (newValue.length > 4)
+            newValue = newValue.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
 
-        return NewValue.substring(0, 10)
+        return newValue.substring(0, 10)
     }
 
     const timeMask = (
@@ -102,19 +102,19 @@ const InputComponent = ({
     ) => {
         if (!value) return value
 
-        let NewValue = `${value}`
+        let newValue = `${value}`
 
-        NewValue = NewValue.replace(/\D/g, '')
+        newValue = newValue.replace(/\D/g, '')
 
-        if (NewValue.length <= 3) NewValue = NewValue.replace(/(\d{2})/, '$1:')
+        if (newValue.length <= 3) newValue = newValue.replace(/(\d{2})/, '$1:')
 
-        if (NewValue.length === 4)
-            NewValue = NewValue.replace(/(\d{2})(\d{2})/, '$1:$2:')
+        if (newValue.length === 4)
+            newValue = newValue.replace(/(\d{2})(\d{2})/, '$1:$2:')
 
-        if (NewValue.length > 4)
-            NewValue = NewValue.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
+        if (newValue.length > 4)
+            newValue = newValue.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
 
-        return NewValue.substring(0, 8)
+        return newValue.substring(0, 8)
     }
 
     const handleMask = useCallback(
