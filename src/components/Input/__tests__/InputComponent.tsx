@@ -89,7 +89,7 @@ describe('Input Component', () => {
                 }}
                 label="Label"
                 variant="password"
-                customOnChange={jest.fn}
+                onChange={jest.fn}
             />
         )
         const input = getByTestId('input')
@@ -106,7 +106,7 @@ describe('Input Component', () => {
                 }}
                 label="Label"
                 variant="password"
-                customOnChange={jest.fn}
+                onChange={jest.fn}
             />
         )
         const eye = getByTestId('input-eye')
@@ -137,19 +137,19 @@ describe('Input Component', () => {
     })
 
     it('Should render an input with date mask', () => {
-        const { container, getByTestId, getByDisplayValue } = render(
+        const { getByTestId } = render(
             <Input
                 error={{
                     message: ''
                 }}
+                value="11102012"
                 label="Label"
                 mask="date"
+                onChange={jest.fn}
             />
         )
 
         const input = getByTestId('input')
-        const value = '11102012'
-        fireEvent.change(input, { target: { value } })
 
         const newInputValue = '11/10/2012'
 
@@ -157,19 +157,19 @@ describe('Input Component', () => {
     })
 
     it('Should render an input with time mask', () => {
-        const { container, getByTestId, getByDisplayValue } = render(
+        const { getByTestId } = render(
             <Input
                 error={{
                     message: ''
                 }}
+                value="000000"
                 label="Label"
                 mask="time"
+                onChange={jest.fn}
             />
         )
 
         const input = getByTestId('input')
-        const value = '000000'
-        fireEvent.change(input, { target: { value } })
 
         const newInputValue = '00:00:00'
 
