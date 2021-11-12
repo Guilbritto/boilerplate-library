@@ -126,6 +126,7 @@ exports[`Input Component Should be able to match a snapshot with false parameter
       <input
         data-testid="input"
         type="text"
+        value=""
       />
     </div>
     <label
@@ -262,6 +263,7 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
       <input
         data-testid="input"
         type="password"
+        value=""
       />
       <div
         class="c2"
@@ -413,6 +415,7 @@ exports[`Input Component Should render the component with medium size 1`] = `
       <input
         data-testid="input"
         type="text"
+        value=""
       />
     </div>
   </div>

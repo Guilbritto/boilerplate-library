@@ -1,12 +1,4 @@
-import React, {
-    FormEvent,
-    SyntheticEvent,
-    useCallback,
-    useEffect,
-    useRef,
-    useState
-} from 'react'
-
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import {
     Container,
     AlertMessage,
@@ -16,7 +8,6 @@ import {
     Mediumlabel
 } from './InputComponent.styles'
 import { InputProps } from './InputComponent.types'
-
 import { Eye } from '@svg/Eye'
 import { EyeOff } from '@svg/EyeOff'
 import { AlertCircle } from '@svg/AlertCircle'
@@ -32,10 +23,10 @@ const InputComponent = ({
     marginLeft,
     marginRight,
     width,
-    customOnChange,
     inputSize = 'large',
     disabled = false,
     mask,
+    value,
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)
@@ -86,54 +77,57 @@ const InputComponent = ({
         }
     }
 
-    const dateMask = (e: SyntheticEvent<HTMLInputElement>) => {
-        e.currentTarget.maxLength = 10
+    const dateMask = (
+        value?: string | ReadonlyArray<string> | number | undefined
+    ) => {
+        if (!value) return value
 
-        let value = e.currentTarget.value
+        let NewValue = `${value}`
 
-        value = value.replace(/\D/g, '')
+        NewValue = NewValue.replace(/\D/g, '')
 
-        if (value.length <= 3) value = value.replace(/(\d{2})/, '$1/')
+        if (NewValue.length <= 3) NewValue = NewValue.replace(/(\d{2})/, '$1/')
 
-        if (value.length === 4)
-            value = value.replace(/(\d{2})(\d{2})/, '$1/$2/')
+        if (NewValue.length === 4)
+            NewValue = NewValue.replace(/(\d{2})(\d{2})/, '$1/$2/')
 
-        if (value.length > 4)
-            value = value.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
+        if (NewValue.length > 4)
+            NewValue = NewValue.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
 
-        e.currentTarget.value = value
-
-        return e
+        return NewValue.substring(0, 10)
     }
 
-    const timeMask = (e: SyntheticEvent<HTMLInputElement>) => {
-        e.currentTarget.maxLength = 8
+    const timeMask = (
+        value?: string | ReadonlyArray<string> | number | undefined
+    ) => {
+        if (!value) return value
 
-        let value = e.currentTarget.value
+        let NewValue = `${value}`
 
-        value = value.replace(/\D/g, '')
+        NewValue = NewValue.replace(/\D/g, '')
 
-        if (value.length <= 3) value = value.replace(/(\d{2})/, '$1:')
+        if (NewValue.length <= 3) NewValue = NewValue.replace(/(\d{2})/, '$1:')
 
-        if (value.length === 4)
-            value = value.replace(/(\d{2})(\d{2})/, '$1:$2:')
+        if (NewValue.length === 4)
+            NewValue = NewValue.replace(/(\d{2})(\d{2})/, '$1:$2:')
 
-        if (value.length > 4)
-            value = value.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
+        if (NewValue.length > 4)
+            NewValue = NewValue.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
 
-        e.currentTarget.value = value
-
-        return e
+        return NewValue.substring(0, 8)
     }
 
-    const handleKeyUp = useCallback(
-        (e: SyntheticEvent<HTMLInputElement>) => {
+    const handleMask = useCallback(
+        (value: any) => {
             if (mask === 'date') {
-                dateMask(e)
+                return dateMask(value)
             }
+
             if (mask === 'time') {
-                timeMask(e)
+                return timeMask(value)
             }
+
+            return value
         },
         [mask]
     )
@@ -186,7 +180,7 @@ const InputComponent = ({
                         ref={inputRef}
                         disabled={disabled}
                         type={variant === 'password' ? 'password' : 'text'}
-                        onChange={handleKeyUp}
+                        value={handleMask(value)}
                         {...rest}
                     />
                     {variant === 'password' && (
