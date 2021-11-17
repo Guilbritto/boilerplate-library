@@ -132,6 +132,8 @@ const InputComponent = ({
         [mask]
     )
 
+    console.log(handleMask(value))
+
     return (
         <div
             style={{
