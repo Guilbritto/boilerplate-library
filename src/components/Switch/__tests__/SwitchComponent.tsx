@@ -8,7 +8,11 @@ describe('<SwitchComponent />', () => {
         const setChecked = (check: boolean) => (checked = check)
 
         const { getByTestId } = render(
-            <SwitchComponent isChecked={checked} setIsChecked={setChecked} />
+            <SwitchComponent
+                isChecked={checked}
+                setIsChecked={setChecked}
+                onClick={jest.fn}
+            />
         )
 
         const switchButton = getByTestId('switch-button')
