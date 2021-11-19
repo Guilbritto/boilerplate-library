@@ -5,7 +5,6 @@ export interface SwitchProps
     isChecked: boolean
     setIsChecked?: (isChecked: boolean) => void
     disabled?: boolean
-    onClick?: (any) => void
 }
 
 export interface SwtichStyleProps {
