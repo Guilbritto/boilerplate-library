@@ -7,7 +7,7 @@ const SwitchComponent = ({
     isChecked,
     setIsChecked,
     disabled,
-    onClick
+    custonClick
 }: SwitchProps) => {
     const [mouseDown, setMouseDown] = useState(false)
     const [mouseUp, setMouseUp] = useState(false)
@@ -27,7 +27,7 @@ const SwitchComponent = ({
 
     const handleOnClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
         setIsChecked(!isChecked)
-        onClick(e)
+        custonClick()
         setMouseDown(false)
         setMouseUp(false)
     }

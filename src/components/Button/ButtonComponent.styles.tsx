@@ -59,7 +59,7 @@ export const Container = styled.button<ButtonStyleProps>`
         props.buttonSize === 'small' &&
         css`
             width: auto;
-            height: auto;
+            height: 32px;
             padding: 4px 12px;
         `}
     ${props =>
