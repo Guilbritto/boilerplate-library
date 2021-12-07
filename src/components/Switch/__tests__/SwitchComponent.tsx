@@ -12,6 +12,7 @@ describe('<SwitchComponent />', () => {
                 isChecked={checked}
                 setIsChecked={setChecked}
                 onClick={jest.fn}
+                custonClick={jest.fn}
             />
         )
 
