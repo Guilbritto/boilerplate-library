@@ -114,7 +114,7 @@ const InputComponent = ({
         if (newValue.length > 4)
             newValue = newValue.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
 
-        return newValue.substring(0, 7)
+        return newValue.substring(0, 8)
     }
 
     const handleMask = useCallback(

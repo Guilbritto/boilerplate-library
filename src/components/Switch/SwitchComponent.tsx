@@ -25,7 +25,7 @@ const SwitchComponent = ({
         setMouseUp(false)
     }
 
-    const handleOnClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const handleOnClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
         setIsChecked(!isChecked)
         custonClick()
         setMouseDown(false)
