@@ -140,7 +140,7 @@ const InputComponent = ({
                 marginLeft,
                 marginRight,
                 width,
-                height: inputSize === 'medium' && !!error ? '74px' : 'auto',
+                height: inputSize === 'medium' && !!error ? '74px' : '50px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between'
