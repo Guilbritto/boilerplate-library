@@ -141,7 +141,9 @@ const InputComponent = ({
                 marginRight,
                 width,
                 height:
-                    inputSize === 'medium' && error?.message !== ''
+                    inputSize === 'medium' &&
+                    !!error?.message &&
+                    error?.message !== ''
                         ? '74px'
                         : '50px',
                 display: 'flex',
