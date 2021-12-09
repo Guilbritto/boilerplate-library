@@ -1,6 +1,6 @@
 export interface InputProps
     extends React.InputHTMLAttributes<HTMLInputElement> {
-    label: string
+    label?: string
     error?: InputError
     variant?: 'password' | 'text'
     marginTop?: string

@@ -5,6 +5,7 @@ import {
     Input,
     Label,
     Svg,
+    TopContainer,
     Mediumlabel
 } from './InputComponent.styles'
 import { InputProps } from './InputComponent.types'
@@ -133,22 +134,18 @@ const InputComponent = ({
     )
 
     return (
-        <div
+        <TopContainer
+            data-testid="input-top-container"
+            variant={variant}
+            label={label}
+            inputSize={inputSize}
+            error={!!(error && error?.message && error?.message !== '')}
             style={{
                 marginTop,
                 marginBottom,
                 marginLeft,
                 marginRight,
-                width,
-                height:
-                    inputSize === 'medium' &&
-                    !!error?.message &&
-                    error?.message !== ''
-                        ? '74px'
-                        : '50px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between'
+                width
             }}
         >
             <Container
@@ -160,7 +157,7 @@ const InputComponent = ({
                 disabled={disabled}
                 inputSize={inputSize}
             >
-                {inputSize === 'medium' && (
+                {inputSize === 'medium' && label && (
                     <Mediumlabel
                         isActive={isActive}
                         error={!!(error && error.message)}
@@ -216,7 +213,7 @@ const InputComponent = ({
                     {error?.message}
                 </AlertMessage>
             )}
-        </div>
+        </TopContainer>
     )
 }
 
