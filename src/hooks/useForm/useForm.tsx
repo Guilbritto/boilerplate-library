@@ -84,6 +84,7 @@ const useForm = <F,>(props: useFormProps<F>): useFormReturnType<F> => {
                 const errors: any = {}
                 ;(e as ValidationError).inner.forEach(err => {
                     if (err.path) errors[err.path] = err.message
+                    else errors[err.type!] = err.message
                 })
                 setFieldsErrors(isEmptyObject(errors) ? undefined : errors)
             }
