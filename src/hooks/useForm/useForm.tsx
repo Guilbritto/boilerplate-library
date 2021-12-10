@@ -93,7 +93,13 @@ const useForm = <F,>(props: useFormProps<F>): useFormReturnType<F> => {
     }, [fields, formStatus])
 
     const onFormSubmit: OnFormSubmit<F> = callback => async e => {
-        callback(fields, e)
+        e?.preventDefault()
+        schema
+            .validate(fields)
+            .then(() => {
+                callback(fields, e)
+            })
+            .catch(() => setFormStatus(FormStatus.SUBMITTED))
     }
 
     return {
