@@ -1,60 +1,33 @@
-import { fireEvent, render, screen } from '../../../lib/test-utils'
+import React from 'react'
 
-import SwitchComponent from '../SwitchComponent'
+import Switch from '../SwitchComponent'
+import { fireEvent, render } from '../../../lib/test-utils'
 
-describe('<SwitchComponent />', () => {
-    it('Should be able to click and change state from not checked to checked', () => {
-        let checked = false
-        const setChecked = (check: boolean) => (checked = check)
+const handleClick = jest.fn()
 
-        const { getByTestId } = render(
-            <SwitchComponent isChecked={checked} setIsChecked={setChecked} />
-        )
-
-        const switchButton = getByTestId('switch-button')
-
-        fireEvent.click(switchButton)
-
-        expect(checked).toBe(true)
-    })
-
-    it('Should be able to render the switch buttom with pressed Down and show aura', () => {
-        const { getByTestId } = render(<SwitchComponent isChecked={false} />)
-
-        const switchButtonAura = getByTestId('switch-button-aura')
-
-        fireEvent.mouseDown(switchButtonAura)
-
-        expect(switchButtonAura).toMatchSnapshot()
-    })
-
-    it('Should be able to render the switch buttom with pressed Up and show aura', () => {
-        const { getByTestId } = render(<SwitchComponent isChecked={false} />)
-
-        const switchButtonAura = getByTestId('switch-button-aura')
-
-        fireEvent.mouseUp(switchButtonAura)
-
-        expect(switchButtonAura).toMatchSnapshot()
-    })
-
-    it('Should be able to render a not active switch', () => {
-        const { container } = render(<SwitchComponent isChecked={false} />)
+describe('Switch Component', () => {
+    it('Should render a Switch with default styles', () => {
+        const { container } = render(<Switch onClick={handleClick} />)
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('Should be able to render a active switch', () => {
-        const { container } = render(<SwitchComponent isChecked={true} />)
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
-    it('Should be able to render disabled switch', () => {
+    it('Should render a checked Switch', () => {
         const { container } = render(
-            <SwitchComponent isChecked={false} disabled />
+            <Switch checked={true} onClick={handleClick} />
         )
 
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('Should render a disabled Switch', () => {
+        const { getByRole, container } = render(
+            <Switch disabled={true} onClick={handleClick} />
+        )
+
+        const input = getByRole('checkbox')
+
+        expect(input).toHaveStyle('cursor: not-allowed')
         expect(container.firstChild).toMatchSnapshot()
     })
 })

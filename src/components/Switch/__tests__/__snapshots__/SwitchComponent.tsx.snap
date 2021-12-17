@@ -1,74 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SwitchComponent /> Should be able to render a active switch 1`] = `
-<div
-  class="sc-bdfBQB kDahIm"
-  data-testid="switch-button"
+exports[`Switch Component Should render a Switch with default styles 1`] = `
+<label
+  class="sc-bdfBQB cMDThJ"
 >
-  <div
-    class="sc-gsTEea fpVGlI"
-    data-testid="switch-button-aura"
-  >
-    <div
-      class="sc-dlfnuX fRKrSx"
-    />
-  </div>
-</div>
+  <input
+    class="sc-dlfnuX fFazWo"
+    type="checkbox"
+    value="switch"
+  />
+  <span
+    class="sc-gsTEea gAfLgx"
+  />
+</label>
 `;
 
-exports[`<SwitchComponent /> Should be able to render a not active switch 1`] = `
-<div
-  class="sc-bdfBQB kVAGWU"
-  data-testid="switch-button"
+exports[`Switch Component Should render a checked Switch 1`] = `
+<label
+  class="sc-bdfBQB cMDThJ"
 >
-  <div
-    class="sc-gsTEea cDUZgb"
-    data-testid="switch-button-aura"
-  >
-    <div
-      class="sc-dlfnuX eUkhDO"
-    />
-  </div>
-</div>
+  <input
+    checked=""
+    class="sc-dlfnuX fFazWo"
+    type="checkbox"
+    value="switch"
+  />
+  <span
+    class="sc-gsTEea gAfLgx"
+  />
+</label>
 `;
 
-exports[`<SwitchComponent /> Should be able to render disabled switch 1`] = `
-<div
-  class="sc-bdfBQB gBzkXP"
-  data-testid="switch-button"
+exports[`Switch Component Should render a disabled Switch 1`] = `
+<label
+  class="sc-bdfBQB hHOdmo"
   disabled=""
 >
-  <div
-    class="sc-gsTEea kHcSHU"
-    data-testid="switch-button-aura"
+  <input
+    class="sc-dlfnuX fFazWo"
     disabled=""
-  >
-    <div
-      class="sc-dlfnuX khbdAx"
-      disabled=""
-    />
-  </div>
-</div>
-`;
-
-exports[`<SwitchComponent /> Should be able to render the switch buttom with pressed Down and show aura 1`] = `
-<div
-  class="sc-gsTEea iehEnf"
-  data-testid="switch-button-aura"
->
-  <div
-    class="sc-dlfnuX eUkhDO"
+    type="checkbox"
+    value="switch"
   />
-</div>
-`;
-
-exports[`<SwitchComponent /> Should be able to render the switch buttom with pressed Up and show aura 1`] = `
-<div
-  class="sc-gsTEea iSyREL"
-  data-testid="switch-button-aura"
->
-  <div
-    class="sc-dlfnuX eUkhDO"
+  <span
+    class="sc-gsTEea bMoSig"
+    disabled=""
   />
-</div>
+</label>
 `;
