@@ -1,20 +1,20 @@
 import React from 'react'
 
 import Switch from '../SwitchComponent'
-import { fireEvent, render } from '../../../lib/test-utils'
+import { render } from '../../../lib/test-utils'
 
-const handleClick = jest.fn()
+const handleChange = jest.fn()
 
 describe('Switch Component', () => {
     it('Should render a Switch with default styles', () => {
-        const { container } = render(<Switch onClick={handleClick} />)
+        const { container } = render(<Switch onChange={handleChange} />)
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('Should render a checked Switch', () => {
         const { container } = render(
-            <Switch checked={true} onClick={handleClick} />
+            <Switch checked={true} onChange={handleChange} />
         )
 
         expect(container.firstChild).toMatchSnapshot()
@@ -22,7 +22,7 @@ describe('Switch Component', () => {
 
     it('Should render a disabled Switch', () => {
         const { getByRole, container } = render(
-            <Switch disabled={true} onClick={handleClick} />
+            <Switch disabled={true} onChange={handleChange} />
         )
 
         const input = getByRole('checkbox')

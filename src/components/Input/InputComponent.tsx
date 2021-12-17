@@ -1,22 +1,14 @@
-import React, {
-    FormEvent,
-    SyntheticEvent,
-    useCallback,
-    useEffect,
-    useRef,
-    useState
-} from 'react'
-
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import {
     Container,
     AlertMessage,
     Input,
     Label,
     Svg,
+    TopContainer,
     Mediumlabel
 } from './InputComponent.styles'
 import { InputProps } from './InputComponent.types'
-
 import { Eye } from '@svg/Eye'
 import { EyeOff } from '@svg/EyeOff'
 import { AlertCircle } from '@svg/AlertCircle'
@@ -32,10 +24,10 @@ const InputComponent = ({
     marginLeft,
     marginRight,
     width,
-    customOnChange,
     inputSize = 'large',
     disabled = false,
     mask,
+    value,
     ...rest
 }: InputProps) => {
     const [isActive, setIsActive] = useState(false)
@@ -86,70 +78,74 @@ const InputComponent = ({
         }
     }
 
-    const dateMask = (e: SyntheticEvent<HTMLInputElement>) => {
-        e.currentTarget.maxLength = 10
+    const dateMask = (
+        value?: string | ReadonlyArray<string> | number | undefined
+    ) => {
+        if (!value) return value
 
-        let value = e.currentTarget.value
+        let newValue = `${value}`
 
-        value = value.replace(/\D/g, '')
+        newValue = newValue.replace(/\D/g, '')
 
-        if (value.length <= 3) value = value.replace(/(\d{2})/, '$1/')
+        if (newValue.length <= 3) newValue = newValue.replace(/(\d{2})/, '$1/')
 
-        if (value.length === 4)
-            value = value.replace(/(\d{2})(\d{2})/, '$1/$2/')
+        if (newValue.length === 4)
+            newValue = newValue.replace(/(\d{2})(\d{2})/, '$1/$2/')
 
-        if (value.length > 4)
-            value = value.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
+        if (newValue.length > 4)
+            newValue = newValue.replace(/(\d{2})(\d{2})(\d)/, '$1/$2/$3')
 
-        e.currentTarget.value = value
-
-        return e
+        return newValue.substring(0, 10)
     }
 
-    const timeMask = (e: SyntheticEvent<HTMLInputElement>) => {
-        e.currentTarget.maxLength = 8
+    const timeMask = (
+        value?: string | ReadonlyArray<string> | number | undefined
+    ) => {
+        if (!value) return value
 
-        let value = e.currentTarget.value
+        let newValue = `${value}`
 
-        value = value.replace(/\D/g, '')
+        newValue = newValue.replace(/\D/g, '')
 
-        if (value.length <= 3) value = value.replace(/(\d{2})/, '$1:')
+        if (newValue.length <= 3) newValue = newValue.replace(/(\d{2})/, '$1:')
 
-        if (value.length === 4)
-            value = value.replace(/(\d{2})(\d{2})/, '$1:$2:')
+        if (newValue.length === 4)
+            newValue = newValue.replace(/(\d{2})(\d{2})/, '$1:$2:')
 
-        if (value.length > 4)
-            value = value.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
+        if (newValue.length > 4)
+            newValue = newValue.replace(/(\d{2})(\d{2})(\d)/, '$1:$2:$3')
 
-        e.currentTarget.value = value
-
-        return e
+        return newValue.substring(0, 8)
     }
 
-    const handleKeyUp = useCallback(
-        (e: SyntheticEvent<HTMLInputElement>) => {
+    const handleMask = useCallback(
+        (value: any) => {
             if (mask === 'date') {
-                dateMask(e)
+                return dateMask(value)
             }
+
             if (mask === 'time') {
-                timeMask(e)
+                return timeMask(value)
             }
+
+            return value
         },
         [mask]
     )
 
     return (
-        <div
+        <TopContainer
+            data-testid="input-top-container"
+            variant={variant}
+            label={label}
+            inputSize={inputSize}
+            error={!!(error && error?.message && error?.message !== '')}
             style={{
                 marginTop,
                 marginBottom,
                 marginLeft,
                 marginRight,
-                width,
-                height: inputSize === 'medium' && !!error ? '74px' : 'auto',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between'
+                width
             }}
         >
             <Container
@@ -161,7 +157,7 @@ const InputComponent = ({
                 disabled={disabled}
                 inputSize={inputSize}
             >
-                {inputSize === 'medium' && (
+                {inputSize === 'medium' && label && (
                     <Mediumlabel
                         isActive={isActive}
                         error={!!(error && error.message)}
@@ -186,7 +182,7 @@ const InputComponent = ({
                         ref={inputRef}
                         disabled={disabled}
                         type={variant === 'password' ? 'password' : 'text'}
-                        onChange={handleKeyUp}
+                        value={handleMask(value)}
                         {...rest}
                     />
                     {variant === 'password' && (
@@ -217,7 +213,7 @@ const InputComponent = ({
                     {error?.message}
                 </AlertMessage>
             )}
-        </div>
+        </TopContainer>
     )
 }
 

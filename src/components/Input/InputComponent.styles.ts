@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components'
 
+
+interface TopContainerStyle {
+
+}
 interface InputComponentStylesProps {
     isActive?: boolean
     variant?: string
@@ -8,6 +12,7 @@ interface InputComponentStylesProps {
     isFilled?: boolean
     disabled?: boolean
     inputSize?: 'large' | 'medium'
+    label?: string
 }
 
 export const AlertMessage = styled.div`
@@ -180,4 +185,39 @@ export const Input = styled.div<InputComponentStylesProps>`
             background-color: ${props.theme.colors.neutral.light[300]};
             border-color: ${props.theme.colors.neutral.light[300]};
         `}
+`
+
+
+export const TopContainer = styled.div<InputComponentStylesProps>`
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    ${props => {
+
+        if(props.inputSize === 'medium' && props.error)
+            return css`height:74px;`
+        else if(props.inputSize === 'medium' && !!props.label)
+            return css`height:50px;`
+        else if(props.inputSize === 'medium')
+            return css`height:32px;`
+        if(props.inputSize === 'large' && props.error)
+            return css `height:85px;`
+        return css`height:60px;`
+    }};
+
+    /* marginTop
+    marginBottom,
+    marginLeft,
+    marginRight,
+    width,
+    height:
+    inputSize === 'medium' &&
+         !!error?.message &&
+                    error?.message !== ''
+                        ? '74px'
+                        : '50px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between' */
 `

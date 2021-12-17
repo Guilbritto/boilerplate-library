@@ -22,129 +22,6 @@ exports[`Input Component Should be able to click outside the input and trigger b
 `;
 
 exports[`Input Component Should be able to match a snapshot with false parameter 1`] = `
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 5px;
-  color: #E73A33;
-}
-
-.c3 svg {
-  margin-right: 5px;
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: 48px;
-}
-
-.c2 {
-  position: absolute;
-  left: 1rem;
-  top: 35%;
-  padding: 0 0.5rem;
-  margin-left: -0.5rem;
-  color: #A7ADBF;
-  cursor: text;
-  -webkit-transition: top 200ms ease-in,left 200ms ease-in,font-size 200ms ease-in;
-  transition: top 200ms ease-in,left 200ms ease-in,font-size 200ms ease-in;
-  top: -0.5rem;
-  font-size: 0.8rem;
-  left: 0.8rem;
-  background-color: #FFF;
-  color: #2B52DD;
-  color: #E73A33;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  border: 2px solid #004282;
-  border: 2px solid #A7ADBF;
-  border-radius: 4px;
-  color: #2B2C32;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-color: #E73A33;
-  border-color: #E73A33;
-  color: #E73A33;
-}
-
-.c1 input {
-  font-size: 14px;
-  line-height: 17px;
-  font-family: inherit;
-  width: 100%;
-  height: 88%;
-  outline: none;
-  background: none;
-  border-style: none;
-  color: #E73A33;
-}
-
-.c1 input::-ms-reveal,
-.c1 input::-ms-clear {
-  display: none;
-}
-
-<div
-  style="height: auto; display: flex; flex-direction: column; justify-content: space-between;"
->
-  <div
-    class="c0"
-    data-testid="input-container"
-  >
-    <div
-      class="c1"
-    >
-      <input
-        data-testid="input"
-        type="text"
-      />
-    </div>
-    <label
-      class="c2"
-      data-testid="input-label"
-    >
-      Test
-    </label>
-  </div>
-  <div
-    class="c3"
-    data-testid="input-errorMessage"
-  >
-    Test
-  </div>
-</div>
-`;
-
-exports[`Input Component Should be able to match a snapshot with true parameter 1`] = `
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -166,24 +43,11 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
   margin-right: 5px;
 }
 
-.c0 {
+.c1 {
   box-sizing: border-box;
   position: relative;
   width: auto;
   height: 48px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c2 svg {
-  right: -2.9rem;
-  top: 0.9rem;
-  cursor: pointer;
 }
 
 .c3 {
@@ -204,152 +68,6 @@ exports[`Input Component Should be able to match a snapshot with true parameter 
   color: #E73A33;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  border: 2px solid #004282;
-  border: 2px solid #A7ADBF;
-  border-radius: 4px;
-  color: #2B2C32;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-color: #E73A33;
-  border-color: #E73A33;
-  color: #E73A33;
-}
-
-.c1 input {
-  font-size: 14px;
-  line-height: 17px;
-  font-family: inherit;
-  width: 100%;
-  height: 88%;
-  outline: none;
-  background: none;
-  border-style: none;
-  color: #E73A33;
-}
-
-.c1 input::-ms-reveal,
-.c1 input::-ms-clear {
-  display: none;
-}
-
-<div
-  style="height: auto; display: flex; flex-direction: column; justify-content: space-between;"
->
-  <div
-    class="c0"
-    data-testid="input-container"
-  >
-    <div
-      class="c1"
-    >
-      <input
-        data-testid="input"
-        type="password"
-      />
-      <div
-        class="c2"
-        data-testid="input-eye"
-      >
-        <svg
-          fill="none"
-          height="24"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
-            fill-rule="evenodd"
-            stroke="#6D7384"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-          <path
-            clip-rule="evenodd"
-            d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
-            fill-rule="evenodd"
-            stroke="#6D7384"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
-    <label
-      class="c3"
-      data-testid="input-label"
-    >
-      Test
-    </label>
-  </div>
-  <div
-    class="c4"
-    data-testid="input-errorMessage"
-  >
-    Test
-  </div>
-</div>
-`;
-
-exports[`Input Component Should render the component with medium size 1`] = `
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 5px;
-  color: #E73A33;
-}
-
-.c3 svg {
-  margin-right: 5px;
-}
-
-.c0 {
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: 32px;
-}
-
-.c1 {
-  color: #2B2C32;
-  cursor: text;
-  font-size: 12px;
-  line-height: 15px;
-  background-color: #FFF;
-  color: #2B52DD;
-  color: #E73A33;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -361,6 +79,7 @@ exports[`Input Component Should render the component with medium size 1`] = `
   height: 100%;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
+  border: 2px solid #004282;
   border: 2px solid #A7ADBF;
   border-radius: 4px;
   color: #2B2C32;
@@ -394,30 +113,368 @@ exports[`Input Component Should render the component with medium size 1`] = `
   display: none;
 }
 
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 85px;
+}
+
 <div
-  style="height: 74px; display: flex; flex-direction: column; justify-content: space-between;"
+  class="c0"
+  data-testid="input-top-container"
+  label="Test"
 >
   <div
-    class="c0"
+    class="c1"
     data-testid="input-container"
   >
-    <div
-      class="c1"
-      data-testid="input-label"
-    >
-      Test
-    </div>
     <div
       class="c2"
     >
       <input
         data-testid="input"
         type="text"
+        value=""
+      />
+    </div>
+    <label
+      class="c3"
+      data-testid="input-label"
+    >
+      Test
+    </label>
+  </div>
+  <div
+    class="c4"
+    data-testid="input-errorMessage"
+  >
+    Test
+  </div>
+</div>
+`;
+
+exports[`Input Component Should be able to match a snapshot with true parameter 1`] = `
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 5px;
+  color: #E73A33;
+}
+
+.c5 svg {
+  margin-right: 5px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  position: relative;
+  width: auto;
+  height: 48px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 svg {
+  right: -2.9rem;
+  top: 0.9rem;
+  cursor: pointer;
+}
+
+.c4 {
+  position: absolute;
+  left: 1rem;
+  top: 35%;
+  padding: 0 0.5rem;
+  margin-left: -0.5rem;
+  color: #A7ADBF;
+  cursor: text;
+  -webkit-transition: top 200ms ease-in,left 200ms ease-in,font-size 200ms ease-in;
+  transition: top 200ms ease-in,left 200ms ease-in,font-size 200ms ease-in;
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+  background-color: #FFF;
+  color: #2B52DD;
+  color: #E73A33;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border: 2px solid #004282;
+  border: 2px solid #A7ADBF;
+  border-radius: 4px;
+  color: #2B2C32;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #E73A33;
+  border-color: #E73A33;
+  color: #E73A33;
+}
+
+.c2 input {
+  font-size: 14px;
+  line-height: 17px;
+  font-family: inherit;
+  width: 100%;
+  height: 88%;
+  outline: none;
+  background: none;
+  border-style: none;
+  color: #E73A33;
+}
+
+.c2 input::-ms-reveal,
+.c2 input::-ms-clear {
+  display: none;
+}
+
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 85px;
+}
+
+<div
+  class="c0"
+  data-testid="input-top-container"
+  label="Test"
+>
+  <div
+    class="c1"
+    data-testid="input-container"
+  >
+    <div
+      class="c2"
+    >
+      <input
+        data-testid="input"
+        type="password"
+        value=""
+      />
+      <div
+        class="c3"
+        data-testid="input-eye"
+      >
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+            fill-rule="evenodd"
+            stroke="#6D7384"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+            fill-rule="evenodd"
+            stroke="#6D7384"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+    <label
+      class="c4"
+      data-testid="input-label"
+    >
+      Test
+    </label>
+  </div>
+  <div
+    class="c5"
+    data-testid="input-errorMessage"
+  >
+    Test
+  </div>
+</div>
+`;
+
+exports[`Input Component Should render the component with medium size 1`] = `
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 5px;
+  color: #E73A33;
+}
+
+.c4 svg {
+  margin-right: 5px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  position: relative;
+  width: auto;
+  height: 32px;
+}
+
+.c2 {
+  color: #2B2C32;
+  cursor: text;
+  font-size: 12px;
+  line-height: 15px;
+  background-color: #FFF;
+  color: #2B52DD;
+  color: #E73A33;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border: 2px solid #A7ADBF;
+  border-radius: 4px;
+  color: #2B2C32;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #E73A33;
+  border-color: #E73A33;
+  color: #E73A33;
+}
+
+.c3 input {
+  font-size: 14px;
+  line-height: 17px;
+  font-family: inherit;
+  width: 100%;
+  height: 88%;
+  outline: none;
+  background: none;
+  border-style: none;
+  color: #E73A33;
+}
+
+.c3 input::-ms-reveal,
+.c3 input::-ms-clear {
+  display: none;
+}
+
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 74px;
+}
+
+<div
+  class="c0"
+  data-testid="input-top-container"
+  label="Test"
+>
+  <div
+    class="c1"
+    data-testid="input-container"
+  >
+    <div
+      class="c2"
+      data-testid="input-label"
+    >
+      Test
+    </div>
+    <div
+      class="c3"
+    >
+      <input
+        data-testid="input"
+        type="text"
+        value=""
       />
     </div>
   </div>
   <div
-    class="c3"
+    class="c4"
     data-testid="input-errorMessage"
   >
     Test

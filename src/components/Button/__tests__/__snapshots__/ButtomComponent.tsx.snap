@@ -109,7 +109,7 @@ exports[`Button Should render a secondary version 1`] = `
 
 exports[`Button Should render a small size 1`] = `
 <button
-  class="sc-bdfBQB buALzq"
+  class="sc-bdfBQB lejZcA"
 >
   <div
     class="sc-gsTEea hrdSoN"

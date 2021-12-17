@@ -14,11 +14,12 @@ enum FormStatus {
     COMPLETED = 'COMPLETED'
 }
 
-interface useApiReturnType<F> {
+interface useFormReturnType<F> {
     handleChange: (e: ChangeEvent<HTMLInputElement>) => void
     setFormStatus: Dispatch<SetStateAction<FormStatus>>
     setFieldsErrors: Dispatch<SetStateAction<F | undefined>>
     onFormSubmit: OnFormSubmit<F>
+    setFields: Dispatch<React.SetStateAction<F>>
     fields: F
     fieldsErrors: F | undefined
     formStatus: FormStatus
@@ -55,7 +56,7 @@ const isEmptyObject = (errors: any): boolean =>
  * fieldsErrors array of values
  * formStatus status of the form
  */
-const useForm = <F,>(props: useFormProps<F>): useApiReturnType<F> => {
+const useForm = <F,>(props: useFormProps<F>): useFormReturnType<F> => {
     //destroy props
     const { schema, fieldsInitialValue } = props
 
@@ -83,6 +84,7 @@ const useForm = <F,>(props: useFormProps<F>): useApiReturnType<F> => {
                 const errors: any = {}
                 ;(e as ValidationError).inner.forEach(err => {
                     if (err.path) errors[err.path] = err.message
+                    else errors[err.type!] = err.message
                 })
                 setFieldsErrors(isEmptyObject(errors) ? undefined : errors)
             }
@@ -92,7 +94,13 @@ const useForm = <F,>(props: useFormProps<F>): useApiReturnType<F> => {
     }, [fields, formStatus])
 
     const onFormSubmit: OnFormSubmit<F> = callback => async e => {
-        callback(fields, e)
+        e?.preventDefault()
+        schema
+            .validate(fields)
+            .then(() => {
+                callback(fields, e)
+            })
+            .catch(() => setFormStatus(FormStatus.SUBMITTED))
     }
 
     return {
@@ -100,6 +108,7 @@ const useForm = <F,>(props: useFormProps<F>): useApiReturnType<F> => {
         setFormStatus,
         setFieldsErrors,
         onFormSubmit,
+        setFields,
         fields,
         fieldsErrors,
         formStatus
