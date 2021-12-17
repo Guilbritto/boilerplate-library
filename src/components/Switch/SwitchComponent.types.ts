@@ -1,16 +1,7 @@
-import React from 'react'
+import { ChangeEventHandler } from 'react'
 
-export interface SwitchProps
-    extends React.InputHTMLAttributes<HTMLInputElement> {
-    isChecked: boolean
-    setIsChecked?: (isChecked: boolean) => void
+export type SwitchProps = {
     disabled?: boolean
-    custonClick?: () => void
-}
-
-export interface SwtichStyleProps {
-    isActive: boolean
-    disabled: boolean
-    isMouseDown?: boolean
-    isMouseUp?: boolean
+    checked?: boolean
+    onChange: ChangeEventHandler<HTMLInputElement>
 }

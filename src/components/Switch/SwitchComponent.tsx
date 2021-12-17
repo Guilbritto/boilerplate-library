@@ -1,62 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import { Container, CircleAura, Circle } from './SwitchComponent.styles'
-import { SwitchProps } from './SwitchComponent.types'
 import { useTheme } from '../../hooks/useTheme'
+import { Circle, Input, Wrapper } from './SwitchComponent.styles'
+import { SwitchProps } from './SwitchComponent.types'
+
 const SwitchComponent = ({
-    isChecked,
-    setIsChecked,
-    disabled,
-    custonClick
+    onChange,
+    checked = false,
+    disabled = false
 }: SwitchProps) => {
-    const [mouseDown, setMouseDown] = useState(false)
-    const [mouseUp, setMouseUp] = useState(false)
     const theme = useTheme()
 
-    const handleMouseUp = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        setMouseDown(false)
-        setMouseUp(true)
-    }
-
-    const handleMouseDown = (
-        e: React.MouseEvent<HTMLDivElement, MouseEvent>
-    ) => {
-        setMouseDown(true)
-        setMouseUp(false)
-    }
-
-    const handleOnClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
-        setIsChecked(!isChecked)
-        custonClick()
-        setMouseDown(false)
-        setMouseUp(false)
-    }
-
     return (
-        <Container
-            isActive={isChecked}
-            onClick={handleOnClick}
-            disabled={disabled || false}
-            theme={theme}
-            data-testid="switch-button"
-        >
-            <CircleAura
-                isActive={isChecked}
-                disabled={disabled || false}
-                isMouseDown={mouseDown}
-                isMouseUp={mouseUp}
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
+        <Wrapper theme={theme} disabled={disabled}>
+            <Input
+                type="checkbox"
+                value="switch"
                 theme={theme}
-                data-testid="switch-button-aura"
-            >
-                <Circle
-                    theme={theme}
-                    isActive={isChecked}
-                    disabled={disabled || false}
-                />
-            </CircleAura>
-        </Container>
+                disabled={disabled}
+                onChange={onChange}
+                checked={checked}
+            />
+            <Circle theme={theme} disabled={disabled} />
+        </Wrapper>
     )
 }
 
