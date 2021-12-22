@@ -19,7 +19,7 @@ const tagStyles = {
     `,
     inactive: css`
         color: ${defaultTheme.colors.neutral.soft};
-        background-color: ${defaultTheme.colors.neutral.light};
+        background-color: ${defaultTheme.colors.neutral.light[300]};
     `,
     default: css`
         color: ${defaultTheme.colors.primary};
