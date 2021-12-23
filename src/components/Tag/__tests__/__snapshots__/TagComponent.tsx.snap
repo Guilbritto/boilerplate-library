@@ -9,10 +9,37 @@ exports[`<TagComponent /> should render the component 1`] = `
 </div>
 `;
 
+exports[`<TagComponent /> should render the danger version 1`] = `
+<div
+  class="sc-bdfBQB goxGPs"
+  type="danger"
+>
+  teste
+</div>
+`;
+
+exports[`<TagComponent /> should render the inactive version 1`] = `
+<div
+  class="sc-bdfBQB eobTVd"
+  type="inactive"
+>
+  teste
+</div>
+`;
+
 exports[`<TagComponent /> should render the success version 1`] = `
 <div
   class="sc-bdfBQB njdSo"
   type="success"
+>
+  teste
+</div>
+`;
+
+exports[`<TagComponent /> should render the warning version 1`] = `
+<div
+  class="sc-bdfBQB gCVwta"
+  type="warning"
 >
   teste
 </div>
