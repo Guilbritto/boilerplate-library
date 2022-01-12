@@ -1,6 +1,5 @@
-import ToastContainer from '../../components/ToastContainer/ToastComponent'
 import React, { useCallback, useState } from 'react'
-import { uuid } from 'uuidv4'
+import ToastContainer from '../../components/ToastContainer/ToastComponent'
 
 interface ToastContextData {
     addToast(messages: Omit<ToastMessages, 'id'>): void
@@ -21,7 +20,7 @@ const ToastProvider: React.FC = ({ children }) => {
 
     const addToast = useCallback(
         ({ type, message }: Omit<ToastMessages, 'id'>) => {
-            const id = uuid()
+            const id = crypto.randomUUID()
             const toast = {
                 id,
                 type,
