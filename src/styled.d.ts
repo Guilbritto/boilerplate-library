@@ -1,5 +1,11 @@
 import 'styled-components'
 
+declare global {
+    interface Crypto {
+        randomUUID: () => string
+    }
+}
+
 declare module 'styled-components' {
     export interface DefaultTheme {
         name: string
