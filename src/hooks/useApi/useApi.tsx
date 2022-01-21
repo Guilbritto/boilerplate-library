@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
-import { AxiosInstance, CancelTokenStatic } from 'axios'
+import { useEffect, useState } from 'react'
+import { AxiosInstance } from 'axios'
 
 interface useApiReturnType<D, E> {
     data: D | undefined
     error: E | undefined
+    loadData: () => Promise<void>
 }
 
 interface useApiProps {
@@ -31,21 +32,20 @@ const useApi = <D, E = undefined>(
     //create source const to cancel an request
     //const source = useRef(cancelationToken.source())
 
+    const loadData = async () => {
+        try {
+            const { data: response } = await api.get<D>(url)
+            //store the result of req
+            setData(response)
+        } catch (error) {
+            const { response } = error
+            //store the error response or error
+            setError(response || error)
+        }
+    }
+
     useEffect(
         () => {
-            //A async function to perform a request
-            const loadData = async () => {
-                try {
-                    const { data: response } = await api.get<D>(url)
-                    //store the result of req
-                    setData(response)
-                } catch (error) {
-                    const { response } = error
-                    //store the error response or error
-                    setError(response || error)
-                }
-            }
-
             //trigger loadData function
             if (url) {
                 loadData()
@@ -60,7 +60,7 @@ const useApi = <D, E = undefined>(
     )
 
     //return data and error
-    return { data, error }
+    return { data, error, loadData }
 }
 
 export { useApi }
