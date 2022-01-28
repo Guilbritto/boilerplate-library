@@ -34,6 +34,11 @@ declare module 'styled-components' {
                 light: string
                 medium: string
                 dark: string
+            },
+            gray: {
+                light: string
+                medium: string
+                dark: string
             }
         }
         fontTokens: {
