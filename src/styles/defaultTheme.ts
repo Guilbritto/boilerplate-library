@@ -27,6 +27,11 @@ export const defaultTheme: DefaultTheme = {
             light: '#CFDDF5',
             medium: '#173EC5',
             dark: '#163161'
+        },
+        gray: {
+            light: '#C9CAD2',
+            medium: '#EBECF4',
+            dark: '#6D6E75'
         }
     },
     borderRadius: '4px',
