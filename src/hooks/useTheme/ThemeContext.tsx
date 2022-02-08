@@ -1,6 +1,6 @@
-import { Theme } from '@styles/types'
 import React, {
     createContext,
+    ReactNode,
     useCallback,
     useContext,
     useEffect,
@@ -9,18 +9,18 @@ import React, {
 import { defaultTheme } from '../../styles/defaultTheme'
 
 interface ThemeContextData {
-    getCurrentTheme: () => Theme
+    getCurrentTheme: <T>() => T
 }
 
-interface ICustomThemeProvider {
-    children: React.ReactNode
-    theme?: Theme
+interface CustomThemeProviderProps {
+    children: ReactNode
+    theme?: any
 }
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
-const CustomThemeProvider = ({ children, theme }: ICustomThemeProvider) => {
-    const [currentTheme, setCurrentTheme] = useState<Theme>(defaultTheme)
+const CustomThemeProvider = ({ children, theme }: CustomThemeProviderProps) => {
+    const [currentTheme, setCurrentTheme] = useState<any>(defaultTheme)
 
     useEffect(() => {
         if (theme) {
@@ -30,10 +30,7 @@ const CustomThemeProvider = ({ children, theme }: ICustomThemeProvider) => {
         }
     })
 
-    const getCurrentTheme = useCallback(
-        () => currentTheme as typeof defaultTheme,
-        [currentTheme]
-    )
+    const getCurrentTheme = useCallback(() => currentTheme, [currentTheme])
 
     return (
         <ThemeContext.Provider value={{ getCurrentTheme }}>
@@ -42,7 +39,7 @@ const CustomThemeProvider = ({ children, theme }: ICustomThemeProvider) => {
     )
 }
 
-function useTheme(): typeof defaultTheme {
+function useTheme(): any {
     const context = useContext(ThemeContext)
     if (!context) {
         throw new Error(
