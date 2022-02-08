@@ -28,7 +28,7 @@ const CustomThemeProvider = ({ children, theme }: CustomThemeProviderProps) => {
         } else {
             setCurrentTheme(defaultTheme)
         }
-    })
+    }, [])
 
     const getCurrentTheme = useCallback(() => currentTheme, [currentTheme])
 
