@@ -1,6 +1,7 @@
-import { css, DefaultTheme } from 'styled-components'
+import { css } from 'styled-components'
+import { Theme } from './types'
 
-export const defaultTheme: DefaultTheme = {
+export const defaultTheme: Theme = {
     name: 'default',
     colors: {
         primary: '#2B52DD',

@@ -1,3 +1,4 @@
+import { Theme } from '@styles/types'
 import React, {
     createContext,
     useCallback,
@@ -6,21 +7,20 @@ import React, {
     useState
 } from 'react'
 import { defaultTheme } from '../../styles/defaultTheme'
-import { DefaultTheme } from 'styled-components'
 
 interface ThemeContextData {
-    getCurrentTheme: () => typeof defaultTheme
+    getCurrentTheme: () => Theme
 }
 
 interface ICustomThemeProvider {
     children: React.ReactNode
-    theme?: typeof defaultTheme
+    theme?: Theme
 }
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
 const CustomThemeProvider = ({ children, theme }: ICustomThemeProvider) => {
-    const [currentTheme, setCurrentTheme] = useState<DefaultTheme>(defaultTheme)
+    const [currentTheme, setCurrentTheme] = useState<Theme>(defaultTheme)
 
     useEffect(() => {
         if (theme) {
