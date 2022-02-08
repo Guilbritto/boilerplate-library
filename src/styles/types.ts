@@ -1,6 +1,6 @@
 import { FlattenSimpleInterpolation } from 'styled-components'
 
-export interface Theme {
+export type Theme = {
     name: string
     colors: {
         primary: string

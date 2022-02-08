@@ -1,7 +1,7 @@
 import { defaultTheme } from '../styles/defaultTheme'
 import { Theme } from '../styles/types'
 
-export const createTheme = <T>(theme: T & Theme) => {
+export const createTheme = <T>(theme: Theme & T) => {
     return {
         ...defaultTheme,
         colors: {

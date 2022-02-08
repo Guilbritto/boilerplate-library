@@ -1,4 +1,4 @@
-import React, {
+import {
     createContext,
     ReactNode,
     useCallback,
@@ -9,7 +9,7 @@ import React, {
 import { defaultTheme } from '../../styles/defaultTheme'
 
 interface ThemeContextData {
-    getCurrentTheme: <T>() => T
+    getCurrentTheme: () => any
 }
 
 interface CustomThemeProviderProps {
